@@ -1,0 +1,2 @@
+# fanfan-owner
+for myself
