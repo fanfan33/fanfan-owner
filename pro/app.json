@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/article/article"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,23 +13,27 @@
   },
   "tabBar": {
     "borderStyle": "white",
-    "selectedColor": "#11cd6e",
+    "selectedColor": "#ffffff",
     "backgroundColor": "#cccccc",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "first",
-      "iconPath": "images/all.png",
-      "selectedIconPath": "images/all-filling.png"
-    },{
-      "pagePath": "pages/logs/logs",
-      "text": "seconed",
-      "iconPath": "images/favorites-filling.png",
-      "selectedIconPath": "images/favorites.png"
-    },{
-      "pagePath": "pages/my/my",
-      "text": "third",
-      "iconPath": "images/account.png",
-      "selectedIconPath": "images/account-filling.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "吾媒体",
+        "iconPath": "images/all.png",
+        "selectedIconPath": "images/all-filling.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "吾星饮",
+        "iconPath": "images/favorites-filling.png",
+        "selectedIconPath": "images/favorites.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "吾",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/account-filling.png"
+      }
+    ]
   }
 }
