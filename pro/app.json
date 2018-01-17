@@ -18,19 +18,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "吾媒体",
+        "text": "星媒体",
         "iconPath": "images/all.png",
         "selectedIconPath": "images/all-filling.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "吾星饮",
+        "text": "星餐饮",
         "iconPath": "images/favorites-filling.png",
         "selectedIconPath": "images/favorites.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "吾",
+        "text": "吾星",
         "iconPath": "images/account.png",
         "selectedIconPath": "images/account-filling.png"
       }
