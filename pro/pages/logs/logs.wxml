@@ -1,6 +1,38 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="page">
+  <view class="weui-tab">
+    <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{currentTab == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider" style=" transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+
+    <swiper current="{{currentTab}}" class="swiper-box weui-tab__panel" duration="300" style="height:{{winHeight+60}}px" bindchange="bindChange">
+        <swiper-item>
+          <view class="weui-tab__content">
+            <view wx:for="{{logs}}" wx:for-item="log" wx:key="log">
+              <text class="log-item">{{index + 1}}. {{log}}</text>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class="weui-tab__content">选项二的内容</view>
+        </swiper-item>
+        <swiper-item>
+          <view class="weui-tab__content">
+            <view class="weui-grids">
+                <block wx:for="{{grids}}" wx:key="*this">
+                    <navigator url="#" class="weui-grid" hover-class="weui-grid_active">
+                        <image class="weui-grid__icon" src="../../images/dog_{{index+1}}.png" />
+                        <view class="weui-grid__label">{{item}}</view>
+                    </navigator>
+                </block>
+            </view>
+          </view>
+        </swiper-item>
+    </swiper>
+  </view>
 </view>
