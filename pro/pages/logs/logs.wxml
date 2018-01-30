@@ -26,7 +26,7 @@
             <view class="weui-grids">
                 <block wx:for="{{grids}}" wx:key="*this">
                     <navigator url="#" class="weui-grid" hover-class="weui-grid_active">
-                        <image class="weui-grid__icon" src="../../images/dog_{{index+1}}.png" />
+                        <image class="weui-grid__icon" src="../../images/dogs/dog_{{index+1}}.png" />
                         <view class="weui-grid__label">{{item}}</view>
                     </navigator>
                 </block>

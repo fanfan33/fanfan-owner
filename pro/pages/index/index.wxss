@@ -1,2 +1,4 @@
 /**index.wxss**/
-
+.weui-panel:before{
+  border-top: 0;
+}
