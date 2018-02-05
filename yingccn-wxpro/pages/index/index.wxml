@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="bg1 bg">
+        <image class="listTxt" src="../../images/index/listTxt1.png" />
+    </view>
+    <view class="bg1-btn btn">
+        <view class="topCategroy" bindtap="topCategroy">
+            <image id="our" src="http://image.yingccn.com/image/59f81d26d6c9b651421ac3e1.png" />
+            <image id="other" src="http://image.yingccn.com/image/59f82337d6c9b651421ac3e5.png" />
+        </view>
+        <view>
+            <block wx:for="{{actList}}" wx:key="{{item.id}}">
+                <view class="content" wx:if="{{item.ifOur && showOur}}">
+                    <view class="title">{{item.title}}</view>
+                    <view class="title-btn con-flex">
+                        <view>({{item.desc}})</view>
+                        <view>{{item.startDate}}</view>
+                    </view>
+                    <image class="conBg" src="{{item.bgImg}}" />
+                    <view class="count-btn con-flex">
+                        <view>报名人数：<text class="red">{{item.enrollCount}}</text></view>
+                        <view>支持人数：<text class="red">{{item.supportCount}}</text></view>
+                    </view>
+                </view>
+                <view class="content" wx:if="{{!item.ifOur && !showOur}}">
+                    <view class="title">{{item.title}}</view>
+                    <view class="title-btn con-flex">
+                        <view>({{item.desc}})</view>
+                        <view>{{item.startDate}}</view>
+                    </view>
+                    <image class="conBg" src="{{item.bgImg}}" />
+                    <view class="count-btn con-flex">
+                        <view>报名人数：<text class="red">{{item.enrollCount}}</text></view>
+                        <view>支持人数：<text class="red">{{item.supportCount}}</text></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        
+    </view>
+    <view class="bg2 bg">
+        <image class="listTxt" src="../../images/index/listTxt2.png" />
+    </view>
+    <view class="bg3 bg">
+        <image class="listTxt" src="../../images/index/listTxt3.png" />
+    </view>
+    <view class="bg4 bg">
+        <image class="listTxt" src="../../images/index/listTxt4.png" />
+    </view>
+</view>

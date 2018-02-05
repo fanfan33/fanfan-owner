@@ -1,0 +1,43 @@
+<!-- my.wxml -->
+<view class="container">
+  <!--<swiper>
+    <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>-->
+  <view class="userinfo">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="userinfo-info">
+        <view>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </view>
+        <view>
+          <text>走自己的路让别人说去吧</text>
+        </view>
+      </view>
+      <view class="userinfo-set">
+        <image class="mySet" src="../../images/tabbar/mySet.png" />
+      </view>
+  </view>
+  <view class="myList">
+    <navigator url="" class="myJoin myCon">
+      <image class="myIcon" src="../../images/tabbar/myJoin.png" />
+      <view class="mytxt"><text>我参与的</text></view>
+      <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+
+    <navigator url="" class="myJoin myCon">
+      <image class="myIcon" src="../../images/tabbar/myDevelop.png" />
+      <view class="mytxt"><text>我发起的</text></view>
+      <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+
+    <navigator url="" class="myJoin myCon">
+      <image class="myIcon" src="../../images/tabbar/myRelease.png" />
+      <view class="mytxt"><text>发布项目</text></view>
+      <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+  </view>
+</view>

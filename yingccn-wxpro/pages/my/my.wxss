@@ -1,0 +1,79 @@
+/* pages/my/my.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #FFAD00;
+  padding: 30rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  margin-right: 0;
+  border-radius: 50%;
+}
+.userinfo-info{
+  padding-left: 20rpx;
+  flex: 1;
+}
+.userinfo text {
+  color: #fff;
+  font-size: 14px;
+}
+.mySet{
+  width: 60rpx;
+  height: 55rpx;
+}
+
+
+.myList{
+  margin-top: 20rpx;
+  background: #ffffff;
+}
+.myCon{
+  margin: 0 40rpx;
+  padding: 20rpx 0;
+  font-size: 14px;
+  border-bottom: 1px solid #F8F8F8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.myIcon{
+  width: 46rpx;
+  height: 46rpx;
+}
+.myArrow{
+  width: 26rpx;
+  height: 26rpx;
+}
+.mytxt{
+  flex: 1;
+  padding-left: 30rpx;
+}
+
+
+swiper image{
+  width: 100%;
+  height: 150px;
+}
+.swiper-tab-list{ 
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.3333%;
+  text-align: center;
+  line-height: 80rpx;
+} 
+.on{ 
+  color:#da7c0c;
+  border-bottom: 5rpx solid#da7c0c;
+}
+.swiper-box{ 
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+} 

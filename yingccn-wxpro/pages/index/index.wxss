@@ -1,0 +1,62 @@
+.container{
+  font-size: 12px;
+}
+.red{color: red;}
+.bg1{
+  background-image: url('http://image.yingccn.com/image/5a0a6382d6c9b651421ac3ef.png');
+}
+.bg2{
+  background-image: url('http://image.yingccn.com/image/5a0a6465d6c9b651421ac3f1.png');
+}
+.bg3{
+  background-image: url('http://image.yingccn.com/image/5a0a6487d6c9b651421ac3f3.png');
+}
+.bg4{
+  background-image: url('http://image.yingccn.com/image/5a0a64a5d6c9b651421ac3f5.png');
+}
+.bg{
+  position: relative;
+  width: 100%;
+  height: 280rpx;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+image.listTxt{
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+  width: 280rpx;
+  height: 60rpx;
+}
+.topCategroy{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.topCategroy image{
+  width: 40%;
+  height: 100rpx;
+}
+.content{
+  margin: 20rpx 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+}
+.title{
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6rpx 0;
+}
+.content .conBg{
+  width: 100%;
+  height: 440rpx;
+  padding: 10rpx 0;
+}
+.con-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}

@@ -1,0 +1,19 @@
+<view class="MessageList">
+    <navigator url="" class="myJoin myCon">
+        <image class="myIcon" src="../../images/tabbar/mes-proItem.png" />
+        <view class="mytxt"><text>项目动态</text></view>
+        <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+
+    <navigator url="" class="myJoin myCon">
+        <image class="myIcon" src="../../images/tabbar/mes-reply.png" />
+        <view class="mytxt"><text>评论回复</text></view>
+        <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+
+    <navigator url="" class="myJoin myCon">
+        <image class="myIcon" src="../../images/tabbar/mes-notice.png" />
+        <view class="mytxt"><text>网站公告</text></view>
+        <image class="myArrow" src="../../images/tabbar/myArrow.png" />
+    </navigator>
+</view>
