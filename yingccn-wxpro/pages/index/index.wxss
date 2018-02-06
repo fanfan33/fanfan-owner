@@ -1,7 +1,6 @@
 .container{
   font-size: 12px;
 }
-.red{color: red;}
 .bg1{
   background-image: url('http://image.yingccn.com/image/5a0a6382d6c9b651421ac3ef.png');
 }

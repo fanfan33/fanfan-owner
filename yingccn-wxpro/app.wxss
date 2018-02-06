@@ -1,3 +1,5 @@
 /**app.wxss**/
-@import 'weui.wxss';
+/*@import 'weui.wxss';*/
 
+.red{color: red;}
+image{width: 100%;}

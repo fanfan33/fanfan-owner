@@ -1,2 +1,59 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="container">
+    <view class="header">
+        <image src="http://image.yingccn.com/image/5a2753a9d6c9b604dc64fc93.png" />
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="main">
+        <view class="team-div">
+            <view data-num="1" bindtap="isActive" class="{{isActive=='1' ? 'activebg' : ''}}">团队</view>
+            <view data-num="2" bindtap="isActive" class="{{isActive=='2' ? 'activebg' : ''}}">个人</view>
+        </view>
+        <!-- 团队 -->
+        <view class="team">
+            <view class="content">
+                <view class="title">title</view>
+                <view class="con-top">
+                    <image bindtap="bindViewTap" class="company-avatar" src="http://image.yingccn.com/image/5a693ee1d6c9b604708cdeb3.png" background-size="cover"></image>
+                    <view class="company-info">
+                        <view>
+                            <text class="userinfo-nickname">userInfo.nickName</text>
+                        </view>
+                        <view>
+                            <text>(走自己的路让别人说去吧)</text>
+                        </view>
+                    </view>
+                    <view class="company-date">
+                        2018-2-1
+                    </view>
+                </view>
+                <view class="bgimgs">
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                </view>
+                <view>
+                    报名<text class="red"> {{37}} </text>人<text space="emsp">支持</text><text class="red"> {{666}} </text>人
+                </view>
+                <view class="headimgs">
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                    <image src="http://image.yingccn.com/image/5a696845d6c9b604708cdefb.png" />
+                    
+                </view>
+            </view>
+        </view>
+        <!-- 个人 -->
+        <view class="person">
+            
+        </view>
+
+    </view>
+</view>

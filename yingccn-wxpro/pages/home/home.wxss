@@ -1,1 +1,79 @@
 /* pages/home/home.wxss */
+.container{font-size: 14px;}
+.header{background: #fff9f3;padding: 12rpx 0;}
+.header image{width:85%;margin:auto;height: 66rpx;display: block}
+swiper,swiper image{height: 440rpx;}
+
+.team-div{
+    width: 50%;
+    margin: 20rpx auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #FAAB00;
+    border-radius: 5px;
+}
+.team-div view{
+    display: inline-block;
+    width: 49.5%;
+    text-align: center;
+    margin: 4rpx;
+    border-radius: 5px;
+    transition: all 0.3s ease-in;
+}
+.team-div view:first-child{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.team-div view:last-child{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.activebg{
+    color: white;
+    background: #FAAB00;
+}
+/*团队列表内容*/
+.content{
+    margin: 20rpx 36rpx 0 36rpx;
+}
+.title{text-align: center;}
+.con-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16rpx 0;
+}
+.con-top text {
+  font-size: 14px;
+}
+.company-avatar {
+  width: 90rpx;
+  height: 90rpx;
+  margin: 20rpx;
+  margin-right: 0;
+  border-radius: 50%;
+}
+.company-info{
+  padding-left: 20rpx;
+  flex: 1;
+}
+.bgimgs image{
+    width: 20%;
+    height: 80rpx;
+    margin-left: 1%;
+    border-radius: 5px;
+}
+.supleft{padding-left: 20rpx;}
+.headimgs image{
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 50%;
+    margin-left: 8rpx;
+}
+
+.mySet{
+  width: 200rpx;
+}

@@ -1,6 +1,4 @@
-var token = {
-    
-};
+var token = wx.getStorageSync('token') || {};
 const baseUrl = 'https://wx.yingccn.com';
 function ajaxGet(url,_data,callback){
     wx.request({
@@ -15,6 +13,7 @@ function ajaxGET(url,_data,callback){
 	if(!token.parameterName){
 		ajaxGet("/access/csrfToken.json","t="+new Date().getTime(),function(data){
 			token = data.data;
+			wx.setStorageSync('token',token);
 			ajaxGET(url,_data,callback);
 		});
         return;

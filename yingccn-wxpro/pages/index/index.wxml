@@ -9,6 +9,18 @@
             <image id="other" src="http://image.yingccn.com/image/59f82337d6c9b651421ac3e5.png" />
         </view>
         <view>
+            <navigator url="../home/home?unique=5a693f91d6c9b604708cdecf" class="content">
+                <view class="title">item.title</view>
+                <view class="title-btn con-flex">
+                    <view>(item.desc)</view>
+                    <view>2018-2-1</view>
+                </view>
+                <image class="conBg" src="http://image.yingccn.com/image/59f82337d6c9b651421ac3e5.png" />
+                <view class="count-btn con-flex">
+                    <view>报名人数：<text class="red">{{66}}</text></view>
+                    <view>支持人数：<text class="red">{{520}}</text></view>
+                </view>
+            </navigator>
             <block wx:for="{{actList}}" wx:key="{{item.id}}">
                 <view class="content" wx:if="{{item.ifOur && showOur}}">
                     <view class="title">{{item.title}}</view>
