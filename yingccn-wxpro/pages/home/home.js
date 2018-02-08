@@ -1,4 +1,5 @@
 // pages/home/home.js
+var newPx = 0;  //转换px
 Page({
   data: {
     imgUrls: [
@@ -13,64 +14,56 @@ Page({
     isActive: 1,
   },
   onLoad: function (options) {
-    
+    //绘制进度条
+    drawCircleProgress(0.5);
   },
   isActive: function (e) {
     var num = e.target.dataset.num
     this.setData({isActive: num})
-    if (num == "2") {
-      
-    } else {
-      
-    }
+    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
   
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
   
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
   
   }
 })
+// rpx --> px
+function pxChange(value) {
+    wx.getSystemInfo({
+      success: function(res) {
+        newPx = parseInt(res.windowWidth) * value / 750;
+      }
+    })
+    return newPx.toFixed(1);
+}
+function drawCircleProgress(value) {
+  var newVal = 2*value;
+  var point = pxChange(75);
+  var ctx = wx.createCanvasContext('round-progress');
+  ctx.setLineWidth(6);
+  ctx.setStrokeStyle('#d2d2d2');
+  ctx.beginPath();
+  ctx.arc(point, point, pxChange(66), 0, 2*Math.PI);
+  ctx.stroke();
+
+  ctx.setLineWidth(6);
+  ctx.setStrokeStyle('#FAAB00');
+  ctx.translate(point,point);
+  ctx.rotate(1.5*Math.PI);
+  ctx.translate(-point,-point);
+  ctx.beginPath();
+  
+  ctx.arc(point, point, pxChange(66), 0, newVal*Math.PI);
+  ctx.stroke();
+
+  ctx.draw();
+}

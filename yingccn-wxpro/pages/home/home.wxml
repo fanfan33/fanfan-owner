@@ -5,7 +5,7 @@
     </view>
     <swiper indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{imgUrls}}">
+        <block wx:for="{{imgUrls}}" wx:key="{{item}}">
             <swiper-item>
                 <image src="{{item}}" class="slide-image" width="355" height="150"/>
             </swiper-item>
@@ -19,7 +19,7 @@
         <!-- 团队 -->
         <view class="team">
             <view class="content">
-                <view class="title">title</view>
+                <view class="center">title</view>
                 <view class="con-top">
                     <image bindtap="bindViewTap" class="company-avatar" src="http://image.yingccn.com/image/5a693ee1d6c9b604708cdeb3.png" background-size="cover"></image>
                     <view class="company-info">
@@ -52,7 +52,50 @@
         </view>
         <!-- 个人 -->
         <view class="person">
-            
+            <view class="per-con">
+                <view class="per-top">
+                    <image class="per-avatar" src="http://image.yingccn.com/image/5a693ee1d6c9b604708cdeb3.png" background-size="cover"></image>
+                    <view class="per-info">
+                        <text class="boldtxt">user</text><text class="darkgrey"> 的众筹</text>
+                    </view>
+                    <view class="per-date">
+                        2018-2-1
+                    </view>
+                </view>
+                <view class="per-title boldtxt">
+                    探寻古商道 重走丝绸路---2018全球商道文化探寻活动
+                </view>
+                <view class="per-desc line-clamp">
+                    这里有美景，这里有热爱，这里有你和我都想要到达的梦想，我想背起行囊去体验这6天5夜的徒步生活，等我回来，带着美酒将这一路上的故事讲于你听。请你支持我众筹成行！穆俊鹏感谢您的支持，也邀请您一起同行见证。
+                </view>
+                <!-- 图表圆形滚动条显示 -->
+                <view class="round-con center">
+                    <view class="round-left">
+                        <view class="left-top padCon">
+                            <view>目标金额</view>
+                            <text class="red">9800.00元</text>
+                        </view>
+                        <view class="left-bottom padCon">
+                            <view>剩余金额</view>
+                            <text class="red">9800.00元</text>
+                        </view>
+                    </view>
+                    <view class="round-center">
+                        <canvas class="round-progress" canvas-id="round-progress"></canvas>
+                        <view class="txt-center center"><text>已筹\n{{66.6}}%</text></view>
+                    </view>
+                    <view class="round-right">
+                        <view class="right-top padCon">
+                            <view>发起时间</view>
+                            <text class="red">2018-2-1</text>
+                        </view>
+                        <view class="right-bottom padCon">
+                            <view>支持人数</view>
+                            <text class="red">98</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
         </view>
 
     </view>

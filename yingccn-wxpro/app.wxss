@@ -2,4 +2,13 @@
 /*@import 'weui.wxss';*/
 
 .red{color: red;}
+.darkgrey{color: #999999;}
 image{width: 100%;}
+.center{text-align: center;}
+.boldtxt{font-size: 16px;font-weight: bold;}
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}

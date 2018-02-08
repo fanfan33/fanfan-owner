@@ -27,6 +27,9 @@ Page({
     //     actList: content,
     //   })
     // })
+
+
+    
   },
   //分类切换
   topCategroy: function(e) {
