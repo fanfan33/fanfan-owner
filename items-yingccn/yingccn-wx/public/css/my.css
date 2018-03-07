@@ -1,0 +1,88 @@
+.my{
+	width: 7.5rem;
+	margin: auto;
+	font-size: 0.28rem;
+}
+.my .myHeader{
+	background-color: #FFAD00;
+	width: 6.6rem;
+	padding: 0 0.45rem;
+	height: 2.3rem;
+	position: relative;
+}
+.my .myHeader figure{
+	padding: 0.45rem 0;
+}
+.my .myHeader figure img{
+	width: 1.4rem;
+	height: 1.4rem;
+	float: left;
+	border-radius: 50px;
+}
+.my .myHeader figure figcaption{
+	float: left;
+	padding: 0.2rem 0 0 0.1rem;
+	color: white;
+}
+.my .myHeader figure figcaption h3{
+	width: 4.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.my .myHeader figure figcaption p{
+	font-size: 0.24rem;
+	padding-top: 0.15rem;
+}
+.my .myHeader .mySet{
+	position: absolute;
+	right: 0.45rem;
+	top: 0.3rem;
+}
+.my .myHeader .mySet img{
+	width: 0.35rem;
+	height: 0.3rem;
+	padding: 0.3rem;
+}
+.my .myDivide{
+	margin-top: 0.2rem;
+	width: 7.5rem;
+	background-color: #fff;
+}
+.my .myJoin,.my .mydevelop,.my .release{
+	height: 1.0rem;
+	box-sizing: border-box;
+	padding: 0.3rem 0;
+	width: 6.6rem;
+	margin: auto;
+	border-bottom: 1px solid #F8F8F8;
+}
+.my .myDivide img,.my .myDivide p{
+	float: left;
+}
+.my .myJoin img.joinLeft{
+	width: 0.46rem;
+	height: 0.43rem;
+	padding-right: 0.5rem;
+}
+.my .myDivide img.joinright{
+	width: 0.2rem;
+	height: 0.3rem;
+	float: right;
+	margin-top: 0.05rem;
+}
+.my .mydevelop img.developLeft{
+	width: 0.47rem;
+	height: 0.48rem;
+	padding-right: 0.5rem;
+}
+.my .release img.developLeft{
+	width: 0.5rem;
+	height: 0.5rem;
+	padding-right: 0.5rem;
+	margin-top: -0.1rem;
+}
+
+.my .release{
+	/*border: none;*/
+}

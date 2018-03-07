@@ -1,0 +1,314 @@
+.wrap{
+	font-size: 0;
+}
+.pro-header{
+	width: 100%;
+	height: 630px;
+	margin: 20px 0 30px 0;
+	position: relative;
+	background: #FFFFFF;
+}
+/*.pro-header .blur{
+	width: 100%;
+	height: 630px;
+	display: inline-block;
+	-webkit-filter: blur(1px); /* Chrome, Opera 
+       -moz-filter: blur(1px);
+        -ms-filter: blur(1px);    
+            filter: blur(1px); 
+}*/
+.pro-header .pro-basic{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1180px;
+	height: 570px;
+	margin-top: 30px;
+}
+.pro-header .pro-basic img{
+	display: inline-block;
+	width: 795px;
+	height: 570px;
+	margin-right: 15px;
+	margin-left: 20px;
+}
+.pro-header .pro-basic .basic-infor{
+	width: 300px;
+	height: 520px;
+	background: #F4F4F4;
+	display: inline-block;
+	vertical-align: top;
+	padding: 25px;
+	font-size: 22px;
+	text-align: left;
+	letter-spacing: 1px;
+}
+.pro-basic .basic-infor img{
+	width: 110px;
+	height: 110px;
+	display: inline-block;
+	float: left;
+	border-radius: 100px;
+}
+.pro-basic .basic-infor .pro-username{
+	font-size: 22px;
+	vertical-align: top;
+	display: inline-flex;
+	width: 152px;
+	margin-top: 30px;
+	height: 66px;
+	overflow: hidden;
+}
+.pro-basic .basic-infor .title{
+	font-size: 22px;
+	color: #333333;
+	margin-top: 30px;
+	letter-spacing: 1px;
+	text-align: left;
+	height: 65px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #000000;
+	margin-bottom: 15px;
+}
+.pro-basic .basic-infor .bz{
+	font-size: 14px;
+	text-align: left;
+	height: 30px;
+	line-height: 30px;
+}
+.pro-basic .basic-infor .bz span{
+	color: #F8AA00;
+	font-size: 18px;
+}
+.pro-basic .basic-infor .bz em{
+	padding-left: 15px;
+	font-size: 14px;
+	font-style: normal;
+	color: #F8AA00;
+}
+.pro-basic .basic-infor .enrollCount{
+	padding-left: 18px;
+}
+.pro-basic .basic-infor .startime{
+	font-size: 14px;
+	margin: 0 0 66px 0;
+	text-align: left;
+	height: 30px;
+	line-height: 30px;
+}
+ .basic-infor .current-money{
+	color: #f8aa00;
+	margin-bottom: 20px;
+}
+ .basic-infor .sup-people{
+ 	display: inline-block;
+ 	font-size: 14px;
+	text-align: left;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+ }
+.clear{clear: both;}
+.basic-infor .proGoing{
+ 	height: 30px;
+	line-height: 30px;
+ 	float: right;
+ 	font-size: 14px;
+ }
+.basic-infor .proGoing em{
+	font-size: 18px;
+ 	color: #F8AA00;
+}
+em{
+ 	font-style: normal;
+ }
+.basic-infor .sup-people em{
+ 	font-size: 18px;
+ 	color: #F8AA00;
+ 	padding-left: 5px;
+ }
+.basic-infor .jindu{
+ 	font-size: 14px;
+ 	display: inline-block;
+ 	width: 110px;
+ 	margin-left: 32px;
+ }
+ .basic-infor .jindu em{
+ 	font-size: 18px;
+ 	color: #F8AA00;
+ 	font-style: normal;
+ }
+ .basic-infor .sup-btn{
+	width: 170px;
+	height: 44px;
+	border-radius: 5px;
+	background: #CCCCCC;
+	text-align: center;
+	line-height: 44px;
+	color: #FFFFFF;
+	margin: 10px auto;
+	cursor: pointer;
+	position: relative;
+}
+ .basic-infor .sup-btn .ewms{
+ 	position: absolute;
+ 	top: -167px;
+ 	right: -190px;
+ 	width: 160px;
+ 	height: 190px;
+ 	display: none;
+ 	background: #FFFFFF;
+ 	font-size: 0;
+ 	padding: 10px;
+ }
+ .basic-infor .sup-btn .ewms span{
+ 	font-size: 12px;
+ 	color: #000000;
+ 	line-height: 20px;
+ }
+ .basic-infor .sup-btn .ewms .ewmsimg{
+ 	width: 160px;
+ 	height: 160px;
+ }
+.project-left{
+	width: 790px;
+	height: auto;
+	min-height: 900px;
+	padding: 10px;
+	margin-bottom: 30px;
+	display: inline-block;
+	margin-right: 20px;
+	background: #FFFFFF;
+	vertical-align: top;
+}
+.project-left > img{
+	display: block;
+	margin: 15px auto;
+}
+.project-left .project-tit{
+	font-size: 30px;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+}
+.project-left .project-com{
+	padding-left: 40px;
+}
+.project-left p img{
+	display: block;
+	margin: 5px auto 0;
+}
+.project-left .project-img1{
+	height: 300px;
+	display: inline-block;
+	width: 100%;
+}
+.project-left .project-content{
+	font-size: 14px;
+	color: #9f9f9f;
+	display: inline-block;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.project-right{
+	width: 350px;
+	height: auto;
+	font-size: 16px;
+	padding: 0 15px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+	padding: 30px 10px 10px;
+	background: #FFFFFF;
+    margin-bottom: 30px;
+}
+.project-right p{
+	font-size: 26px;
+	margin-left: 25px;
+}
+.project-right i{
+	font-style: normal;
+	font-size: 16px;
+	display: block;
+	margin-left: 28px;
+}
+.project-right .right-content{
+	display: inline-block;
+	margin: 5px 0;
+	font-size: 14px;
+	color: #666666;
+	margin-left: 28px;
+	width: 280px;
+}
+i.hri{
+	font-size: 12px;
+	color: #AAAAAA;
+}
+
+.project-right .right-money{
+	width: 272px;
+	height: 42px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	background: transparent;
+	margin: 20px 5px 0 25px;
+}
+.project-right .immediately-btn{
+	width: 170px;
+	height: 44px;
+	background: #CCCCCC;
+	line-height: 44px;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 26px;
+	border-radius: 5px;
+	margin: 20px auto 30px;
+}
+.project-right .hr{
+	width: 100%;
+	height: 0;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 10px;
+}
+.project-right .right-m{
+	font-size: 30px;
+	color: #f8aa00;
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 25px;
+}
+.project-right .right-t{
+	font-size: 22px;
+}
+.project-right .hrs{
+	width: 300px;
+	height: 0;
+	border-bottom: 1px solid #CCCCCC;
+	margin:10px auto 10px;
+}
+
+/*进度条*/
+.progressBar{
+	width: 300px;
+	margin: auto;
+	height: 10px;
+	line-height: 10px;
+	margin: 10px 0;
+	/*padding: 0 0 0.1rem 0;*/
+	/*border-top: 1px solid darkgray;*/
+}
+.progressBar .scrollShow{
+	width: 300px;
+	height: 10px;
+	background-color: #fff;
+	/*background-color: #FAAB00;*/
+	border-radius: 10px;
+	/*box-shadow: 2px 2px 2px #A9A9A9;*/
+}
+.progressBar .scrollShow .scrollShowOn{
+	width: 300px;
+	height: 10px;
+	background: linear-gradient( to right,#FFAE95,#FF003F);
+	border-radius: 10px;
+	
+}

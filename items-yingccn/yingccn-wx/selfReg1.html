@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<style type="text/css">
+			.cont-detail .tabs {
+				height: .6rem;
+				font-size: .32rem;
+				color: #000000;
+				width: 6.6rem;
+				padding: 0.05rem 0.45rem;
+				margin: auto;
+				box-shadow: 0 4px 3px #F4F4F4;
+			}
+			.cont-detail .tabs a{
+				display: inline-block;
+				line-height: .6rem;
+				width: 32%;
+				text-align: center;
+			}
+
+			.cont-detail .tabs a.active{color:#faab00;border-bottom: 2px solid #faab00;border-radius:5px 5px 0px 0px;}
+
+			.swiper-container{height:auto;}
+			.swiper-container .tab1{background:#fff9f3;margin:.1rem .45rem -.01rem;padding-top: .2rem;}
+			.swiper-slide{width:100%;background:none;color:#fff;}
+
+			.swiper-slide > .content-slide{
+				/*display: none;*/
+				height: 200px;
+			}
+
+			.swiper-slide.swiper-slide-visible.swiper-slide-active  > .content-slide{
+				/*display: block;*/
+				height: 100%;
+			}
+
+			.content-slide{
+				color: #000000;
+				font-size: .24rem;
+				/*text-align: center;*/
+				line-height: .34rem;
+			}
+
+			/*.content-slide{
+				padding: 10px 15px 10px 15px !important;
+			}*/
+			.content-slide .tab1-more{
+				margin: 0 auto;
+				width: 2.66rem;
+				height: .65rem;
+				background: url(../img/active/show-detail.png)no-repeat;
+				background-size: 100% 100%;
+				font-size: .26rem;
+			}
+			/*.content-slide p{text-indent:2em;line-height:1.9;}*/
+			.swiper-container {position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;/* Fix of Webkit flickering */	z-index:1;}
+			.swiper-wrapper {position:relative;width:100%;
+				-webkit-transition-property:-webkit-transform, left, top;
+				-webkit-transition-duration:0s;
+				-webkit-transform:translate3d(0px,0,0);
+				-webkit-transition-timing-function:ease;
+
+				-moz-transition-property:-moz-transform, left, top;
+				-moz-transition-duration:0s;
+				-moz-transform:translate3d(0px,0,0);
+				-moz-transition-timing-function:ease;
+
+				-o-transition-property:-o-transform, left, top;
+				-o-transition-duration:0s;
+				-o-transform:translate3d(0px,0,0);
+				-o-transition-timing-function:ease;
+				-o-transform:translate(0px,0px);
+
+				-ms-transition-property:-ms-transform, left, top;
+				-ms-transition-duration:0s;
+				-ms-transform:translate3d(0px,0,0);
+				-ms-transition-timing-function:ease;
+
+				transition-property:transform, left, top;
+				transition-duration:0s;
+				transform:translate3d(0px,0,0);
+				transition-timing-function:ease;
+
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+			}
+			.swiper-free-mode > .swiper-wrapper {
+				-webkit-transition-timing-function: ease-out;
+				-moz-transition-timing-function: ease-out;
+				-ms-transition-timing-function: ease-out;
+				-o-transition-timing-function: ease-out;
+				transition-timing-function: ease-out;
+				margin: 0 auto;
+			}
+			.swiper-slide {
+				float: left;
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+			}
+			/*.content-slide p{
+				line-height: 0.8rem;
+				font-size: 0.28rem;
+			}*/
+			figure{
+				position: relative;
+				margin: 15px 15px !important;
+			}
+			figure img{
+				float: left;
+				width: 48%;
+				display: block;
+			}
+			figure figcaption{
+				float: left;
+				width: 48%;
+				margin-left: 3%;
+			}
+			figure figcaption .price{
+				position: absolute;
+				left: 51%;
+				bottom: 0;
+			}
+			.price p{
+				margin-top: 0.2rem;
+			}
+			.price span{
+				color: #FAAB00;
+				font-size: 0.32rem;
+			}
+			del{color: #FAAB00;}
+			em{color: #000000;}
+			.remainDate{
+				font-size: 0.32rem;
+				height: 1.0rem;
+				line-height: 1.0rem;
+				margin: 0.2rem 0;
+				background-color: #F5F5F5;
+				padding: 0 10px;
+				box-sizing: border-box;
+				text-align: center;
+			}
+			.remainDate span{
+				color: #FAAB00;
+			}
+			.headIcon{
+				margin: 10px 20px !important;
+			}
+			.headIcon img{
+				width: 0.95rem;
+				height: 0.95rem;
+				border-radius: 50%;
+				margin-right: 0.2rem;
+			}
+
+			/*参赛须知*/
+			ul{
+				margin: 10px 15px;
+			}
+			ul li{
+				line-height: 0.6rem;
+			}
+			ul li:before{
+				content:''; width:4px; height:4px; border-radius:50%; background:#000; display:inline-block; margin-right:5px; vertical-align:middle; margin-top:-3px;
+			}
+			.conMain{
+				padding: 10px 15px !important;
+				text-align: center;
+			}
+			.conMain img{
+				width: 100%;
+				display: block;
+				/*margin: 0.3rem 0;*/
+			}
+			.conMain h3{
+				font-size: 0.32rem;
+				margin: 0.3rem 0;
+			}
+			.conMain img.qcard{
+				width: 50%;
+				margin: 0.8rem auto 0.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cont-detail">
+			<div class="tabs">
+				<a href="#" hidefocus="true" class="active informationTitle">活动介绍</a>
+				<a href="#" hidefocus="true" class="regulationsTitle">参团方式</a>
+				<a href="#" hidefocus="true" class="regulationsTitle">参团须知</a>
+			</div>
+
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="content-slide" style="text-align:left;">
+							<figure>
+								<img src="public/img/home/index-banner.jpg"/>
+								<figcaption>
+									<h3>108公里·千人走长征·商界精英户外徒步挑战赛</h3>
+									<div class="price">
+										<del><em>原价：12800元/人</em></del>
+										<p>参团价：<span>9800元/人</span></p>
+									</div>
+								</figcaption>
+								<div class="clear"></div>
+							</figure>
+							<div class="remainDate">
+								已参团&nbsp;<span id="count">0</span>&nbsp;人，剩余时间：<span id="remainTime"></span>
+							</div>
+							<div class="headIcon">
+								<!--<img src="public/img/home/newHeadIcon.png"/>
+								<img src="public/img/home/headIcon3.png"/>
+								<img src="public/img/home/headIcon2.jpg"/>
+								<img src="public/img/home/headIcon4.jpg"/>-->
+								<img class="lastImg" src="public/img/home/emptyheadicon.png"/>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="content-slide regulations" style="text-align:left;">
+							<div class="conMain">
+								<h3>参团方式一:</h3>
+								<img src="public/img/home/actType.jpg"/>
+								<img class="qcard" src="public/img/home/actType2.png"/>
+								<h3>参团方式二:</h3>
+								<img src="public/img/home/actType3.jpg"/>
+							</div>
+
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="content-slide regulations" style="text-align:left;">
+							<ul>
+								<li>每人仅有一次参团机会；</li>
+								<li>本次拼团活动日期截止到2018年4月25日；</li>
+								<li>本次拼团活动人数至少5人；</li>
+								<li>若截止到团购结束时，尚未凑满5人，视为拼团失败。（备注：已缴纳的费用将会在3个工作日内返还原账户。）</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="public/js/util/common.js" type="text/javascript"></script>
+	<script src="public/js/util/idangerous.swiper.js" type="text/javascript"></script>
+	<script>
+				//获取头像
+		var proId=GetQueryString("proId");
+
+		ajaxPost(
+			'/user/activitiesGroupUsers/list',
+			JSON.stringify({activitiesId:proId}),
+			function(data){
+				console.log(data);
+				var con=data.data;
+				$(con).each(function(i,item){
+					var _img=$('<img src="'+rightImg(item.headImg)+'"/>');
+					_img.insertBefore($('.lastImg'));
+				})
+				$('#count').text(con.length);
+			}
+		)
+
+		var dateEnd = new Date("2018/4/25");
+		var iCount = setInterval(timeGo,1000);
+		timeGo();
+		function timeGo(){
+			var dateNow=new Date();
+			var arr=adddate(dateNow,dateEnd);
+			
+			if(dateNow.getTime() >= dateEnd.getTime()){
+				clearInterval(iCount);
+				arr = [0,0,0,0];
+			}
+			
+			var txt=arr[0]+"天"+arr[1]+"小时"+arr[2]+"分"+arr[3]+"秒";
+			$('#remainTime').text(txt);
+		}
+
+		function adddate(date1,date2){
+			var date3=date2.getTime()-date1.getTime();  //时间差的毫秒数
+			var days=Math.floor(date3/(24*3600*1000));
+			var leave1=date3%(24*3600*1000);    //计算天数后剩余的毫秒数
+			var hours=Math.floor(leave1/(3600*1000));
+			var leave2=leave1%(3600*1000);        //计算小时数后剩余的毫秒数
+			var minutes=Math.floor(leave2/(60*1000));
+			var leave3=leave2%(60*1000);    //计算分钟数后剩余的毫秒数
+			var seconds=Math.floor(leave3/1000);
+			var arr=[days,hours,minutes,seconds];
+			return arr;
+		}
+
+
+
+		//滑动效果
+		var tabsSwiper = new Swiper('.swiper-container', {
+			speed: 500,
+			autoHeight:true,
+			setWrapperSize:true,
+			onSlideChangeStart: function() {
+				$(".tabs .active").removeClass('active');
+				$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+			},
+			onSlideChangeEnd:function(){
+				$("div.swiper-wrapper").eq(0).css("height","");
+				$("div.swiper-wrapper > div").css("height","");
+			}
+		});
+
+		$(".swiper-slide , .swiper-wrapper").css("height","100%");
+		setTimeout(function(){
+			$(".swiper-slide , .swiper-wrapper").css("height","100%");
+		},500);
+
+
+		$(".tabs a").on('touchstart mousedown', function(e) {
+			e.preventDefault()
+			$(".tabs .active").removeClass('active');
+			$(this).addClass('active');
+			tabsSwiper.swipeTo($(this).index());
+		});
+
+		$(".tabs a").click(function(e) {
+			e.preventDefault();
+		});
+	</script>
+</html>

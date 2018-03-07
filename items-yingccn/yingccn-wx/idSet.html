@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/idSet.css"/>
+	</head>
+	<body>
+		<div class="idSet">
+			<!--<p>账号绑定</p>-->
+			<div class="setContent">
+				<div class="setList">
+					<ul>
+						<li class="tel">
+							手机绑定<span class="tele"></span>
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="img">
+							头像
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="name">
+							昵称<span class="anoterName"><em></em></span>
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="signature">
+							个性签名<span>带着感动上路，一路花开满地，绿树成荫!</span>
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="chang-pwd">
+							修改密码
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="adrChange">
+							地址管理
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="bindCard">
+							绑定提现账号
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+						<li class="exit">
+							退出登录
+							<img src="public/img/home/myArrow.png"/>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			 
+			ajaxGET('/user/info','',function(data){
+				console.log(data);
+				var _id=data.data.id,
+					_name=data.data.nickName,
+					_desc=data.data.desc,
+					_phone=data.data.phone;
+					bindCard=data.data.accountName;
+					
+				if (_phone) {
+					_phone = _phone.substr(0, 3) + '****' + _phone.substr(7);
+				} else{
+					_phone='暂未绑定手机号';
+				}
+				
+				_desc=_desc && _desc!='null'?_desc:'无';
+				$('.tele').text(_phone);
+				$('.anoterName em').text(_name);
+				$('.signature span').text(_desc);
+				$(".tel").click(function(){
+					location.href='tel-bind.html?phone='+_phone;
+				})
+				$(".signature").click(function(){
+					location.href='my-signature.html?desc='+_desc;
+				})
+				$(".name").click(function(){
+					location.href='my-name.html?name='+_name;
+				})
+				$(".chang-pwd").click(function(){
+					location.href='change-pwd.html';
+				})
+				$(".img").click(function(){
+					location.href='my-img.html';
+				})
+				$(".adrChange").click(function(){
+					setCookie('prevAdr',location.href);
+					location.href='adrSet.html';
+				})
+				$(".bindCard").click(function(){
+					if (!bindCard||(bindCard==null)) {
+						location.href='bindCard.html';
+					} else{
+						location.href='applyPut.html';
+					}	
+				})
+				$(".exit").click(function(){
+					if (confirm("确定退出登录？")) {
+						
+						
+				$.ajax({
+					type: "get",
+					url: "/logout", 
+					success: function(data) {
+						console.info(data);
+						token = {};
+						clearCookie();
+						location.href="index.html";
+					} 
+				});
+			
+			
+//						ajaxGET('/logout','',function(data){
+//							clearCookie();
+//							console.log(data)
+//						});
+
+//						location.href="index.html";
+					}
+				})
+			})
+
+
+
+		</script>
+	</body>
+</html>

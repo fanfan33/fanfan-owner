@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="Keywords" content=""/>
+		<meta name="Description" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="public/js/concat/jquery-1.8.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/concat/jquery.qrcode.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/pc-public.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/pc_common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/login.css"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<script src="public/js/login.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="login-top w1200">
+				<a href="home.html"><img src="public/img/homes/logo-1.png"/></a>
+			</div>
+			<div class="login-con">
+				<div class="content">
+						<p>登录</p>
+						<div class="login-left">
+							<span><em>*</em>账户</span>  <input  class="left-con" type="text" placeholder="请输入手机号码" id="login-id"/><br />
+														<!--<span class="error-id">*请输入已注册账户名</span>-->
+							<span><em>*</em>密码</span>  <input  class="left-con" type="password" placeholder="请输入正确的密码" id="login-pwd"/>
+														<i class="errorpwd">*请输入正确的用户名和密码</i>
+							<div class="login-btn" id="login-btn">登录</div>
+							<!--<i class="forget-pwd">忘记密码?</i>-->
+						</div>
+						<div class="login-right loginf">
+							<img src="public/img/homes/wx.png"/>
+							<span>点击获取微信二维码登录</span>
+						</div>
+						<div class="login-right loginb" style="display:none;">
+							<!-- <p>微信登录</p> -->
+							<!-- <img src="public/img/homes/ewm.png"/> -->
+							<div id="qrcode" style="padding-top: 20px;"></div>
+							<span id="msg">打开微信“扫一扫”</span>
+						</div>
+				</div>
+			</div>
+			<div class="opinion">
+						<div class="opinion-back">
+							<span class="op-tit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意见反馈
+							<i class="close-opinion">×</i>
+							</span>
+							<span class="op-type">反馈类型：</span>
+							<select name="">
+								<option value="">投资问题</option>
+								<option value="">其他错误</option>
+								<option value="">意见建议</option>
+								<option value="">文字错误</option>
+								<option value="">数据错误</option>
+								<option value="">融资问题</option>
+								<option value="">技术错误</option>
+							</select>
+							<br />
+							<span class="op-type">反馈内容：</span>
+							<textarea class="op-content"></textarea>
+							<div class="option-submit">提交</div>
+						</div>
+				</div>
+			<footer>
+					<div class="footer-ways">
+						<ul>
+							<li>关于我们</li>
+							<li>服务条款</li>
+							<li>联系我们</li>
+							<li>新闻资讯</li>
+							<li>帮助中心</li>
+							<li class="feedback">意见反馈</li>
+							<li><img src="public/img/homes/tels.png"/>010-8492-5592 (服务时间：9:00—18:00)</li>
+						</ul>
+						<p>京ICP备17017534号  &nbsp;&nbsp; 中国（北京）朝阳区北苑中国铁建广场F座 &nbsp;&nbsp;  投资有风险，购买需谨慎</p>
+					</div>
+			</footer>
+		</div>
+	</body>
+</html>

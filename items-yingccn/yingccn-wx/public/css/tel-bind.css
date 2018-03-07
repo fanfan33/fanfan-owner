@@ -1,0 +1,98 @@
+body{
+	background: #f8f8f8;
+}
+.register{
+	padding: 1.0rem .46rem;
+	font-size: 0;
+}
+.register input::-webkit-input-placeholder{
+	color: #aaaaaa;
+}
+.register input,.register .yz-code,.register .reg-password,#reg-pas{
+	height: 1.0rem;
+	width: 100%;
+	font-size: 0.30rem;
+	border: 0;
+	outline: none;
+	border-bottom: 1px solid #cccccc;
+	vertical-align: top;
+	background-color: #f8f8f8;
+}
+.yz-code{
+	line-height: 1.0rem;
+}
+
+.yz-code:empty:before {
+	content: attr(placeholder);
+	color: #aaaaaa;
+}
+.yz-code:focus:before {
+	content: none;
+}
+.register .code-num{
+	display: inline-block;
+	width: 1.9rem;
+	height: .6rem;
+	border: 1px solid #cccccc;
+	line-height: .6rem;
+	text-align: center;
+	font-size: .26rem;
+	color: #cccccc;
+	border-radius: 5px;
+	float: right;
+	margin-top: -0.84rem;
+}
+.register .reg-password{
+	position: relative;
+}
+.register .eyes {
+	display: inline-block;
+	width: .45rem;
+	height: .2rem;
+	position: absolute;
+	right: 0;
+	top: 0.45rem;
+}
+.register .reg-btn{
+	width: 6.58rem;
+	height: .9rem;
+	border-radius: 5px;
+	background: #ffad00;
+	font-size: .4rem;
+	line-height: .9rem;
+	text-align: center;
+	color: #ffffff;
+	margin: 1.3rem auto 0;
+}
+.tel-bind{
+	background: #ffffff;
+	padding-top: 1.0rem;
+}
+.tit{
+	font-size: 0.24rem;
+	padding-left: 0.46rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	color: #000000;
+}
+.tel-g{
+	width: 1.6rem;
+	height: 1.6rem;
+	display: block;
+	margin: 0 auto;
+}
+.tel-num{
+	font-size: 0.28rem;
+	text-align: center;
+	margin: .5rem 0 0.15rem;
+}
+.tel-cur{
+	text-align: center;
+	font-size: 0.24rem;
+}
+.tel-cont{
+	font-size: 0.2rem;
+	text-align: center;
+	margin-top: .9rem;
+	padding-bottom: 0.9rem;
+}

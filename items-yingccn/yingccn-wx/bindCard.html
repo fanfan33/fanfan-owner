@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<style type="text/css">
+			body{background-color: #F8F8F8;}
+			.wrap{width: 100%;font-size: 0.32rem;}
+			.wrap p.tit{width: 6.6rem;margin: 0.2rem 0.45rem;font-size: 0.28rem;}
+			.wrap .conInfo{width: 6.6rem;padding: 0 0.45rem;background: #fff;}
+			.conInfo p{border-bottom: 1px solid #EEEEEE;padding: 0.3rem 0;}
+			.conInfo p:last-child{border: none;}
+			.conInfo label{vertical-align: middle;}
+			.conInfo input{margin-left: 0.2rem;vertical-align: middle;width: 5.0rem;}
+			input[disabled=disabled]{background: none;}
+			.save{
+				width: 5.5rem;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border-radius: 0.1rem;
+				margin: 2.0rem auto 0;
+				text-align: center;
+				background-color: #FFAD00;
+				color: white;
+			}
+			p.sign{
+				font-size: 0.28rem;
+				margin: 0.1rem 0.45rem;
+				color: #FFAD00;
+			}
+			p.sign .getcheck{
+				color: #999999;
+				padding-left: 0.6rem;
+				background: url(public/img/home/signcard.png) center left no-repeat ;
+				background-size: contain;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<p class="tit">请绑定持卡人本人的银行卡</p>
+			<div class="conInfo">
+				<p><label for="user">用户姓名</label><input id="user" type="text" /></p>
+				<p><label for="t_bankno">账号<span style="visibility: hidden;">账号</span></label><input id="t_bankno" type="number" /></p>
+				<p>账号类型<input type="text" class="cardType" /></p>
+			</div>
+			<p class="sign"><span class="getcheck">同意</span><span>《用户协议》</span></p>
+			<div class="save">
+				保&nbsp;存
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="public/js/util/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript" src="public/js/util/common.js" ></script>
+	<script type="text/javascript" src="public/js/util/bankData.js" ></script>
+	<script>
+		// 根据银行卡号获取发卡行名称
+    		$('#t_bankno').blur(function(){
+	    		var bankCard = $('#t_bankno').val();
+	            if (bankCard == null || bankCard == "") {
+	                return false;
+	            }
+            	var data=arr;
+                var bankBin = 0;
+                var isFind = false;
+                for (var key = 10; key >= 2; key--) {
+                    bankBin = bankCard.substring(0, key);
+                    $.each(data, function (i, item) {
+                        if (item.bin == bankBin) {
+                            isFind = true;
+                            $('.cardType').val(item.bankName);
+                        }
+                    });
+
+                    if (isFind) {
+                        break;
+                    }
+                }
+
+                if (!isFind) {
+                	$('.cardType').val("未知发卡银行");
+                }
+                $('.cardType').attr('readonly',true);
+	       	})
+    		//保存
+    		$('.save').click(function(){
+    			var box={
+    				accountName: $('#user').val(),
+    				accountNum: $('#t_bankno').val(),
+    				accountType: $('.cardType').val()
+    			}
+    			ajaxPost('/user/account',JSON.stringify(box),function(data){
+    				console.log(data);
+    				alert("保存成功");
+    				location.href='idSet.html';
+    			})
+    		})
+	</script>
+</html>

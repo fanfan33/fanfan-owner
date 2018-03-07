@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/weixinPay.css"/>
+		<script type="text/javascript" src="public/js/util/jquery.1.10.2.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+
+	</head>
+	<body>
+		<div class="pay">
+			<div class="header">
+				<p>自己付款</p>
+			</div>
+			<div class="weiPay">
+				<figure>
+					<img src="public/img/home/weinxinLogo.png"/>
+					<figcaption>
+						微信支付
+					</figcaption>
+					<div class="clear"></div>
+				</figure>
+				<div class="payNum">
+					<form action="" method="post" id="payForm">
+						<div class="payTop">
+							<div class="inputLeft" for="pN">支持金额</div>
+							<input type="number" id="pN" placeholder="可输入随意金额" />
+							<div class="inputRight">元</div>
+							<p class="clear"></p>
+						</div>
+						<textarea name="supText" placeholder="给自己加油吧！默认：2017，我最努力"></textarea>
+					</form>
+				</div>
+			</div>
+			<div class="payFooter">
+				<div class="paySum">
+					合计：<span><em>888.00</em>元</span>
+				</div>
+				<div class="paySub">
+					<input type="submit" value="立即支付" form="payForm"/>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

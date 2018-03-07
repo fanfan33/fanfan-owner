@@ -1,0 +1,383 @@
+.actDetail .act-share{
+	height: .8rem;
+	background: #fff9f3;
+	padding:.1rem 0 0 0.46rem ;
+	font-size: 0;
+}
+.act-share img{
+	width: 6.6rem;
+}
+.actDetail .act-event .content{
+	padding: .25rem .46rem .2rem .46rem;
+	width: auto;
+	font-size: 0.28rem;
+	letter-spacing: 0.02rem;
+}
+.actDetail .act-event{
+	position: relative;
+}
+.timeRest{
+	text-align: center;
+	font-size: 0.32rem;
+	font-weight: bold;
+	position: absolute;
+	color: red;
+	left: 3.3rem;
+	top: 0.9rem;
+}
+/*红旗飘飘*/
+.company img{
+	position: absolute;
+	left: 0.43rem;
+	width: 30%;
+}
+.company p{
+	position: absolute;
+	width: 0.2rem;
+	left: 0.57rem;
+	margin-top: 0.15rem;
+	font-size: 0.20rem;
+}
+.actDetail figure{
+	width: 6.6rem;
+	margin: 1.15rem auto 0.2rem;
+	height: 2.0rem;
+}
+.actDetail figure .img{
+	float: left;
+	width: 2.0rem;
+	height: 2.0rem;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+	border-left: none;
+	border-right: none;
+}
+.actDetail figure .img .pic{
+	width: 1.35rem;
+	height: 1.35rem;
+	margin-top: 0.6rem;
+	border-radius: 50%;
+}
+.actDetail figcaption{
+	float: left;
+	width: 4.5rem;
+	border: 1px solid #CCCCCC;
+}
+.actDetail figcaption ul li{
+	float: left;
+	width: 50%;
+	height: 1.0rem;
+	padding-top: 0.1rem;
+	text-align: center;
+	box-sizing: border-box;
+	color: #666666;
+}
+.actDetail figcaption ul li:first-child{
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+.actDetail figcaption ul li:nth-child(2){
+	border-bottom: 1px solid #CCCCCC;
+}
+.actDetail figcaption ul li:nth-child(3){
+	border-right: 1px solid #CCCCCC;
+}
+figcaption i{
+	color: red;
+}
+.actDetail .cont-detail .tabs {
+	height: .6rem;
+	font-size: .26rem;
+	color: #000000;
+	width: 6.6rem;
+	padding: 0 0.45rem;
+	margin: 0.3rem auto 0.3rem;
+	/*box-shadow: 0 4px 3px #F4F4F4;*/
+}
+.actDetail .cont-detail .tabs a{
+	color: white;
+	display: inline-block;
+	line-height: .6rem;
+	width: 33%;
+	text-align: center;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #F81212;
+	margin: 0 8.5%;
+	box-shadow: 0 4px 3px #CCCCCC;
+}
+
+.cont-detail .tabs a.active{box-shadow: 0 4px 3px #780000;}
+
+.swiper-container{height:auto;}
+.swiper-container .tab1{background:#fff9f3;margin:.1rem .45rem -.01rem;padding-top: .2rem;}
+.swiper-slide{width:100%;background:none;color:#fff;}
+
+.swiper-slide > .content-slide{
+	/*display: none;*/
+	height: 200px;
+}
+
+.swiper-slide.swiper-slide-visible.swiper-slide-active  > .content-slide{
+	/*display: block;*/
+	height: 100%;
+}
+
+.content-slide{color: #000000;
+	 font-size: .24rem;
+	 /*text-align: center;*/
+	 line-height: .34rem;}
+.content-slide img{
+	display: inline-block;
+	width: 100%;
+	/*height: 3rem;*/
+	margin-top: .2rem;
+	height: 100%;
+
+}
+.content-slide{
+	padding: 10px 15px 10px 15px !important;
+}
+.content-slide .tab1-more{
+	margin: 0 auto;
+	width: 2.66rem;
+	height: .65rem;
+	background: url(../img/active/show-detail.png)no-repeat;
+	background-size: 100% 100%;
+	font-size: .26rem;
+}
+/*.content-slide p{text-indent:2em;line-height:1.9;}*/
+.swiper-container {position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;/* Fix of Webkit flickering */	z-index:1;}
+.swiper-wrapper {position:relative;width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+/*更多按钮*/
+.getMore{
+	text-align: center;
+	font-size: 0.32rem;
+	margin-bottom: 0.3rem;
+}
+.getMore img{
+	width: 50%;
+}
+/*.getMore span{
+	color: #FAAB00;
+	
+	padding-right: 0.5rem;
+	background: url(../img/home/getMore.png) right center no-repeat;
+	background-size: 0.32rem;
+}*/
+/*众筹列表*/
+.actDetail .act-people{
+	/*background: #fff9f3;*/
+	width: 100%;
+	height: auto;
+	margin-bottom: 1.8rem;
+	border-top: 0.2rem solid #F7F7FB;
+}
+.actDetail .act-people .zc {
+	width: 100%;
+	height: .7rem;
+	line-height: .7rem;
+	font-size: .28rem;
+	box-shadow: 0px 4px 3px #F4F4F4;
+	margin-bottom: 0.2rem;
+	font-weight: bold;
+}
+.actDetail .act-people .zc .choice {
+	color: #f81212;
+	border-bottom: 1px solid #f81212;
+}
+.actDetail .act-people .zc span {
+	display: inline-block;
+	text-align: center;
+	height: .7rem;
+}
+.actDetail .act-people .zc span:nth-child(1){
+	margin:0 .45rem;
+}
+.zc p{
+	width: 100%;
+	height: 0.08rem;
+	background-color: #F7F8FB;
+}
+.actDetail .zc-people{
+	margin: 0 0.25rem;
+	border-radius: 10px;
+	width: auto;
+	height: 1.92rem;
+	background-color: #F8F8F8;
+	padding: .19rem .3rem;
+	margin-bottom: .2rem;
+	overflow: hidden;
+}
+
+.actDetail .zc-people .info{
+	height: 0.95rem;
+	padding-bottom: 0.2rem;
+}
+.actDetail .zc-people .info .headImg{
+	width: 0.95rem;
+	height: 0.95rem;
+	float: left;
+}
+.actDetail .zc-people .info .headImg img{
+	width: 0.95rem;
+	height: 0.95rem;
+	border-radius: 0.5rem;
+}
+.actDetail .zc-people .info .infoTop{
+	float: left;
+	width: 5.4rem;
+	height: 0.95rem;
+	padding: 0.15rem;
+	box-sizing: border-box;
+}
+.actDetail .zc-people .info p{
+	font-size: 0.26rem;
+}
+.actDetail .zc-people .info .infoTop .title{
+	float: left;
+	font-size: 0.30rem;
+	font-weight: bolder;
+	width: 3.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.actDetail .zc-people .info .infoTop .date{
+	float: right;
+}
+
+.actDetail .zc-people .info .infoTop .text{
+	color: #666666;
+	padding-top: 0.1rem;
+}
+
+.actDetail #register{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: .98rem;
+	text-align: center;
+	line-height: .98rem;
+	font-size: .4rem;
+	background: #ffad00;
+	color: #ffffff;
+	z-index: 1000;
+	border: none;
+}
+/*.register,.selfReg{
+	width: 50%;
+	float: left;
+	height: 0.98rem;
+}
+.selfReg{
+	background: #ffad00;
+	box-sizing: border-box;
+	border-right: 1px solid white;
+}*/
+.actDetail .finish{
+	display: none;
+}
+
+/*进度条*/
+.progressBar{
+	width: 6.58rem;
+	margin: auto;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	padding: 0.1rem 0;
+	font-size: 0.28rem;
+}
+.progressBar .scrollShow{
+	width: 5.3rem;
+	height: 0.15rem;
+	background-color: #CCCCCC;
+	border-radius: 0.2rem;
+	float: left;
+	position: relative;
+}
+.progressBar .scrollShow .scrollShowOn{
+	width: 2.8rem;
+	height: 0.15rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.2rem;
+	background-color: #FFAD00;
+}
+.progressBar em{
+	float: right;
+	padding-right: 0.2rem;
+	color: #333333;
+	font-weight: bold;
+}
+.actDetail .zc-supporter{
+	font-size: 0.28rem;
+	float: left;
+	border-right: 1px solid #CCCCCC;
+	padding-right: 0.3rem;
+	margin-right: 0.3rem;
+	letter-spacing: 0.03rem;
+	color: #666666;
+}
+.actDetail .zc-money{
+	font-size: 0.28rem;
+	float: left;
+	letter-spacing: 0.03rem;
+	color: #666666;
+}
+.loadImgCon,.loadImgConFinish{
+	position: fixed;
+	display: block;
+	left: 43%;
+	bottom: 1.0rem;
+	font-size: 0.28rem;
+	text-align: center;
+}
+.loadImg img{
+	width: 0.32rem;
+}

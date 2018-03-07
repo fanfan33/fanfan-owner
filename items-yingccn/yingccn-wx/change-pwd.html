@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改密码</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/util/common.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{
+				background: #f8f8f8;
+			}
+			.wrap {
+				font-size: 0;
+				height: 100%;
+			}
+			.wrap .password{
+				background: #ffffff;
+				padding: 0 0.46rem 0;
+			}
+			.wrap input{
+				background: #ffffff;
+			    height: 1.0rem;
+			    width: 100%;
+			    font-size: 0.26rem;
+			    border: 0;
+			    outline: none;
+			    border-bottom: 1px solid #cccccc;
+			    vertical-align: top;
+			}
+			.wrap input:nth-last-of-type(1){
+				border: 0;
+			}
+			.wrap .finish{
+				width: 5.50rem;
+				height: .8rem;
+				border-radius:5px;
+				background: #ffad00;
+				text-align: center;
+				line-height: .8rem;
+				margin: 2.52rem auto;
+				font-size: .4rem;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="password">
+				<input type="text" name="" id="oldpwd" value="" placeholder="请输入登录密码"/>
+				<input type="text" name="" id="newpwd" value="" placeholder="请输入新的登录密码"/>
+				<input type="text" name="" id="newpwds" value="" placeholder="请再次输入新的登录密码"/>
+			</div>
+			<div class="finish">完成</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".finish").click(function(){
+					var oldpwd = $("#oldpwd").val();
+						npwd = $("#newpwd").val();
+						repwd = $("#newpwds").val();
+						if(oldpwd === ''){
+						      alert('密码不能为空');
+						      return false;
+						   }
+						if( npwd !=repwd){
+							 alert("两次密码不同，请重新输入");
+						}else{
+							ajaxPost("/user/password",JSON.stringify({'password':npwd,'oldpwd':oldpwd}),function(data){
+								console.log(data);
+							})
+						}
+				})
+
+			})
+
+
+		</script>
+	</body>
+</html>

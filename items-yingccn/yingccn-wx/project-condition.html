@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="public/js/util/common.js"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<style type="text/css">
+			body{
+				background-color: #F3F3F3;
+			}
+			.tit{
+				font-size: 0.30rem;
+				text-align: center;
+				margin: 0.4rem;
+			}
+			.proCondition{
+				width: 100%;
+				background-color: #fff;
+				font-size: 0.28rem;
+				margin-top: 0.4rem;
+			}
+			.proCondition .notCon{
+				width: 6.6rem;
+				margin: auto;
+				padding: 0.2rem 0;
+				border-bottom: 1px solid #EEEEEE;
+			}
+			.proCondition .notCon .imgAb{
+				width: 0.75rem;
+				height: 0.75rem;
+				border-radius: 50%;
+			}
+			.proCondition .notCon .imgright{
+				float: right;
+				width: 5.8rem;
+			}
+			.proCondition .notCon .notTitle{
+				text-align: left;
+			}
+			.proCondition .notCon .notTitle p{
+				font-size: 0.26rem;
+				padding: 0.1rem;
+				color: #666666;
+				text-indent: 0.32rem;
+			}
+			.proCondition .notCon .notDate{
+				text-align: right;
+				color: #B0B0B0;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="proCondition">
+
+		</div>
+		<p class="tit" style="display: none;">暂无更多数据！</p>
+		<script type="text/javascript">
+			var indexProCon=0;
+			$(window).scroll(function(){
+				if ($(document).height()==$(window).height()+$(document).scrollTop()) {
+					indexProCon++;
+					loadProCon(indexProCon);
+				}
+			})
+			function loadProCon(index){
+				ajaxPost('/user/message/list', JSON.stringify({ 'type': '2', 'page': index }), function(data) {
+					console.log(data);
+					var list=data.content;
+					if (list.length==0) {
+						$('.tit').show();
+						return
+					}
+					$(list).each(function(i,item){
+						var _createTime=getFeild(item,['support','createTime']);
+						var imgUrl=getFeild(item,['support','imgUrl']);
+						var actTime=new Date(_createTime).toLocaleStringEnd();
+						var _desc=getFeild(item,['support','desc']);
+						var projectId=getFeild(item,['support','projectId']);
+						_desc=_desc?_desc:'无';
+						var textList=$(
+							'<div class="notCon" index="'+projectId+'">'+
+							'<img class="imgAb" src="'+rightImg(imgUrl)+'" />'+
+							'<div class="imgright">'+
+							'<div class="notDate">'+
+							'<p>'+actTime+'</p>'+
+							'</div>'+
+	
+							'<div class="notTitle">'+
+							'<p>'+_desc+'</p>'+
+							'</div>'+
+							'</div>'+
+							'<div class="clear"></div>'+
+							'</div>'
+						);
+						$('.proCondition').append(textList);
+					})
+					$('.proCondition .notCon').click(function(){
+						location.href='share.html?id='+$(this).attr('index');
+					})
+				})
+			}
+			loadProCon(indexProCon);
+		</script>
+	</body>
+
+</html>

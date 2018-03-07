@@ -1,0 +1,60 @@
+/*!grunt_test - 1.0.0-2017-03-17 */*{margin: 0;padding: 0;}
+html{
+	font-size: 62.5%;
+}
+body{
+	font-size: 1.6rem;
+}
+h1{
+	font-size: 2.4rem;
+}
+
+/*媒体查询*/
+/*当页面大于 1200px 时，大屏幕，主要是 PC 端*/ 
+@media only screen and (min-width:1200px ) {
+	
+}
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	
+}
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/ 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body{
+		font-size: 1.4rem;
+	}
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media only screen and (max-width:479px ) {
+	body{
+		font-size: 1.2rem;
+	}
+}
+/*当页面大于 1200px 时，大屏幕，主要是 PC 端*/ 
+@media only screen and (min-width:1200px ) {
+	
+}
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	
+}
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/ 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body{
+		font-size: 1.4rem;
+	}
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media only screen and (max-width:479px ) {
+	body{
+		font-size: 1.2rem;
+	}
+}

@@ -1,0 +1,157 @@
+.divide{
+	width: 500rpx;
+	height: 50rpx;
+	padding: 0 6rpx;
+	border: 1px solid #FF6000;
+	border-radius: 10rpx;
+	margin: 20rpx auto;
+	font-size: 25rpx;
+	font-weight: bolder;
+	position: relative;
+}
+.change{
+	background-color: #FF6000;
+	color: white;
+}
+.divide .divActList{
+	position: absolute;
+	top: 50%;
+	width: 50%;
+	height: 40rpx;
+	margin-top: -20rpx;
+	line-height: 40rpx;
+	text-align: center;
+}
+.divide .activiy{
+	border-radius: 10rpx 0 0 10rpx;
+	left: 10rpx;
+}
+.divide .list{
+	border-radius: 0 10rpx 10rpx 0;
+	right: 10rpx;
+}
+
+.topThree{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.topThree>view{
+  width: 33.3%;
+}
+.topThree .imgCon{
+  background: url('http://image.yingccn.com/image/599146d5d6c9b64205e1b71f.png') center no-repeat;
+  background-size: 66%;
+}
+.topThree .imgFirst{
+  background-image: url('http://image.yingccn.com/image/59914689d6c9b64205e1b71d.png');
+}
+.topThree .imgThird{
+  background-image: url('http://image.yingccn.com/image/599146eed6c9b64205e1b721.png');
+}
+.topThree .imgCon image{
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 3rpx;
+  border-radius: 50%;
+  margin-top: 107rpx;
+}
+.topThree .imgFirst image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 80rpx;
+}
+.topName{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* .topList{
+  margin-top: 30rpx;
+} */
+
+/* 普通排序 */
+.lastList{
+  line-height: 100rpx;
+  border-top: 1px solid #E5E5E5;
+  display: flex; 
+  vertical-align:middle; 
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  padding-bottom: 10rpx;
+}
+.lastList image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  vertical-align: middle; 
+}
+.lastList .infoLeft{
+  flex: 0.3;
+  text-align: center;
+}
+.lastList .infoCenter{
+  flex: 1.6;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lastList .infoRight{
+  flex:0.7;
+  color:#FF6000;
+  text-align:right;
+  padding-right:26rpx;
+}
+.log-list {
+  display: flex;
+  flex-direction: column;
+   padding: 40rpx; 
+}
+.log-item {
+  margin: 10rpx;
+}
+.nomsg{
+  text-align: center;
+  padding-top: 100rpx;
+}
+
+/* 自己 */
+.myStep{
+  margin-top: 30rpx;
+  padding: 10rpx 40rpx;
+  box-sizing: border-box;
+  background-color: #eeeeee;
+  border: none; 
+  vertical-align: middle;
+}
+
+.myStep .myLeft{
+  float: left;
+  margin-left: 72rpx;
+}
+.myStep .myCount{
+  float: right;
+  padding-right: 28rpx;
+  margin-top: 18rpx;
+  color: #FF6000;
+}
+.myLeft image{
+  width: 90rpx;
+  height: 90rpx;
+  float: left;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.myLeft .myInfo{
+  float: left;
+  margin-top: 6rpx;
+}
+.mylistNum{
+  font-size: 28rpx;
+  color: #aaaaaa;
+}
+.clear{
+  clear: both;
+}

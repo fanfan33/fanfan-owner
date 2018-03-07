@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>更新动态</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/update-dt.css"/>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul class="up-top">
+				
+			</ul>
+			<div class="up-content">
+				<!--<input type="text" name="" id="title" value="" placeholder="填写动态标题" class="con-tit" maxlength="10"/>-->
+				<div class="con-content" id="manifesto" contenteditable="true" placeholder="填写动态内容"></div>
+			</div>
+	        <div class="z_photo">
+				<div class="z_file">
+					<form id= "uploadForm"  method= "post" enctype ="multipart/form-data">
+						<input type="file" name="file" id="file" value="" accept="image/*"  onchange="imgChange('z_photo','z_file');" />
+					</form>
+            	</div>
+	        </div>
+			<!--<div class="update-btn">更新动态</div>-->
+			<input type="button" class="update-btn" value="更新动态" />
+				<!--遮罩层-->
+	        <div class="z_mask">
+	            <!--弹出框-->
+	            <div class="z_alert">
+	                <p>确定要删除这张图片吗？</p>
+	                <p>
+	                    <span class="z_cancel">取消</span>
+	                    <span class="z_sure">确定</span>
+	                </p>
+	            </div>
+	        </div>
+		</div>
+
+		<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="public/js/util/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/update-dt.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			var common=location.href.split('?')[1].split('&');
+			var id=common[0].split('=')[1];
+			var title=decodeURI(common[1].split('=')[1]);
+			$('.up-top').text(title);
+			$('.update-btn').click(function(){
+				var _title=$('#title').val(),
+					manifesto=$('#manifesto').text();
+				if (manifesto) {
+					var $this=$(this);
+					$this.attr('disabled',true);
+					ajaxPost('/user/project/manifesto',JSON.stringify({'projectId':id,'title':_title,'manifesto':manifesto,'images':images}),function(data){
+						$this.attr('disabled',false);
+						console.log(data);
+						var id=data.data.projectId;
+						location.href='share.html?id='+id+'&unique'+getCookie('unique');
+					})
+				} else{
+					alert('请输入具体内容!');
+				}
+			})
+		</script>
+		
+	</body>
+</html>

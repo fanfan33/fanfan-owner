@@ -1,0 +1,136 @@
+.wrap{
+	max-width: 1920px;
+	width: 100%;
+	background-color: #fff;
+}
+/*轮播图*/
+main .banner{
+	max-width: 1920px;
+	position: relative;
+	margin: 0 auto;
+}
+main .banner img{
+	max-width: 1920px;
+	width: 100%;
+	display: block;
+}
+main .banner .arrow{
+	max-width: 1200px;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -50px 0 0 -600px;
+}
+main .banner .arrow img{
+	width: 54px;
+	height: 100px;
+	display: inline-block;
+}
+main .banner .arrow img:hover{
+	cursor: pointer;
+}
+main .banner .arrow img#arrow-right{
+	float: left;
+}
+main .banner .arrow img#arrow-right{
+	float: right;
+}
+main .content{
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+/*新闻资讯*/
+main .content .news .newsTitle{
+	text-align: center;
+	height: 238px;
+	line-height: 238px;
+	border-bottom: 1px solid black;
+	position: relative;
+	width: 1200px;
+}
+main .content .news .newsTitle img{
+	vertical-align: middle;
+}
+.newsTitle .newsDiv{
+	width: 230px;
+	height: 45px;
+	position: absolute;
+	left: 50%;
+	margin-left: -115px;
+	bottom: -22.5px;
+	border-radius: 20px;
+	background-color: #333333;
+}
+.newsTitle .newsDiv .newsLeft{
+	float: left;
+	width: 50%;
+	height: 45px;
+	border-radius: 20px 0 0 20px;
+	background-color: #FAAB00;
+	text-align: center;
+	line-height: 45px;
+}
+.newsTitle .newsDiv .newsRight{
+	width: 50%;
+	float: left;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+}
+.newsTitle .newsDiv span{
+	color: white;
+}
+main .content .news .newsCon{
+	height: 180px;
+	margin-top: 40px;
+	border: 1px solid #EA0000;
+}
+/*联系我们*/ /*合作伙伴*/
+.contact .contactTitle,.partner .partnerTitle{
+	height: 200px;
+	line-height: 200px;
+	text-align: center;
+}
+.partner .partnerTitle{
+	height: 226px;
+	line-height: 226px;
+}
+
+.contact .contactTitle img,.partner .partnerTitle img{
+	vertical-align: middle;
+}
+.contact .contactCon,.partner .partnerCon{
+	height: 180px;
+	border: 1px solid #EA0000;
+}
+/*合作伙伴*/
+
+
+/*媒体查询*/
+/*当页面大于 1200px 时，大屏幕，主要是 PC 端*/ 
+@media only screen and (min-width:1200px ) {
+	
+}
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	
+}
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/ 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body{
+		font-size: 1.4rem;
+	}
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media only screen and (max-width:479px ) {
+	body{
+		font-size: 1.2rem;
+	}
+}

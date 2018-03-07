@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>报名</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/apply.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/add-backway.css"/>
+
+		<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="public/js/util/common.js" type="text/javascript"></script>
+		<script src="public/js/apply.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="fabu">
+				<div class="ap-top" >
+
+				</div>
+				<div class="ap-change">
+					<div class="support">
+						<span>开启友情赞助</span>
+						<div class="con-btn">
+							<div id="div1" class="open1">
+								<div id="div2" class="open2"></div>
+							</div>
+						</div>
+					</div>
+					<div class="support">
+						<span>需要支持者填写收件地址</span>
+						<div class="con-btn">
+							<div id="div3" class="close3">
+								<div id="div4" class="close4"></div>
+							</div>
+						</div>
+					</div>
+					<!--默认地址-->
+					<div class="defaultAdr" style="display: none;">
+						<div class="adrLeft">
+							<p><span class="realName"></span><span class="phone"></span></p>
+							<p class="defadr"></p>
+						</div>
+						<img src="public/img/home/myArrow.png"/>
+						<div class="clear"></div>
+					</div>
+					<div class="con-detail">
+						<div class="declaration" contenteditable="true" placeholder="众筹宣言：［默认］兄弟姐妹们，请支持我！"></div>
+					</div>
+				</div>
+				<div class="backway">
+					添加回报方式
+				</div>
+				<div class="reply" style="display: none;">
+
+
+				</div>
+				<!--<div class="sub">发布</div>-->
+				<input type="button" class="sub" value="发布" />
+				<div class="agree">
+					<div class="agr-btn"></div>
+					<div >已阅读并同意<span class="agr-content">《英筹网发起项目条款》</span></div>
+				</div>
+			</div>
+
+			<div id="backway" style="display: none;">
+				<!--<p>添加回报方式</p>-->
+				<div class="add-mid">
+					<div class="sup-money">
+						<span>支持金额</span>
+						<input type="number" name="" id="supMoney" value="" placeholder="填写支持金额"/>
+						<span>元</span>
+					</div>
+					<div class="sup-money">
+						<span>限制数量</span>
+						<input type="number" name="" id="supNum" value="" placeholder="默认不限制"/>
+						<span>份</span>
+					</div>
+					<div class="con-detail">
+						<div class="declaration" contenteditable="true" placeholder="填写回报方式具体内容"></div>
+					</div>
+				</div>
+				<div class="z_photo">
+					<div class="z_file">
+						<form id= "uploadForm"  method= "post" enctype ="multipart/form-data">
+							<input type="file" name="file" id="file" value="" accept="image/*"   />
+						</form>
+	            	</div>
+		        </div>
+					<!--遮罩层-->
+		        <!--<div class="z_mask">
+		            <div class="z_alert">
+		                <p>确定要删除这张图片吗？</p>
+		                <p>
+		                    <span class="z_cancel">取消</span>
+		                    <span class="z_sure">确定</span>
+		                </p>
+		            </div>
+		        </div>-->
+		        <div class="add-btn">保存</div>
+			</div>
+		</div>
+	</body>
+
+</html>

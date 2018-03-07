@@ -1,0 +1,146 @@
+body{
+	background-color: #F8F8F8;
+}
+.mD{
+	width: 7.5rem;
+	margin: auto;
+	font-size: 0.28rem;
+}
+.mD p.noData{
+	text-align: center;
+	margin-top: 0.5rem;
+	font-size: 0.28rem;
+}
+.mD .mD-content{
+	width: 6.58rem;
+	border-radius: 0.1rem;
+	margin: 0.1rem auto 0.4rem;
+	background-color: #fff;
+    margin: 0.1rem auto 0.2rem;
+    padding: 0.2rem 0.45rem;
+	padding-bottom: 0.4rem;
+	position: relative;
+}
+img.finishImg{
+	position: absolute;
+	width: 35%;
+	left: 50%;
+	top: 50%;
+	margin: -17.5% 0 0 -17.5%;
+	z-index: 99;
+}
+/*图片区域*/
+.mD .mD-content .conImg{
+	position: relative;
+}
+.mD .mD-content .conImg img{
+	width: 6.58rem;
+	height: 2.6rem;
+}
+/*定位元素*/
+.mD .mD-content .conImg span{
+	font-size: 0.24rem;
+	background-color: #FAAB00;
+	color: white;
+	padding: 0 0.05rem;
+	position: absolute;
+	right: 0;
+}
+.mD .mD-content .conImg span.going{
+	top: 0.3rem;
+	background-color: #FAAB00;
+}
+.mD .mD-content .conImg span.finish{
+	top: 0.3rem;
+	background-color: red;
+}
+.mD .mD-content .conImg span.over{
+	top: 0.3rem;
+	background-color: #000000;
+}
+.mD .mD-content .conImg span.remainD{
+	bottom: 0.08rem;
+}
+/*文字区域*/
+.mD .mD-content p{
+	padding: 0.05rem 0;
+	font-size: 0.26rem;
+	color: #666666;
+}
+/*滚动条*/
+.mD .progressBar{
+	width: 6.58rem;
+	margin: auto;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	padding: 0.1rem 0;
+	font-size: 0.28rem;
+}
+/*滚动条底色*/
+.mD .progressBar .scrollShow{
+	width: 5.6rem;
+	height: 0.15rem;
+	background-color: #EEEEEE;
+	border-radius: 0.2rem;
+	float: left;
+	position: relative;
+}
+/*进度*/
+.mD .progressBar .scrollShow .scrollShowOn{
+	width: 5.1rem;
+	height: 0.15rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.2rem;
+	background-color: #FFAD00;
+}
+.mD .progressBar .scrollShow .scOnFinish{
+	width: 5.6rem;
+}
+.mD .progressBar .scrollShow .scOnOver{
+	width: 0rem;
+}
+.mD .progressBar em{
+	float: right;
+}
+.mD .progressBar .proInfo{
+	margin-top: 0.1rem;
+	font-size: 0.24rem;
+	color: #737373;
+}
+.mD .progressBar .proFullPrice{
+	float: left;
+}
+.mD .progressBar .proSupPrice{
+	float: left;
+	margin-left: 0.7rem;
+}
+.mD .progressBar .proSupPrice span{
+	color: #FAAB00;
+}
+.mD .progressBar .proFullNum{
+	float: right;
+}
+p.tit{
+	font-size: 0.30rem;
+	text-align: center;
+	margin: 0.4rem;
+}
+.loadImgCon{
+	position: fixed;
+	display: block;
+	left: 50%;
+	margin-left: -0.25rem;
+	bottom: 0.15rem;
+	font-size: 0.28rem;
+	text-align: center;
+}
+.loadImgCon img{
+	width: 0.5rem;
+	height: 0.5rem;
+}
+.mD-content:last-child{
+	margin-bottom: 1.0rem;
+}
+

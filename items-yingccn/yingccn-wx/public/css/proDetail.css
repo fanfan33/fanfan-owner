@@ -1,0 +1,266 @@
+.proDetail{width: 100%;position: relative;font-size: 0.28rem;}
+.proDetail .act-share{
+	/*width: auto;*/
+	height: .8rem;
+	background: #fff9f3;
+	padding:.1rem 0 0 0.46rem ;
+	font-size: 0;
+}
+.act-share img{
+	width: 6.6rem;
+}
+/*.proDetail .act-share .act-logo{
+	display: inline-block;
+	width: 4.85rem;
+	height: .7rem;
+	margin-right: 1.28rem;
+	vertical-align: middle;
+}
+.proDetail .act-share .share{
+	vertical-align: middle;
+	width: .56rem;
+	height: .5rem;
+}*/
+.proDetail .header{
+	width: 7.5rem;
+	height: 0.9rem;
+	margin: 0 auto ;
+	padding: 0.1rem 0 0 0.45rem;
+	box-sizing: border-box;
+	background-color: #F8F8F8;
+	font-size: 0;
+}
+.proDetail .header img{
+	display: inline-block;
+	width: 4.85rem;
+	vertical-align: middle;
+}
+.proDetail .banner{
+	width: 7.5rem;
+	margin: auto;
+	font-size: 0.28rem;
+	background-size: 7.5rem;
+	background-color: #F8F8F8;
+	color: white;
+}
+.proDetail .banner p{
+	text-align: center;
+}
+
+/*add*/
+.proDetail .supTitle{
+	padding: 0.30rem 0.45rem 0;
+}
+.proDetail .supTitle .banText{
+	/*border-bottom: 1px solid #EEEEEE;*/
+}
+.proDetail .supTitle .banText h3{
+	padding-bottom: 0.1rem;
+	font-size: 0.26rem;
+}
+.proDetail .supTitle .banText p{
+	font-size: 0.26rem;
+}
+/*公司发起人*/
+.companyDet{
+	width: 6.6rem;
+	margin: 0.3rem auto 0.2rem;
+}
+.companyDet img{
+	float: left;
+	width: 1.0rem;
+	height: 1.0rem;
+	border-radius: 50%;
+}
+.companyDet figcaption{
+	float: left;
+	padding-left: 0.2rem;
+}
+.companyDet figcaption h3{
+	padding: 0.07rem 0;
+}
+.companyDet figcaption p{
+	font-size: 0.24rem;
+	color: darkgrey;
+}
+.companyDet .startDate{
+	float: right;
+	color: darkgrey;
+	line-height: 1.0rem;
+}
+/*目标金额三栏*/
+.proDetail .moneyDiv{
+	width: 6.58rem;
+	margin: auto;
+	font-size: 0.28rem;
+	text-align: center;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+.proDetail .moneyDiv .supLeft ul{
+	float: left;
+	width: 32.8%;
+	padding: 0.25rem 0;
+	border-right: 1px solid #CCCCCC;
+}
+.proDetail .moneyDiv .supLeft ul:last-child{
+	border: none;
+}
+.proDetail .moneyDiv span{
+	color: red;
+}
+.slideRight{
+	padding: 0 0.3rem;
+	box-sizing: border-box;
+}
+/*按钮,切换效果*/
+.cont-detail .tabs {
+	height: 0.6rem;
+	font-size: 0.26rem;
+	width: 6.6rem;
+	margin: 0 auto 1px;
+	color: #000000;
+	padding: 0.2rem 0.45rem 0.3rem;
+	box-shadow: 0 1px 1px #F4F4F4;
+}
+.cont-detail .tabs a{
+	color: white;
+	display: inline-block;
+	line-height: .6rem;
+	width: 33%;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 2px 3px #726F70;
+	text-align: center;
+	background-color: #D7D7D7;
+	margin: 0 8.5%;
+}
+.cont-detail .tabs a.active{background-color: #FFAD00;}
+
+/*进度条*/
+.progress{
+	margin: 0.2rem auto 0.3rem;
+}
+.progress .line{
+	width: 6.6rem;
+	margin: auto;
+	height: 0.4rem;
+	background-color: #F4F4F4;
+	border-radius: 0.2rem;
+	box-shadow:inset 0 0 0.2rem #B0B0B0;
+	position: relative;
+}
+.line .probtn{
+	width: 5.3rem;
+	height: 0.25rem;
+	background: #FFFFFF;
+	border-radius: 0.25rem;
+	z-index: 2;
+	position: absolute;
+	top: 0.07rem;
+	left: 0.05rem;
+	float: left;
+}
+.line .probtn .btnTop{
+	height: 0.25rem;
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.2rem;
+}
+.line .probtn span{
+	width: 2px;
+	height: 0.25rem;
+	position: absolute;
+	top: 0;
+	background: #fff;
+}
+.line span:first-child{
+	left: 1.325rem;
+}
+.line span:nth-child(2){
+	left: 2.65rem;
+}
+.line span:nth-child(3){
+	left: 3.975rem;
+}
+
+.line .pronum{
+	float: right;
+	padding-right: 0.12rem;
+	color: #EC0909;
+	font-weight: bold;
+	line-height: 0.4rem;
+}
+.proEnd{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 1.0rem;
+	background-color: #FFAD00;
+	line-height: 1.0rem;
+	text-align: center;
+	font-size: 0.4rem;
+	z-index: 10;
+	color: white;
+}
+/*加载更多*/
+.getMore{
+	width: 60%;
+	margin: auto;
+	text-align: center;
+	padding: 0.2rem 0;
+}
+.getMore span{
+	color: #FFAD00;
+	display: inline-block;
+	font-size: 0.32rem;
+	padding: 0.1rem 0.5rem;
+	background: url(../img/home/getMore-old.png) no-repeat right center;
+	background-size: 0.35rem;
+}
+.getLess span{
+	background-image: url(../img/home/getLess-old.png);
+}
+/*TA的支持*/
+.clear{
+	clear: both;
+}
+.supList{
+	background-color: #EFEFEF;
+	border-radius: 5px;
+	padding: 0.1rem;
+	box-sizing: border-box;
+	margin: 0.1rem 0;
+}
+.supList figure img,.supList figure figcaption{
+	float: left;
+}
+.supList figure img{
+	width: 1.0rem;
+}
+.supList figure{
+	float: left;
+}
+.supList .figRight{
+	float: right;
+}
+.supList p span{
+	padding: 0 0.1rem;
+}
+.pdTop{
+	padding: 0.15rem 0.2rem;
+}
+.pdbtm{
+	padding: 0 0.2rem;
+}
+.bgdark{
+	color: #333;
+	font-size: 0.24rem;
+	text-align: center;
+}
+.bgbold{
+	font-weight: bolder;
+	font-size: 0.28rem;
+}

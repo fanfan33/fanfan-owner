@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提现申请</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/applyPut.css"/>
+	</head>
+	<body>
+		<div class="apply">
+			<div class="applyList">
+				<ul>
+					<li class="applyCard">
+						到账银行卡<span class="bankCard"><span class="bankType"></span>(<span class="countEnd"></span>)</span>
+						<!--<p>提现到<em>招商银行</em></p>-->
+					</li>
+					<li class="selectPro">
+						<p>选择项目</p>
+						
+					</li>
+					<li class="applySum">
+						提现金额
+						<div class="rmb">
+							&yen;
+						</div>
+						<p><input type="number" name="accout" id="accout" readonly="readonly"/></p>
+					</li>
+				</ul>
+			</div>
+			<div class="moneyPut">
+				提&nbsp;现
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="public/js/util/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript" src="public/js/util/common.js"></script>
+	<script>
+		ajaxGET('/user/info','',function(data){
+			var bindCard=data.data.accountType.split('-')[0];
+			var countEnd=data.data.accountNum
+			
+			String.prototype.Right = function(i) { 
+ 				return this.slice(this.length - i,this.length); 
+			};
+			$('.countEnd').text(countEnd.Right(4));
+			$('.bankType').text(bindCard);
+			$('.bankCard').click(function(){
+				location.href='bindCard.html';
+			})
+		})
+		ajaxPost('/user/project/withdraProject','',function(data){
+			console.log(data);
+			var con=data.data;
+			if (con.length==0) {
+				$('#status').hide();
+				$('.selectPro').append('<p style="text-align:center;">当前没有可选项目</p>');
+				$('.moneyPut').css('background','#ccc').unbind();
+			} else{
+				$(con).each(function(i,item){
+					var title=item.title;
+					var getFees=item.getFees;
+					var id=item.id;
+					var options=$('<select id="status"><option value="'+getFees+'" proid="'+id+'">'+title+'</option></select>');
+					$('.selectPro').append(options);
+					if (i==0) {
+						$('#accout').val(getFees);
+					}
+				})
+				
+				$('#status').change(function(){
+					var selectFees=$(this).val();
+					$('#accout').val(selectFees);
+				});
+			}
+			
+		})
+		
+		
+		$('.moneyPut').click(function(){
+			var projectId=$("#status").find("option:selected").attr('proid');
+			console.log(projectId);
+			ajaxPost('/user/withdraw',JSON.stringify({projectId:projectId}),function(data){
+				console.log(data);
+			})
+		})
+		
+	</script>
+</html>

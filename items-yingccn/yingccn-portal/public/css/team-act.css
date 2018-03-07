@@ -1,0 +1,184 @@
+/**********分页css*************/
+.page {
+	list-style: none;
+	margin-left: 440px;
+}
+.page>li {
+	float: left;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.page .pageItem {
+	border: solid thin #DDDDDD;
+	margin: 5px;
+	color: #9999A7;
+}
+.page .pageItemActive {
+	border: solid thin #f8a000;
+	margin: 5px;
+	background-color: #f8a000;
+	color: white;
+}
+.page .pageItem:hover {
+	border: solid thin #f8a000;
+	background-color: #f8a000;
+	color: white;
+}
+.page .pageItemDisable {
+	border: solid thin #DDDDDD;
+	margin: 5px;
+	background-color: #DDDDDD;
+	color: #CCCCCC;
+}
+.jp-pros{
+	min-height: 800px;
+}
+.act-inf{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 80px;
+    background: linear-gradient(to left, #eb3f2f 0%, #f2e4e3 100%);
+    text-align: left;
+}
+/*loading*/
+.loadingTip {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	z-index: 10001;
+}
+
+.loadingTip div {
+	background-color: #F8AA00;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	margin: 2px;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	position: absolute;
+}
+
+@-webkit-keyframes loading {
+	50% {
+		opacity: 0.3;
+		-webkit-transform: scale(0.4);
+		transform: scale(0.4);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+.loadingTip>div:nth-child(1) {
+	top: 25px;
+	left: 0;
+	-webkit-animation: loading 1s 0s infinite linear;
+	animation: loading 1s 0s infinite linear;
+}
+
+.loadingTip>div:nth-child(2) {
+	top: 17.04545px;
+	left: 17.04545px;
+	-webkit-animation: loading 1s 0.12s infinite linear;
+	animation: loading 1s 0.12s infinite linear;
+}
+
+.loadingTip>div:nth-child(3) {
+	top: 0;
+	left: 25px;
+	-webkit-animation: loading 1s 0.24s infinite linear;
+	animation: loading 1s 0.24s infinite linear;
+}
+
+.loadingTip>div:nth-child(4) {
+	top: -17.04545px;
+	left: 17.04545px;
+	-webkit-animation: loading 1s 0.36s infinite linear;
+	animation: loading 1s 0.36s infinite linear;
+}
+
+.loadingTip>div:nth-child(5) {
+	top: -25px;
+	left: 0;
+	-webkit-animation: loading 1s 0.48s infinite linear;
+	animation: loading 1s 0.48s infinite linear;
+}
+
+.loadingTip>div:nth-child(6) {
+	top: -17.04545px;
+	left: -17.04545px;
+	-webkit-animation: loading 1s 0.6s infinite linear;
+	animation: loading 1s 0.6s infinite linear;
+}
+
+.loadingTip>div:nth-child(7) {
+	top: 0;
+	left: -25px;
+	-webkit-animation: loading 1s 0.72s infinite linear;
+	animation: loading 1s 0.72s infinite linear;
+}
+
+.loadingTip>div:nth-child(8) {
+	top: 17.04545px;
+	left: -17.04545px;
+	-webkit-animation: loading 1s 0.84s infinite linear;
+	animation: loading 1s 0.84s infinite linear;
+}
+.hot-con1 .c100{
+	margin-top: 84px!important;
+}
+.hot-con1 >span{
+	height: 28px!important;
+}
+.act-inf .act-img{
+	display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 10px 20px 10px 6px;
+    vertical-align: middle;
+}
+.act-inf .act-name{
+	font-size: 20px;
+    color: #FFFFFF;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.hot-pro{
+	position: relative;
+}
+.w1024{
+	width: 1024px;
+	margin: 0 auto;
+}
+.remain-day{
+	position: absolute;
+	display: inline-block;
+	top: 15px;
+	right: 0;
+	width: 88px;
+	height: 26px;
+	border-radius: 13px 0 0 13px;
+	background: #FFFFFF;
+	color: #ef1e2d;
+	line-height: 26px;
+	text-align: center;
+}
+h4{
+	font-weight: normal;
+	font-size:20px;
+}
+h4 em{
+	font-style:normal;
+	color:#ef1e2d;
+}
+.pernum{
+	left: 34px!important;
+}

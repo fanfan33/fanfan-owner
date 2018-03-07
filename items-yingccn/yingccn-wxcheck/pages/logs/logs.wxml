@@ -1,0 +1,104 @@
+<!--logs.wxml-->
+<view class="divide">
+		<view data-num="1" class="activiy divActList {{_num==1 ? 'change' : ''}}" bindtap="viewChange">
+			今日排行
+		</view>
+		<view data-num="2" class="list divActList {{_num==2 ? 'change' : ''}}" bindtap="viewChange">
+			总排行
+		</view>
+	</view>
+<!-- 今日排行榜 -->
+<view class="single" wx:if="{{_num == 1}}">
+  <view class="topThree">
+    <view class="second">
+      <view class="imgCon">
+        <image src="{{infoArr[1].userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="topName">{{infoArr[1].userInfo.nickName}}</view>
+      <view>{{infoArr[1].checkStep}}</view>
+    </view>
+    <view class="first">
+      <view class="imgCon imgFirst">
+        <image src="{{infoArr[0].userInfo.avatarUrl}}"></image>
+      </view>
+      <view  class="topName">{{infoArr[0].userInfo.nickName}}</view>
+      <view>{{infoArr[0].checkStep}}</view>
+    </view>
+    <view class="third">
+      <view class="imgCon imgThird">
+        <image src="{{infoArr[2].userInfo.avatarUrl}}"></image>
+      </view>
+      <view  class="topName">{{infoArr[2].userInfo.nickName}}</view>
+      <view>{{infoArr[2].checkStep}}</view>
+    </view>
+  </view>
+  <!-- 自己的排行 -->
+  <view class="myStep" wx:if="{{myStepShow}}">
+      <view class="myLeft">
+        <image src="{{todayHead}}"></image>
+        <view class="myInfo">
+          <view class="myName">我</view>
+          <view class="mylistNum">第{{todayList}}名</view>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view class="myCount">{{todayStep}}</view>
+      <view class="clear"></view>
+  </view>
+
+  <view class="nomsg" wx:if="{{ifMsg}}">今日还没有人打卡</view>
+  <view class="topList">
+    <view wx:for="{{infoArr}}" wx:key="id" wx:for-index="idx" wx:if="{{idx>2}}" class="lastList">
+      <view class="infoLeft">{{idx+1}}</view>
+      <view class="infoCenter"><image src="{{item.userInfo.avatarUrl}}"></image><text class="nickName"> {{item.userInfo.nickName}}</text></view>
+      <view class="infoRight">{{item.checkStep}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 总排行榜 -->
+<view class="total" wx:if="{{_num == 2}}">
+  <view class="topThree">
+    <view class="second">
+      <view class="imgCon">
+        <image src="{{infoArrTotal[1].userInfo.avatarUrl}}"></image>
+      </view>
+      <view  class="topName">{{infoArrTotal[1].userInfo.nickName}}</view>
+      <view>{{infoArrTotal[1].checkStep}}</view>
+    </view>
+    <view class="first">
+      <view class="imgCon imgFirst">
+        <image src="{{infoArrTotal[0].userInfo.avatarUrl}}"></image>
+      </view>
+      <view  class="topName">{{infoArrTotal[0].userInfo.nickName}}</view>
+      <view>{{infoArrTotal[0].checkStep}}</view>
+    </view>
+    <view class="third">
+      <view class="imgCon imgThird">
+        <image src="{{infoArrTotal[2].userInfo.avatarUrl}}"></image>
+      </view>
+      <view  class="topName">{{infoArrTotal[2].userInfo.nickName}}</view>
+      <view>{{infoArrTotal[2].checkStep}}</view>
+    </view>
+  </view>
+  <!-- 自己的排行 -->
+  <view class="myStep">
+      <view class="myLeft">
+        <image src="{{headImg}}"></image>
+        <view class="myInfo">
+          <view class="myName">我</view>
+          <view class="mylistNum">第{{stepList}}名</view>
+        </view>
+        <view class="clear"></view>
+      </view>
+      <view class="myCount">{{totalStep}}</view>
+      <view class="clear"></view>
+  </view>
+  <view class="topList">
+    <view wx:for="{{infoArrTotal}}" wx:key="id" wx:for-index="jdx" wx:if="{{jdx>2}}" class="lastList">
+      <view class="infoLeft">{{jdx+1}}</view>
+      <view class="infoCenter"><image src="{{item.userInfo.avatarUrl}}"></image><text class="nickName"> {{item.userInfo.nickName}}</text></view>
+      <view class="infoRight">{{item.checkStep}}</view>
+    </view>
+  </view>
+</view>

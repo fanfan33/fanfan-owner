@@ -1,0 +1,172 @@
+body {
+	background: #f8f8f8;
+}
+
+.up-top {
+	font-size: 0.28rem;
+	height: 1.0rem;
+	line-height: 1.0rem;
+	text-align: center;
+}
+
+.wrap ul li {
+	display: inline-block;
+}
+
+.up-top .top-tit {
+	font-size: .36rem;
+}
+
+.up-content {
+	background: #ffffff;
+	padding: 0 0.46rem;
+	width: 6.58rem;
+	height: auto;
+	font-size: 0;
+}
+
+.up-content .con-tit {
+	vertical-align: top;
+	border: 0;
+	border-bottom: 1px solid #cccccc;
+	height: 0.76rem;
+	width: 100%;
+	outline: none;
+}
+
+.up-content .con-content {
+	width: 100%;
+	height: 3.5rem;
+	overflow: auto;
+	word-wrap: break-word;
+	font-size: .32rem;
+	outline: none;
+}
+
+.con-content:empty:before {
+	content: attr(placeholder);
+	color: #cccccc;
+	height: 3.32rem;
+	line-height: 3.32rem;
+	padding-left: 2.5rem;
+}
+
+.con-content:focus:before {
+	content: none;
+}
+
+.up-img {
+	display: inline-block;
+	background: url(../img/login/upload-img.png)no-repeat;
+	background-size: 100% 100%;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0.2rem 0 0 0.46rem;
+}
+
+.update-btn {
+	width: 6.58rem;
+	height: .9rem;
+	display: block;
+	border-radius: 5px;
+	background: #ffad00;
+	line-height: .9rem;
+	text-align: center;
+	color: #ffffff;
+	font-size: .4rem;
+	margin: 2.06rem auto;
+}
+
+
+/*************************************/
+
+.z_file {
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url(../img/login/upload-img.png) no-repeat;
+	background-size: 100% 100%;
+	float: left;
+	margin: 0.20rem 0.2rem 0 0.46rem;
+}
+
+.z_file input::-webkit-file-upload-button {
+	width: 1rem;
+	height: 1rem;
+	border: none;
+	position: absolute;
+	outline: 0;
+	opacity: 0;
+}
+
+.z_file input#file {
+	display: block;
+	width: auto;
+	border: 0;
+	vertical-align: middle;
+}
+
+.z_addImg {
+	float: left;
+	margin-right: 0.2rem;
+}
+
+.z_photo {
+	width: auto;
+	/*height: 1.8rem;*/
+	/*padding: 0.3rem;*/
+	overflow: auto;
+	clear: both;
+	margin: 0 auto;
+}
+
+.z_photo img {
+	width: 1.5rem;
+	height: 1.5rem;
+	display: inline-block;
+	margin-top: 0.2rem;
+}
+
+
+/*遮罩层*/
+
+.z_mask {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	display: none;
+}
+
+.z_alert {
+	width: 3.5rem;
+	height: 2rem;
+	border-radius: .2rem;
+	background: #fff;
+	font-size: .24rem;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -1.5rem;
+	margin-top: -2rem;
+}
+
+.z_alert p:nth-child(1) {
+	line-height: 1.5rem;
+}
+
+.z_alert p:nth-child(2) span {
+	display: inline-block;
+	width: 49%;
+	height: .5rem;
+	line-height: .5rem;
+	float: left;
+	border-top: 1px solid #ddd;
+}
+
+.z_cancel {
+	border-right: 1px solid #ddd;
+}

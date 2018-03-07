@@ -1,0 +1,158 @@
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;color: black;}
+.clear{clear: both;}
+
+html{
+	font-family: "微软雅黑";
+	font-size: 62.5%;
+}
+body{
+	font-size: 1.6rem;
+}
+h1{
+	font-size: 2.4rem;
+}
+/*头部*/
+header .headTop{
+	height: 30px;
+	padding: 5px 0;
+	background-color: #E5E5E5;
+}
+header .headTop .info{
+	max-width: 1200px;
+	font-size: 1.4rem;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+}
+header .headTop .info .infoLeft{
+	float: left;
+	padding-left: 20px;
+	background: url(../img/home/tele.png) no-repeat;
+}
+header .headTop .info .infoRight{
+	float: right;
+}
+header .headTop .info .infoRight #enter{
+	background-color: red;
+	color: white;
+	border-radius: 5px;
+	padding: 1px;
+}
+header .headTop .info .infoRight a{
+	color: red;
+}
+#register{
+	margin:0 12px 0 10px;
+}
+#problems{
+	padding-left: 20px;
+	background: url(../img/home/error.png) left center no-repeat;
+}
+.headBtn{
+	max-width: 1200px;
+	height: 147px;
+	margin: 0 auto;
+}
+/*logo图标*/
+.headBtn .logo{
+	height: 147px;
+	line-height: 147px;
+}
+.logo img{
+	vertical-align: middle;
+}
+.headBtn .logo{
+	float: left;
+}
+/*导航*/
+.headBtn .nav{
+	float: right;
+	height: 147px;
+	line-height: 147px;
+}
+.nav a{
+	font-size: 16px;
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 10px;
+	border-radius: 5px;
+	margin-left: 35px;
+	transition: all 0.5s ease-in;
+}
+.wrap .nav a:first-child{
+	color: white;
+	background-color: #FAAB00;
+}
+.nav a:hover{
+	color: white;
+	background-color: #FAAB00;
+}
+
+
+/*底部*/
+footer{
+	height: 180px;
+	margin-top: 38px;
+	background-color: #E5E5E5;
+	padding-top: 65px;
+	box-sizing: border-box;
+}
+footer .footer{
+	max-width: 1060px;
+	margin: 0 auto;
+	height: 100px;
+	font-size: 14px;
+}
+footer .footer .topLine ul{
+	text-align: center;
+}
+footer .footer .topLine ul li{
+	float: left;
+}
+footer .footer .topLine ul li a{
+	font-size: 14px;
+	border-right: 1px solid black;
+	display: inline-block;
+	width: 110px;
+	text-align: center;
+}
+footer .footer .topLine ul li p{
+	padding-left: 20px;
+	margin-left: 10px;
+	background: url(../img/home/call.png) left center no-repeat;
+	background-size: 18px;
+}
+footer .footer .btnLine{
+	text-align: center;
+	padding-top: 20px;
+}
+
+
+/*媒体查询*/
+/*当页面大于 1200px 时，大屏幕，主要是 PC 端*/ 
+@media only screen and (min-width:1200px ) {
+	
+}
+/*在 992 和 1199 像素之间的屏幕里，中等屏幕，分辨率低的 PC*/ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	
+}
+/*在 768 和 991 像素之间的屏幕里，小屏幕，主要是 PAD*/ 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/*在 480 和 767 像素之间的屏幕里，超小屏幕，主要是手机*/ 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body{
+		font-size: 1.4rem;
+	}
+}
+/*在小于 480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media only screen and (max-width:479px ) {
+	body{
+		font-size: 1.2rem;
+	}
+}

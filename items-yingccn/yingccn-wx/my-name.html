@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>昵称</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<script type="text/javascript" src="public/js/util/jquery.1.10.2.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<style type="text/css">
+			body{
+				background: #f8f8f8;
+			}
+			body{
+				background: #f8f8f8;
+			}
+			.wrap{
+				font-size: 0.28rem;
+			}
+			#personName{
+				width: 100%;
+				height: 1.0rem;
+				line-height: 1.0rem;
+				background-color: #fff;
+				padding-left: 0.4rem;
+				box-sizing: border-box;
+				resize: none;
+			}
+			p.nameNum{
+				text-align: right;
+				margin-right: 0.2rem;
+				color: #999;
+			}
+			.nameSave{
+				width: 2.2rem;
+				margin: 3.0rem auto 0;
+				text-align: center;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				color: #FFAD00;
+				font-size: 0.36rem;
+				border-radius: 0.2rem;
+				border: 1px solid #FFAD00;
+				display: block;
+				background: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<textarea id="personName"></textarea>
+			<p class="nameNum"><span id="nameNum"></span>/10</p>
+			<input type="button" class="nameSave" value="保存" />
+		</div>
+	</body>
+	<script>
+		var _name=decodeURI(location.href.split('?')[1].split('=')[1]);
+		var conts=$('#personName').val(_name);
+		$('#nameNum').text(conts.val().length);
+		$('#personName').keyup(function(){
+			var len=conts.val().length;
+			if (len>10) {
+				$('#personName').val(conts.val().substring(0,10));
+				alert('最多输入10字符!');
+				return false;
+			}
+			$('#nameNum').text(len);
+		})
+		$('.nameSave').click(function(){
+			var $this=$(this);
+			$this.attr('disabled',true);
+			ajaxPost('/user/nickname',JSON.stringify({'nickName':conts.val()}),function(data){
+				$this.attr('disabled',false);
+				console.log(data);
+				if (data.success) {
+					location.href='idSet.html';
+				}
+			})
+		})
+	</script>
+</html>

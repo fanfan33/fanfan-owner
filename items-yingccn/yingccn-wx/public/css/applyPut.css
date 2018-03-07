@@ -1,0 +1,92 @@
+body{
+	background-color: #F8F8F8;
+}
+.apply{
+	width: 6.6rem;
+	margin: auto;
+	font-size: 0.32rem;
+}
+.apply p{
+	font-size: 0.24rem;
+	padding: 0.05rem 0;
+}
+.apply .applyList{
+	background-color: #fff;
+	margin-top: 0.3rem;
+}
+.apply .applyList ul li{
+	border-bottom: 1px solid #F8F8F8;
+	margin: 0 0.1rem;
+}
+.apply .applyList ul li.applyCard{
+	height: 1.4rem;
+	padding-top: 0.4rem;
+}
+.apply .applyList ul li.applyCard span{
+	color: #FAAB00;
+	font-size: 0.28rem;
+	padding-left: 0.75rem;
+}
+.apply .applyList ul li.applyCard span span{
+	padding-left: 0;
+}
+.apply .applyList ul li.applyCard button{
+	margin-left: 0.5rem;
+}
+.apply .applyList ul li.applyCard p{
+	text-align: center;
+}
+.apply .applyList ul li.applySum{
+	height: 1.5rem;
+	padding-top: 0.5rem;
+	position: relative;
+}
+.apply .applyList ul li.applySum .rmb{
+	position: absolute;
+	font-weight: bold;
+	left: 0.5rem;
+	bottom: 0.5rem;
+}
+.apply .applyList ul li.applySum p{
+	text-align: center;
+	font-size: 0.32rem;
+	font-weight: bold;
+}
+
+.apply .applyList ul li.applySum p input{
+	text-align: center;
+	border: none;
+	width: 4.5rem;
+	font-size: 0.6rem;
+}
+.apply .applyList ul li.applyAll{
+	height: 1.1rem;
+	padding-top: 0.2rem;
+	font-size: 0.24rem;
+	color: #666666;
+	letter-spacing: 0.02rem;
+}
+.apply .applyList ul li.applyAll em{
+	color: #FAAB00;
+}
+.apply .moneyPut{
+	width: 5.5rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	border-radius: 0.1rem;
+	margin: 1.0rem auto 0;
+	text-align: center;
+	background-color: #FFAD00;
+	color: white;
+}
+.selectPro{
+	padding: 0.3rem 0;
+	text-align: center;
+}
+.selectPro p{
+	text-align: left;
+	font-size: 0.32rem;
+}
+.selectPro select{
+	margin: 0.3rem 0 0.1rem 0;
+}

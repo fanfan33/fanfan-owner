@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/webNotice.css"/>
+	</head>
+	<body>
+		<div class="webNotice web-notice">
+			
+		</div>
+		<p class="tit" style="display: none;">暂无更多数据！</p>
+		<script type="text/javascript">
+			var webNotice=0;
+			$(window).scroll(function(){
+				if ($(document).height()==$(window).height()+$(document).scrollTop()) {
+					webNotice++;
+					loadWebNotice(webNotice);
+				}
+			})
+			function loadWebNotice(index){
+				ajaxPost('/user/message/list',JSON.stringify({'type':'1','page':index}),function(data){
+					console.log(data);
+					var list=data.content;
+					if (list.length==0) {
+						$('p.tit').show();
+					}
+					$(list).each(function(i,item){
+						var _list=$(
+							'<div class="notCon">'+
+							'<h3>'+item.title+'</h3>'+
+							'<div class="notTitle">'+
+							'<p>'+item.msg+'</p>'+
+							'</div>'+
+							'<div class="notDate">'+
+							'<p>'+new Date(item.createTime).toLocaleStringEnd()+'</p>'+
+							'</div>'+
+							'<div class="clear"></div>'+
+							'</div>'
+						);
+						$('.web-notice').append(_list);
+					})
+				})
+			}
+			loadWebNotice(webNotice);
+		</script>
+	</body>
+</html>

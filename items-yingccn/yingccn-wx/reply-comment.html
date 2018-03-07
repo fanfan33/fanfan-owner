@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="public/js/util/common.js"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+
+	</head>
+	<style type="text/css">
+		body{
+			background: #F3F3F3;
+		}
+		.tit{
+			font-size: 0.30rem;
+			text-align: center;
+			margin: 0.4rem;
+		}
+		.replyCom{
+			width: 7.5rem;
+			margin-top: 0.4rem;
+			font-size: 0.24rem;
+			background: #fff;
+
+		}
+		.replyCom figure img{
+			width: 0.75rem;
+			height: 0.75rem;
+			border-radius: 50%;
+		}
+		.replyCom figure img,.replyCom figure figcaption{
+			float: left;
+		}
+		.replyCom .notCon{
+			width: 6.6rem;
+			margin: auto;
+			padding: 0.2rem 0;
+			border-bottom: 1px solid #EEEEEE;
+		}
+		.replyCom figure figcaption{
+			padding-left: 0.2rem;
+			width: 5.6rem;
+		}
+		.replyCom figure figcaption .notTitle{
+			float: left;
+		}
+		.replyCom figure figcaption .notDate{
+			float: right;
+		}
+		.replyCom .notCon p{
+			color: #999;
+		}
+		.replyCom .notCon p.comment{
+			padding-top: 0.05rem;
+			font-size: 0.32rem;
+			color: #333;
+		}
+	</style>
+	<body>
+		<div class="replyCom">
+
+		</div>
+		<p class="tit" style="display: none;">暂无更多数据！</p>
+		<script type="text/javascript">
+			
+			var replyIndex=0;
+			$(window).scroll(function(){
+				if ($(document).height()==$(window).height()+$(document).scrollTop()) {
+					replyIndex++;
+					loadMore(replyIndex);
+				}
+			})
+			function loadMore(index){
+				ajaxPost('/user/message/list', JSON.stringify({ 'type': '3', 'page': index }), function(data) {
+					console.log(data);
+					var list=data.content;
+					if (list.length==0) {
+						$('p.tit').show();
+						return
+					}
+					$(list).each(function(i,item){
+						var id=getFeild(item,['comment','projectId']),
+							headImg=getFeild(item,['comment','headImg']),
+							nickName=getFeild(item,['comment','nickName']),
+							createTime=getFeild(item,['comment','createTime']),
+							_comment=getFeild(item,['comment','comment']);
+						var list=$(
+							'<div class="notCon" index="'+id+'">'+
+							'<figure>'+
+							'<img src="'+rightImg(headImg)+'" />'+
+							'<figcaption>'+
+								'<div class="notTitle">'+
+								'<p>'+nickName+'</p>'+
+								'</div>'+
+								'<div class="notDate">'+
+								'<p>'+new Date(createTime).toLocaleStringEnd()+'</p>'+
+								'</div>'+
+								'<div class="clear"></div>'+
+								'<p class="comment">'+_comment+'</p>'+
+							'</figcaption></figure>'+
+							'<div class="clear"></div>'+
+							'</div>'
+						);
+						$('.replyCom').append(list);
+					})
+					$('.replyCom .notCon').click(function(){
+						location.href='share.html?id='+$(this).attr('index');
+					})
+				})
+			}
+			loadMore(replyIndex);
+		</script>
+	</body>
+
+</html>

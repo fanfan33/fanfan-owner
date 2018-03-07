@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>英筹网</title>
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="public/js/concat/jquery-1.8.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/pc-public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/concat/showBo.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/pc_common.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/release-project.css" />
+		<link rel="shortcut icon" href="favicon.ico" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<header>
+				<div class="header-tit">
+					<div class="header-tit-con">
+						<span>您好，欢迎来到<em>英筹网</em></span>
+						<div class="header-tit-right">
+							<ul>
+								<li class="ylogin">请
+									<a href="login.html"><i>登录</i></a>
+								</li>
+								<li>
+									<a href="register.html">免费注册</a>
+								</li>
+								<li class="public-num">公众号<img src="public/img/homes/erwei.png" alt="" /><img style="display:none" class="public-num-img" src="public/img/homes/ewm.png" alt="" /></li>
+								<!--<li class="public-tel">手机版<img src="public/img/homes/tel.png" alt="" /><img class="public-tel-img" src="public/img/homes/ewm.png" alt="" /></li>-->
+								<li class="feedback">意见反馈</li>
+								<!--<li>帮助中心</li>-->
+								<li class="oneself"></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="header-nav">
+					<ul>
+						<li>
+							<a href="home.html">首页</a>
+						</li>
+						<li>
+							<a href="view-project.html">浏览项目</a>
+						</li>
+						<li>
+							<a href="team-act.html">团队活动</a>
+						</li>
+						<li class="current">发布项目</li>
+						<li>
+							<a href="help.html">新手帮助</a>
+						</li>
+						<div class="colon"><input class="search" type="text" name="" id="" value="" /><img class="search-img" src="public/img/homes/search.png" alt="" /></div>
+
+					</ul>
+				</div>
+			</header>
+			<main>
+				<div class="wrap-pro">
+					<div class="pro-title">
+						<div class="sky">
+							<div class="clouds_one"></div>
+							<div class="clouds_two"></div>
+							<div class="clouds_three"></div>
+						</div>
+						<div class="title-btn">
+							<a href="#jump">发布项目</a>
+						</div>
+					</div>
+					<div class="pro-content w1200" id="jump">
+						<div class="basic-information">
+							<div class="tit-img">
+								<img src="public/img/project/rel-pro1.png" />
+								<ul>
+									<li class="rel-current">基本信息</li>
+									<li>详细信息</li>
+									<li>回报设置</li>
+								</ul>
+							</div>
+							<dl>
+								<dd class="infor-img">
+									<div class="tran-cover">
+										<div class="send_photo">
+											<div class="send_file">
+												<form id="uploadFormSend" method="post" enctype="multipart/form-data">
+													<input type="file" id="sendfile" name="file" accept="*" onchange="imgChange('send_photo','send_file');" />
+												</form>
+											</div>
+										</div>
+										<!--遮罩层-->
+										<div class="z_mask">
+											<!--弹出框-->
+											<div class="z_alert">
+												<p>确定要删除这张图片吗？</p>
+												<p>
+													<span class="z_cancel">取消</span>
+													<span class="z_sure">确定</span>
+												</p>
+											</div>
+										</div>
+									</div>
+
+								</dd>
+								<dd><input id="itemTitle" type="text" placeholder="请输入项目标题" /> </dd>
+								<!--<dd><span class="xmjj">项目简介</span><input id="itemdesc" type="text" placeholder="请输入内项目简介" /> </dd>-->
+								<dd><span class="xmjj">项目简介</span> <textarea name="" id="itemdesc" rows="" cols="" placeholder="请输入项目简介"></textarea> </dd>
+								<dd><span class="zcje">众筹金额(元)</span><input id="saveMoney" type="text" class="infor-st" placeholder="请输入你的众筹金额，数额" /></dd>
+								<dd><span class="zcts">众筹天数</span><input id="dateCount" type="text" class="infor-st" placeholder="请输入你的众筹周期，7～30天" /></dd>
+								<dd class="sponsors"><span>是否开启友情赞助:</span>
+									<input type="radio" name="friend" id="yf" value="" class="fradio" />
+									<label name='yf' class="checked" id="div1" for="yf">是</label>
+									<input type="radio" name="friend" id="nf" value="" class="fradio" />
+									<label name='nf' for="nf">否</label></dd>
+							</dl>
+							<div class="infor-next">下一步</div>
+						</div>
+
+						<div class="detail-inf w1200">
+							<div class="tit-img">
+								<img src="public/img/project/rel-pro2.png" />
+								<ul>
+									<li>基本信息</li>
+									<li class="rel-current">详细信息</li>
+									<li>回报设置</li>
+								</ul>
+							</div>
+							<div class="det-left">
+								<ul>
+									<div class="det-tit">项目视频</div>
+									<li class="tit0" follow='0'>项目分标题1</li>
+									<li class="tit1" follow='1'>项目分标题2</li>
+								</ul>
+								<div class="add-tit">添加分标题</div>
+							</div>
+							<div class="det-right">
+								<div class="det-video">
+									<span class="xmsp">视频链接</span><input type="text" id="vedioUrl" placeholder="请输入视频链接（以http://开头的url地址）" />
+								</div>
+								<div class="create-pro ">
+									<div class="detail-tit fol0" index="0">
+										<img class="det-del" src="public/img/project/rdel.png" /> <span class="fbt">项目分标题1</span> <input type="text" class="fentit" placeholder="请输入标题" /> <br />
+										<span class="xmxq">项目详情</span>
+										<div class="declaration fencontent" contenteditable="true" placeholder="请输入项目详情文字"></div>
+									</div>
+									<div class="detail-tit fol1" index="1">
+										<img class="det-del" src="public/img/project/rdel.png" /> <span class="fbt">项目分标题2</span> <input type="text" class="fentit" placeholder="请输入标题" /> <br />
+										<span class="xmxq">项目详情</span>
+										<div class="declaration fencontent" contenteditable="true" placeholder="请输入内项目详情文字"></div>
+									</div>
+								</div>
+
+							</div>
+							<div class="detail-bottom">
+								<ul>
+									<li class="det-prev">上一步</li>
+									<li class="det-next">下一步</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="set-return w1200">
+							<div class="tit-img">
+								<img src="public/img/project/rel-pro3.png" />
+								<ul>
+									<li>基本信息</li>
+									<li>详细信息</li>
+									<li class="rel-current">回报设置</li>
+								</ul>
+							</div>
+							<div class="return-way">
+								<div class="return-left shadow">
+									<ul>
+										<li class="ti0" fd="0">回报方式1</li>
+									</ul>
+									<div class="rw-add">添加回报</div>
+								</div>
+								<div class="return-right">
+									<div class="ret-way fw0" reindex="0">
+										<dl>
+											<dd class="tr-one"><em>*</em>回报方式&nbsp;1 <img class="del-way" src="public/img/project/rdel.png" alt="" /></dd>
+											<dd>
+												<span>支持金额(元)</span>
+												<input class="remoney" type="number" name="" id="" value="" placeholder="12800.00" />
+											</dd>
+											<dd>
+												<span>回报内容</span>
+												<input class="recont" type="" name="" id="" value="" placeholder="请输入回报内容" />
+											</dd>
+											<dd>
+												<span>人数上线</span>
+												<div class="renums">
+													<div class="xzrs">限制 <input type="text" maxlength="" class="renum" name="" id="" value="" placeholder="0" />人</div>
+												</div>
+											</dd>
+											<dd>
+												<span>上传图片</span>
+												<div class="return-type tran-img">
+													<!--<img src="public/img/project/transport1.png" />-->
+													<div class="z_photo">
+														<div class="z_file">
+															<form id="uploadForm" method="post" enctype="multipart/form-data">
+																<input class="fills" type="file" id="file" name="file" accept="*" onchange="addBackImg('file','uploadForm');" />
+															</form>
+														</div>
+													</div>
+												</div>
+											</dd>
+										</dl>
+
+									</div>
+								</div>
+
+							</div>
+							<div class="return-bottom">
+								<ul>
+									<li class="return-prev">上一步</li>
+									<li class="return-btn">提交审核</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="opinion">
+					<div class="opinion-back">
+						<span class="op-tit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意见反馈
+							<i class="close-opinion">×</i>
+							</span>
+						<span class="op-type">反馈类型：</span>
+						<select name="">
+							<option value="">投资问题</option>
+							<option value="">其他错误</option>
+							<option value="">意见建议</option>
+							<option value="">文字错误</option>
+							<option value="">数据错误</option>
+							<option value="">融资问题</option>
+							<option value="">技术错误</option>
+						</select>
+						<br />
+						<span class="op-type">反馈内容：</span>
+						<textarea class="op-content"></textarea>
+						<div class="option-submit">提交</div>
+					</div>
+				</div>
+			</main>
+			<footer>
+				<div class="footer-ways">
+					<ul>
+						<li>关于我们</li>
+						<li>服务条款</li>
+						<li>联系我们</li>
+						<li>新闻资讯</li>
+						<li>帮助中心</li>
+						<li class="feedback">意见反馈</li>
+						<li><img src="public/img/homes/tels.png" />010-8492-5592 (服务时间：9:00—18:00)</li>
+					</ul>
+					<p>京ICP备17017534号-2 &nbsp;&nbsp; 中国（北京）朝阳区北苑中国铁建广场F座 &nbsp;&nbsp; 投资有风险，购买需谨慎</p>
+				</div>
+			</footer>
+		</div>
+		<script src="public/js/release-project.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

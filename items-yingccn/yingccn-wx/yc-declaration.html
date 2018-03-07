@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>英筹宣言</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<script src="public/js/util/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<style type="text/css">
+			body {
+				background: #f8f8f8;
+			}
+			
+			.wrap .top {
+				font-size: .28rem;
+				color: #333333;
+				text-align: center;
+				padding: .13rem 0;
+			}
+			.wrap .title{
+				padding: 0 0.46rem;
+				font-size: .24rem;
+				background: #ffffff;
+				height: 1.0rem;
+				line-height: 1.0rem;
+				outline: none;
+				position: relative;
+			}
+			.wrap .title:after{
+				position: absolute;
+				content: "4";
+				right: .46rem;
+				bottom: -.2rem;
+				font-size: .24rem;
+			}
+			.wrap .mid {
+				font-size: .28rem;
+				color: #333333;
+				text-align: center;
+				padding: 0.13rem 0;
+				margin-top: 0.47rem;
+			}
+			.wrap .content {
+				padding: 0.3rem 0.46rem 0.6rem;
+				font-size: .24rem;
+				background: #ffffff;
+				height: 0.3rem;
+				line-height:0.3rem;
+				outline: none;
+				position: relative;
+			}
+			.wrap .content:after{
+				position: absolute;
+				content: "55";
+				right: .46rem;
+				bottom: 0.1rem;
+				font-size: .24rem;
+			}
+			.tit{
+				font-size: 0.24rem;
+				padding-left: 0.46rem;
+				height: 0.4rem;
+				line-height: 0.4rem;
+				color: #000000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<p class="tit">英筹宣言</p>
+			<p class="top">宣言主题</p>
+			<div contenteditable="true" class="title" maxlength=4>梦想</div>
+			<p class="mid">宣言内容</p>
+			<div contenteditable="true"class="content"maxlength=55>在实现梦想时，不要放弃，不遇岛屿与暗礁，难以激起美丽的浪花。保持心中梦想的光芒，成为照亮心灵的月亮。</div>
+		</div>
+		<!--<div contenteditable="true" id="input_div" style="width:300px;border:1px solid black" maxlength=14></div>
+			<p id="rest">14</p>-->
+		<!--<script type="text/javascript">
+			document.getElementById("input_div").onkeyup = excute;
+			document.getElementById("input_div").onkeydown = excute;
+			document.getElementById("input_div").onblur = excute;
+
+			function excute() {
+				var num1 = document.getElementById("input_div").innerText.length;
+				if(num1 > 14) {
+					document.getElementById("input_div").innerHTML = document.getElementById("input_div").innerText.substring(0, 14);
+					num1 = 14;
+				}
+				// alert(document.getElementById("input_div").innerText);
+				var rest = 14 - num1;
+				document.getElementById("rest").innerHTML = rest;
+			}
+		</script>-->
+	</body>
+
+</html>

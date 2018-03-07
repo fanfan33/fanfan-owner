@@ -1,0 +1,52 @@
+body{
+	background-color: #F8F8F8;
+}
+.idSet{
+	width: 7.5rem;
+	margin: auto;
+	font-size: 0.28rem;
+}
+.idSet p{
+	width: 6.6rem;
+	margin: auto;
+	font-size: 0.24rem;
+	padding: 0.05rem 0;
+}
+.idSet .setContent{
+	width: 7.5rem;
+	margin: auto;
+	background-color: #fff;
+}
+.idSet .setContent .setList{
+	width: 6.6rem;
+	margin: auto;
+}
+.idSet .setContent .setList ul li{
+	height: 1rem;
+	line-height: 1rem;
+	border-bottom: 1px solid #F8F8F8;
+	position: relative;
+}
+.idSet .setContent .setList ul li span{
+	display: inline-block;
+	position: absolute;
+	right: 0.3rem;
+	font-size: 0.24rem;
+	color: #666666;
+}
+.idSet .signature span{
+	display: inline-block;
+	width: 3.8rem;
+	text-align: right;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.idSet .setContent .setList ul li img{
+	width: 0.2rem;
+	height: 0.3rem;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -0.15rem;
+}

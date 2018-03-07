@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/proDetail.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/carousel.css"/>
+		<script type="text/javascript" src="public/js/util/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+	</head>
+	<body>
+		<div class="proDetail">
+			<div class="act-share">
+				<!--<img class="act-logo" src="public/img/active/logo-share.png">
+				<img class="share" src="public/img/home/home-c.png" />-->
+				<img src="http://image.yingccn.com/image/5a2753a9d6c9b604dc64fc93.png"/>
+			</div>
+			<div class="banner">
+				<div class="slider-wrap" style="height:5.0rem; background-size: cover; background-repeat: no-repeat; background-position: center;" id="banner"></div>	<!--轮播or背景-->
+			</div>
+			<div class="supTitle">
+				<div class="banText">
+					<h3></h3>
+					<p></p>
+				</div>
+			</div>
+			<div class="companyDet">
+				<figure>
+					<img src=""/>
+					<figcaption>
+						<h3 id="company">贵州茅台集团</h3>
+						<p class="companyFrom">红五军第七团战友</p>
+					</figcaption>
+					<p class="startDate">2017-11-1</p>
+					<div class="clear"></div>
+				</figure>
+			</div>
+			<div class="moneyDiv">
+				<div class="supLeft">
+					<ul>
+						<li>目标份数</li>
+						<li><span><em id="goalMoney">0</em></span></li>
+					</ul>
+					<ul>
+						<li>剩余份数</li>
+						<li><span><em id="lastMoney">0</em></span></li>
+					</ul>
+					<ul class="supportLine">
+						<li>支持份数</li>
+						<li><span><em id="supNum">0</em></span></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--进度条-->
+			<div class="progress">
+				<div class="line">
+					<div class="probtn">
+						<div class="btnTop">
+							<span></span>
+							<span></span>
+							<span></span>
+							<div class="clear"></div>
+						</div>
+
+					</div>
+					<div class="pronum">0.00%</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="empty"></div>
+			<div class="current">
+				<div class="cont-detail">
+					<div class="tabs">
+
+					</div>
+					<div class="content-slide slideLeft" >
+						<!--详情-->
+					</div>
+					<div class="content-slide slideRight" style="display: none;">
+						<!--支持列表-->
+						<div class="getMore supMore" style="display: none;"><span ifmore="false">点击查看更多</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="empty" style="margin-bottom: 1.0rem;"></div>
+				
+			<div class="proEnd">
+				立即认购
+			</div>
+		</div>
+	</body>
+	<script>
+		var unit = "";
+		var isThanks = false;
+		var id = GetQueryString("projectId");
+		ajaxGET('/project/findById','id='+id,function(data){
+			window.sessionStorage.setItem("proInfo",JSON.stringify(data));
+			console.log(data);
+			var con = data.data,
+				images = con.images,
+				bgImg = con.bgImg,
+				headImg = con.headImg,
+				startDate = con.startDate,
+				nickName = con.nickName,
+				title = con.title,
+				projectDesc = con.projectDesc,
+				fees = con.pcs,
+				getFees = con.payPcs,
+				remainFees = fees-getFees,
+				descList=getFeild(con,['projectDescList','descList']),
+				projectManifestos=con.projectManifestos;
+				
+			unit = con.unit;
+			$(".companyDet img").attr('src',rightImg(headImg));
+			
+			if (nickName == '英筹网') {
+				isThanks = true;
+				$('.companyFrom').hide();
+				$('#company').parents('figure').css('line-height', '0.8rem');
+				var zcText = $('<div class="zcText" style="height:0;overflow:hidden;">'+
+								'<div>“让长征传承 为奋斗加冕”，英筹网一周年答谢会，差旅费全免，免费港澳双日游！</div></div>');
+				zcText.insertBefore($('.empty').first());
+			}
+			$("#company").text(nickName);
+			$(".startDate").text(new Date(startDate).toLocaleString());
+			$(".banText h3").text(title);
+			$(".banText p").text(projectDesc);
+			$("#goalMoney").text(fees);
+			$("#lastMoney").text(remainFees);
+			$("#supNum").text(getFees);
+			
+			progressLen(fees,getFees);
+			getTurnImgs(images,bgImg);
+			
+			
+			//选项按钮
+			var titleList = ["详情描述","Ta的认购"];
+			$(titleList).each(function(i,item){
+				var _title=$('<a href="#" index="'+i+'" class="">'+item+'</a>');
+				$('.tabs').append(_title);
+				if(i==0){
+					$('.tabs').children().first().addClass('active');
+				}
+				if (i>1) {
+					$('.tabs').children().last().hide();
+				}
+			});
+			if (descList) {
+				$(descList).each(function(i,item){
+					if(i==0){
+						$('.content-slide').eq(0).html(item);
+						if (!isThanks) {
+							slideMore();
+						}
+					}
+				});
+			}else{
+				if (projectManifestos) {
+					$(projectManifestos).each(function(i,item){
+						$('.content-slide').eq(0).append($('<p>'+item+'</p>'));
+					})
+				}else{
+					$('.content-slide').eq(0).html($('<p>暂无详情描述</p>'));
+				}
+			}
+			$('.tabs a').click(function(e){
+				e.preventDefault();
+				$('.tabs a').attr('class','');
+				$(this).addClass('active');
+				$(".content-slide").hide();
+				if ($(this).attr('index') == "0") {
+					console.log("000")
+					$('.slideLeft').show();
+				} else{
+					console.log("111")
+					$('.slideRight').show();
+				}
+			})
+		})
+		
+		//展开详情，点击收起
+		function slideMore(){
+			var anotherHeight = $(".slideLeft").children();
+			
+			if (anotherHeight.length>1 && anotherHeight.children("img")) {
+				var moreIn=$('<div class="getMore moreInfo"><span ifmore="false">点击查看更多</span></div>');
+				
+				$('.slideLeft').children("p").eq(0).nextAll("p").hide();
+				
+				moreIn.insertAfter($('.slideLeft').children().last());
+				
+				$('.moreInfo span').click(function(){
+					
+					if ($(this).attr('ifmore')=="false") {
+						
+						$(this).attr('ifmore',true);
+						
+						$('.slideLeft').children("p").eq(0).nextAll("p").show();
+						$(this).text('点击收起').css('background-image','url(public/img/home/getLess-old.png)');
+						
+					} else{
+						$(this).attr('ifmore',false);
+						
+						$('.slideLeft').children("p").eq(0).nextAll("p").hide();
+						
+						$(this).text('展开详情').css('background-image','url(public/img/home/getMore-old.png)');
+						$('html,body').animate({scrollTop:$('.slideLeft').offset().top},0);
+					}
+				})
+			}
+		}
+
+		//进度条
+		function progressLen(fees,getFees){
+			var progressBar=(getFees*100/fees).toFixed(2)+"%";
+			var proBarWidth=(getFees/fees)*5.3+"rem";
+			
+			var num=parseFloat(progressBar);
+			var getspan=$('.probtn .btnTop');
+			if (num>0&&num<25) {
+				if (num<=3) {
+					proBarWidth=0.25+'rem';
+					getspan.css('border-radius','50%');
+				}
+				getspan.css('background','#3079F9');
+			}else if (num>=25&&num<50) {
+				getspan.css('background','#F8AA00');
+			} else if (num>=50&&num<75) {
+				getspan.css('background','#25D50D');
+			}else if (num>=75&&num<=100) {
+				getspan.css('background','#EC0909');
+			}else if (num>100) {
+				getspan.css('background','#EC0909');
+				num=100;
+				proBarWidth=5.3+'rem';
+			}
+			$('.probtn .btnTop').css('width',proBarWidth);
+			num = num?num:0.00;
+			$('.pronum').text(num+'%');
+		}
+		
+		
+		//加载更多，点击收起
+//		var showMore = $('.moreInfo');
+//		var showLess = $('.getLess');
+		//懒加载
+//		$("img.lazy").lazyload({ effect: "fadeIn" });
+//		setTimeout(function(){
+//			var firstImg = $(".slideLeft img").first();
+//			console.log(parseInt(firstImg.outerHeight(true)));
+//			console.log(parseInt($(".getMore").outerHeight(true)));
+//			var _height = parseInt(firstImg.height())+parseInt($(".getMore").outerHeight(true));
+//			console.log(_height);
+//			$(".slideLeft").css("height",_height+"px");
+//			showMore.click(function(){
+//				$(this).hide();
+//				$(".slideLeft").css("height","auto");
+//				$(".swiper-container").css("height","auto");
+//				
+//				showLess.show();
+//			})
+//			showLess.click(function(){
+//				$(this).hide();
+//				$(".slideLeft").css("height",_height+"px");
+//				$(".swiper-container").css("height",_height+"px");
+//				showMore.show();
+//			})
+//		},500);
+		
+		
+		$('.act-share').click(function(){location.href='index.html'});
+		var userId = getCookie("userId");
+		$('.proEnd').click(function(){
+			if (userId && userId != "") {
+				location.href="proSupport.html?projectId="+GetQueryString("projectId");
+			}else{
+				gotoLogin();
+			}
+			
+		})
+		
+		//Ta的支持
+		var indexSup = 0
+		$(".supMore").click(function(){
+			indexSup++;
+			getSupList(indexSup);
+		})
+		getSupList(indexSup);
+		function getSupList(){
+			ajaxGET('/support/list','page='+indexSup+'&projectId='+id,function(data){
+				console.log(data);
+				var res = data.content;
+				var supLen = data.content.length;
+				var totalPages = data.totalPages;
+				if (!supLen) {
+					var noMsg = $("<p style='text-align: center;padding: 0.5rem;'>暂无更多支持</p>");
+					$(".slideRight").append(noMsg);
+				}else {
+					$(res).each(function(i,item){
+						var msg = $(
+							'<div class="supList">'+
+								'<figure>'+
+									'<img style="width: 0.95rem;height: 0.95rem;border-radius: 50%;" src="'+rightImg(item.imgUrl)+'"/>'+
+									'<figcaption>'+
+										'<p class="pdTop bgbold">'+item.nickName+'</p>'+
+										'<p class="pdbtm bgdark">'+item.supportNickName+'</p>'+
+									'</figcaption>'+
+									'<div class="clear"></div>'+
+								'</figure>'+
+								'<div class="figRight">'+
+									'<p class="pdTop bgdark">'+new Date(item.payTime).toLocaleString()+'</p>'+
+									'<p class="pdbtm bgbold">支持数量<span>'+item.pcs+'</span>'+unit.slice(-1)+'</p>'+
+								'</div>'+
+								'<div class="clear"></div>'+
+							'</div>'
+						);
+						$(".slideRight").append(msg);
+					})
+					
+				}
+				if(totalPages>1){
+					$(".supMore").show();
+					if (supLen == 0) {
+						$(".supMore span").text("暂无更多支持");
+					}
+				}
+			})
+		}
+		
+		
+//		获得轮播图
+		function getTurnImgs(images,bgImg){
+			var _height=$('#banner').css('height');
+			var _width=$(document).width();
+			var len=images.length;
+			var carouselArr=[];
+			if(len>=1){
+				$(images).each(function(i,item){
+					var objImg={image:rightImg(item)};
+					carouselArr.push(objImg);
+				});
+				var renderBanner = function(bannerList){
+					var html = '<ul class="slider-list">';
+					$.each(bannerList, function(index, _item) {
+						html += '<li class="slider-item openParam" data-baidu-label="' + (parseInt(index) + 1) + '">' +
+							'<div class="img-wrap"><img class="banner-image" src="' + _item["image"] + changeWidth(parseInt(_width)*2,parseInt(_height)*2)+'"/></div></li>';
+					});
+					html += '</ul>';
+					return html;
+				}
+		
+				var bannerList = carouselArr;
+				var bannerHTML = bannerList ? renderBanner(bannerList) : '';
+				$("#banner").html(bannerHTML);
+				$("#banner").slider({
+					"autoScroll": true,
+					"infinite": true
+				});
+			}else{
+				$('.banner .slider-wrap').css('background-image','url('+rightImg(bgImg)+')');
+			}
+		}
+		
+	</script>
+</html>

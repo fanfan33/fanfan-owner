@@ -1,0 +1,78 @@
+.home .listDivide{
+	margin: 0.2rem 0;
+}
+.home .listDivide .listCon{
+	font-size: 0.25rem;
+	width: 6.0rem;
+	margin: auto;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	border: 1px solid #FFD780;
+	text-align: center;
+	border-radius: 0.2rem;
+}
+.home .listDivide .listCon .newChange{
+	width: 25%;
+	float: left;
+	box-sizing: border-box;
+}
+.home .listDivide .listAct{
+	float: right;
+	border-radius: 0 0.2rem 0.2rem 0;
+}
+.home .listDivide .listGrow{
+	border-radius: 0.2rem 0 0 0.2rem;
+}
+.home .listDivide .listSup{
+	border-left: 1px solid #FFD780;
+	border-right: 1px solid #FFD780;
+	text-align: center;
+}
+.home .listDivide .listFinish{
+	border-right: 1px solid #FFD780;
+}
+.change{
+	background-color: #FAAB00;
+	color: white;
+}
+.home .progressBar{
+	width: 6.58rem;
+	margin: auto;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	padding: 0.2rem 0 0.1rem 0;
+	/*border-top: 1px solid darkgray;*/
+	font-size: 0.28rem;
+}
+.home .progressBar .scrollShow{
+	width: 5.5rem;
+	height: 0.2rem;
+	background-color: #EEEEEE;
+	/*background-color: #FAAB00;*/
+	border-radius: 0.2rem;
+	/*box-shadow: 2px 2px 2px #A9A9A9;*/
+	float: left;
+}
+.home .progressBar .scrollShow .scrollShowOn{
+	height: 0.2rem;
+	background-color: #FAAB00;
+	border-radius: 0.2rem;
+}
+.home .progressBar em{
+	color: #333333;
+	float: right;
+	font-weight: bold;
+}
+.home .progressBar .proInfo{
+	margin-top: 0.2rem;
+}
+.home .progressBar .proFullPrice{
+	float: right;
+	color: #333333;
+}
+.home .progressBar .proFullDate{
+	/*float: right;*/
+}
+.proInfo p{
+	float: left;
+}

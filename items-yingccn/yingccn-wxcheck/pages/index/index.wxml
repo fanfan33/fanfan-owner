@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="calTop {{ifOn?'':'imgblur'}}" animation="{{topAnimation}}" >
+    <view class="calTobBg"  animation="{{topAnimation1}}"></view>
+    <view class="goList {{ifOn?'':'checkScale'}} {{scaleJust?'checkRecovery':''}}"> 
+      <view  bindtap="goList">
+        <image src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyBjbGFzcz0iaWNvbiIgd2lkdGg9IjEwMjRweCIgaGVpZ2h0PSIxMDI0LjAwcHgiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOTQ0LjUgMjUxLjVjLTEwLjUtMTAuNS0yNC44LTE2LjMtMzkuNi0xNi4zSDc5Mi42VjExOC45Yy0wLjEtMjAuNi0xNi44LTM3LjItMzcuNC0zNy4ySDI2OC44Yy05LjkgMC0xOS40IDMuOS0yNi40IDEwLjlzLTExIDE2LjUtMTEgMjYuNHYxMTYuM0gxMTkuMWMtMTQuOCAwLTI5LjEgNS44LTM5LjYgMTYuM0M2OSAyNjIgNjMgMjc2LjIgNjMgMjkxdjE4LjZjMC4zIDEwMy43IDcyIDE5My42IDE3MyAyMTYuOSAyMi41IDEyMyAxMjMuOSAyMTYuMSAyNDguMyAyMjguMnYxMzEuN0gzMTUuNmMtMTUuNCAwLTI3LjkgMTIuNS0yNy45IDI3LjlzMTIuNSAyNy45IDI3LjkgMjcuOWgzOTIuOWMxNS40IDAgMjcuOS0xMi41IDI3LjktMjcuOXMtMTIuNS0yNy45LTI3LjktMjcuOWgtMTY4Vjc1NC43YzEyNC4xLTEyLjQgMjI1LTEwNS40IDI0Ny41LTIyOC4xIDEwMS0yMy40IDE3Mi43LTExMy4yIDE3My0yMTdWMjkxYzAtMTQuOC02LTI5LTE2LjUtMzkuNXpNMjMxLjQgNDY2LjhjLTY3LTIzLjItMTEyLTg2LjMtMTEyLjMtMTU3LjIgMC4xLTEwLjMgOC40LTE4LjYgMTguNy0xOC42aDkzLjV2MTc1Ljh6IG01MDUuMSAxMC4zYzAgMTI0LTEwMC41IDIyNC41LTIyNC41IDIyNC41UzI4Ny41IDYwMS4xIDI4Ny41IDQ3Ny4xdi0zMjFjMC4xLTEwLjMgOC40LTE4LjYgMTguNy0xOC42aDQxMS42YzEwLjMgMCAxOC42IDguMyAxOC43IDE4LjZ2MzIxeiBtNTYuMS0xMC4yVjI5MWg5My41YzUgMCA5LjcgMiAxMy4yIDUuNXM1LjUgOC4zIDUuNSAxMy4yYy0wLjIgNzAuOS00NS4yIDEzMy45LTExMi4yIDE1Ny4yeiIgZmlsbD0iI0ZGZmZmZiIgLz48cGF0aCBkPSJNNTkwLjIgNDk4LjloLTQ5LjRWMjMxLjVjMC02LjctNS40LTEyLjEtMTIuMS0xMi4xaC0yMi41Yy0yLjIgMC00LjMgMC42LTYuMSAxLjctMTUuOSA5LjMtMzQuMyAxNS45LTU4LjYgMjEuMS00LjggMS04LjMgNS4yLTguMyAxMC4ydjEzYzAgNS43IDQuNiAxMC40IDEwLjQgMTAuNGg0Ny4ydjIyMy4zSDQzNGMtMTEuNCAwLTIwLjcgOS4zLTIwLjcgMjAuNyAwIDExLjQgOS4zIDIwLjcgMjAuNyAyMC43aDE1Ni40YzExLjQgMCAyMC43LTkuMyAyMC43LTIwLjctMC4yLTExLjYtOS41LTIwLjktMjAuOS0yMC45eiIgZmlsbD0iI0ZGZmZmZiIgLz48L3N2Zz4="></image>
+      </view>
+    </view>
+    
+    <view class="stepView  {{ifOn?'':'checkScale'}} {{scaleJust?'checkRecovery':''}}">
+      <view class="bigCricle">
+        <view class="smallCircle"></view>
+      </view>
+      <view class="getCheck {{ifOn?'':'topScale'}} {{scaleJust?'topScale1':''}}"  bindtap="signUp">  
+        <text class="check">{{ifCheck}}</text>
+      </view>
+    </view>
+    <view class="steps_p">
+      <view class="steps" wx:if="{{ifOn}}">步数:{{steps}}</view>
+    </view>
+    
+    <view class="daysCon" wx:if="{{ifOn}}">
+      <view><view class="signtext">{{getCheck}} 天</view>已打卡</view>
+      <view><view class="signtext">{{check}} 天</view>连续打卡</view>
+      <view bindtap="showClick"><view class="signtext">{{getCheckLine}} 个</view>我的足迹</view>
+    </view>  
+  </view>
+  
+  <image class="flagAnimation" animation="{{animationData}}" style="height:0;width:100%" src="{{svgurl}}"></image>
+  <view class="flagway" bindtap="showClick" wx:if="{{ifshow}}"><image src="../image/delete.png"></image></view>
+  <view id="c">
+    <view class="sectionDate">
+      <picker mode="date" value="{{date}}" start="2017-08-01" end="2017-12-31" bindchange="bindDateChange">
+        <view class="picker">
+          ＜ {{date}} ＞
+        </view>
+      </picker>
+    </view>
+    <text class="days weekShow" wx:for='{{["日","一","二","三","四","五","六"]}}' wx:key="">{{item}}</text>
+    <text wx:for="{{daysList}}" wx:key="" wx:for-index="idx" id="{{checkDate[item.dateStr]['checkDate']}}" class="days {{ (idx == today)&&ifRight ? 'thisDay' : ''}} {{ checkDate[item.dateStr] ? 'checked' : ''}} " bindtap="clickMe" >
+      {{item.date}}
+      <text class="title {{showView?'view_show':'view_hide'}}"  wx:if="{{checkDate[item.dateStr]}}" >{{checkDate[item.dateStr]['checkStep']}}</text>
+    </text> 
+  </view>
+</view>

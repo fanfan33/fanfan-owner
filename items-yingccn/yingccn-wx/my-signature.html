@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个性签名</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<style type="text/css">
+			body{
+				background: #f8f8f8;
+			}
+			.wrap{
+				font-size: 0.28rem;
+			}
+			#personDesc{
+				width: 100%;
+				padding: 0.4rem;
+				box-sizing: border-box;
+				background-color: #fff;
+				resize: none;
+			}
+			p.descNum{
+				text-align: right;
+				margin-right: 0.2rem;
+				color: #999;
+			}
+			.descSave{
+				width: 2.2rem;
+				margin: 3.0rem auto 0;
+				text-align: center;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				color: #FFAD00;
+				font-size: 0.36rem;
+				border-radius: 0.2rem;
+				border: 1px solid #FFAD00;
+				background: none;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<textarea id="personDesc"></textarea>
+			<p class="descNum"><span id="descNum"></span>/30</p>
+			<!--<p class="descSave">保存</p>-->
+			<input type="button" class="descSave" value="保存" />
+		</div>
+		<script type="text/javascript">
+			var desc=decodeURI(location.href.split('?')[1].split('=')[1]);
+			var conts=$('#personDesc').val(desc);
+			$('#descNum').text(conts.val().length);
+			$('#personDesc').keyup(function(){
+				var len=conts.val().length;
+				if (len>=30) {
+					$('#personDesc').val(conts.val().substring(0,29));
+					alert('最多输入30字符!');
+					return false;
+				}
+				$('#descNum').text(len);
+			})
+			$('.descSave').click(function(){
+				var $this=$(this);
+				$this.attr('disabled',true);
+				ajaxPost("/user/desc",JSON.stringify({'desc':conts.val()}),function(data){
+					$this.attr('disabled',false);
+					console.log(data);
+					if (data.success) {
+						location.href='idSet.html';
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

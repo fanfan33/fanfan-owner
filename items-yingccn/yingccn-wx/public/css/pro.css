@@ -1,0 +1,396 @@
+.pro{font-size: 0.28rem;overflow: hidden;}
+img{width: 100%;}
+.conTop .pact{
+	width: 100%; 
+	position: relative;
+}
+
+.conTop .act{
+	width: 120%;
+	margin: auto;
+	left: -10% !important;
+	height: 2.5rem;
+	margin-top: 0.2rem;
+	position: relative; 
+	background-color: #EEEEEE;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+}
+.conTop .act:before {  
+    position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 0;
+    height: 0;
+    border-bottom: 2.5rem solid #efefef;
+    border-right: 1.0rem solid transparent;
+} 
+.conTop .act:after {  
+    position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	width: 0;
+    height: 0;
+    border-top: 2.5rem solid #efefef;
+    border-left: 1.0rem solid transparent;
+}  
+.conTop .pact img{
+	position: absolute;
+	width: 2.0rem;
+	right: 0;
+	bottom: 0.2rem;
+}
+
+ .com{
+	width: 100%;
+	height: 100%;
+}
+ .sceneCon{
+ 	margin: 0;
+ }
+.conTop .act1{
+	background-image: url('http://image.yingccn.com/image/5a0a6382d6c9b651421ac3ef.png');
+}
+.conTop .act2{
+	background-image: url('http://image.yingccn.com/image/5a0a6465d6c9b651421ac3f1.png');
+}
+.conTop .act3{
+	background-image: url('http://image.yingccn.com/image/5a0a6487d6c9b651421ac3f3.png');
+}
+.conTop .act4{
+	background-image: url('http://image.yingccn.com/image/5a0a64a5d6c9b651421ac3f5.png');
+}
+/*活动详情*/
+.pmain{width: 7.0rem;margin: auto;}
+.ActDivide{
+	margin: 0.3rem 0.3rem 0;
+}
+.ActDivide img{
+	display: block;
+	width: 3.0rem;
+	float: left;
+	box-shadow: 0 4px 3px #CCCCCC;
+	border-radius: 0.2rem;
+}
+.ActDivide img.ourAct{
+	padding-top: 0.03rem;
+}
+.ActDivide img.otherAct{
+	float: right;
+}
+.pMainDet{
+	padding: 0.15rem 0;
+}
+.proActDiv{
+	padding: 0.2rem 0.2rem;
+	border-top: 1px solid #ccc;
+	position: relative;
+}
+
+.proActDiv:first-child{
+	margin-top: 0.1rem;
+}
+.proActDiv:last-child{
+	border-bottom: 1px solid #ccc;
+}
+.pMainDet .pTitle{
+	font-size: 0.32rem;
+	font-weight: bold;
+	margin-bottom: 0.15rem;
+	letter-spacing: 0.03rem;
+}
+.pMainDet img.index-proact{
+	width: 90%;
+	margin-left: 5%;
+	border-radius: 10px;
+	
+}
+.ifGoing{
+	width: 2.5rem;
+	position: absolute;
+	right: 0;
+	bottom: 3.0rem;
+}
+.pDesc p{
+	font-size: 0.24rem;
+	float: left;
+}
+.pDesc p.pDate{
+	float: right;
+}
+.index-proact{
+	padding: 0.2rem 0;
+}
+.pDetail ul li{
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+.pDetail ul li span{
+	color: red;
+	padding-left: 0.1rem;
+}
+.pDetail ul li span em{
+	color: red;
+}
+.proMain{
+	width: 6.8rem;
+	margin: auto;
+}
+.proMain figure{
+	position: relative;
+	padding: 0.15rem 0;
+	border-top: 1px solid #ccc;
+}
+.proMain figure:first-child{
+	margin-top: 0.3rem;
+}
+.proMain figure:last-child{
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 0.3rem;
+}
+.proMain figure img{
+	float: left;
+	width: 48%;
+	height: 2.5rem;
+	display: block;
+	border-radius: 5px;
+	background-size: auto 100%;
+	background-position: center;
+}
+.proMain figure figcaption{
+	float: left;
+	width: 48%;
+	margin-left: 3%;
+}
+.proMain figure figcaption .price{
+	position: absolute;
+	left: 51%;
+	bottom: 0.18rem;
+}
+.proMain .desc{
+	padding-top: 0.2rem;
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.proMain .price p{
+	margin-top: 0.05rem;
+}
+.proMain .price span{
+	color: #FAAB00;
+	font-size: 0.32rem;
+}
+del{color: #FAAB00;}
+em{color: #000000;}
+
+/*英筹项目*/
+.content{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.content:first-child{
+	margin-top: 0.1rem;
+}
+.content .contain{
+	width: 6.6rem;
+	margin: 0 auto;
+	margin-bottom: 0.1rem;
+	background-color: #FFFFFF;
+	padding: 0.1rem 0 0.5rem 0;
+}
+.contain h3{
+	text-align: center;
+	font-size: 0.26rem;
+	color: #FAAB00;
+	margin-top: 0.1rem;
+}
+.contain em.title{
+	background-color: #fff;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    margin: 0 -0.5rem;
+}
+.contain h3 span img{
+	width: 0.6rem;
+	height: 0.02rem;
+	margin: 0 0.1rem;
+	vertical-align: middle;
+}
+.info{
+	padding-top: 0.2rem;
+}
+.info .headImg{
+	width: 0.95rem;
+	float: left;
+}
+.info .headImg img{
+	width: 0.95rem;
+	height: 0.95rem;
+	border-radius: 50%;
+}
+.info .infoTop{
+	float: left;
+	width: 5.5rem;
+	height: 0.95rem;
+	padding: 0.07rem 0.15rem;
+	box-sizing: border-box;
+}
+.info p{
+	font-size: 0.26rem;
+}
+.info .infoTop .title{
+	float: left;
+	font-size: 0.30rem;
+	width: 3.7rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.info .infoTop .date{
+	float: right;
+}
+.info .infoTop .text{
+	padding-top: 0.1rem;
+	color: #666666;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.imgCon img{
+	width: 1.53rem;
+	height: 0.9rem;
+	float: left;
+	margin-left: 0.1rem;
+	border-radius: 0.1rem;
+}
+.content .infoBtn{
+	font-size: 0.26rem;
+	margin: 0.05rem 0;
+}
+.content .infoBtn em{
+	color: red;
+}
+.content .infoBtn p:first-child{
+	border-bottom: 2px solid #CCCCCC;
+}
+.content .infoBtn p{
+	float: left;
+	letter-spacing: 0.02rem;
+	padding: 0.05rem 0.05rem;
+}
+.content .infoBtn p.remainP{
+	float: right;
+}
+.content .infoBtn .imgList img{
+	border-radius: 0.3rem;
+	width: 0.6rem;
+	height: 0.6rem;
+	display: block;
+	float: left;
+	margin: 0.2rem 0.2rem 0 0;
+}
+.content .infoBtn .imgList{
+	margin: 0.1rem 0;
+	padding-bottom: 0.1rem;
+}
+.content:last-child .contain{
+	margin-bottom: 0;
+}
+.loadMore{
+	text-align: center;
+	font-size: 0.32rem;
+	padding-top: 0.1rem;
+}
+ .progressBar{
+	width: 6.58rem;
+	margin: auto;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	padding: 0.2rem 0 0.1rem 0;
+	/*border-top: 1px solid darkgray;*/
+	font-size: 0.28rem;
+}
+ .progressBar .scrollShow{
+	width: 5.5rem;
+	height: 0.2rem;
+	background-color: #EEEEEE;
+	/*background-color: #FAAB00;*/
+	border-radius: 0.2rem;
+	/*box-shadow: 2px 2px 2px #A9A9A9;*/
+	float: left;
+}
+ .progressBar .scrollShow .scrollShowOn{
+	height: 0.2rem;
+	background-color: #FAAB00;
+	border-radius: 0.2rem;
+}
+ .progressBar em{
+	color: #333333;
+	float: right;
+	font-weight: bold;
+}
+ .progressBar .proInfo{
+	margin-top: 0.2rem;
+}
+ .progressBar .proFullPrice{
+	float: right;
+	color: #333333;
+}
+.proInfo p{
+	float: left;
+}
+
+/*英筹公益*/
+.good-img{
+	width: 6.6rem;
+	margin: 0.2rem auto 0;
+	position: relative;
+}
+.good-img img{
+	width: 100%;
+}
+.good-img .comesoon{
+	width: 3.0rem;
+	position: absolute;
+	right: -0.6rem;
+	top: -0.3rem;
+}
+.yingccn-goods h3{
+	text-align: center;
+	font-size: 0.38rem;
+	font-weight: bolder;
+	letter-spacing: 0.08rem;
+	margin-top: 0.15rem;
+}
+/*slider*/
+.content-slide .tab1-more{
+	margin: 0 auto;
+	width: 2.66rem;
+	height: .65rem;
+	background: url(../img/active/show-detail.png) no-repeat;
+	background-size: 100% 100%;
+	font-size: .26rem;
+}
+.swiper-container {
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	backface-visibility:hidden;
+	z-index:1;	
+}
+/*阴影*/
+img.getActive{
+	box-shadow: 0 4px 3px #787878;
+}

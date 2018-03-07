@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增地址</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<script type="text/javascript" src="public/js/util/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<script type="text/javascript" src="public/js/util/distpicker.data.js" ></script>
+		<script type="text/javascript" src="public/js/util/distpicker.js" ></script>
+		<style type="text/css">
+			body{
+				background-color: #F8F8F8;
+			}
+			.newAdr{
+				font-size: 0.30rem;
+				letter-spacing: 0.05rem;
+				background-color: #F8F8F8;
+			}
+			.adrMain{
+				
+				background-color: #fff;
+			}
+			.adrMain div.bd{
+				padding: 0.3rem 0;
+				width: 6.6rem;
+				margin: auto;
+				border-top: 1px solid #999;
+			}
+			.adrMain div.bd:first-child{
+				border: none;
+			}
+			.adrMain div.bd p{
+				float: left;
+			}
+			.adrMain .distpicker{
+				padding: 0 0 0.3rem 0.2rem;
+				float: left;
+			}
+			.adrMain .distpicker .form-group{
+				float: left;
+				width: 1.3rem;
+				margin-left: 0.1rem;
+				height: 0.5rem;
+			}
+			.adrMain .distpicker .form-group select.form-control{
+				width: 1.3rem;
+				height: 0.5rem;
+			}
+			.adrMain .distpicker .form-group:nth-child(2){
+				width: 2.0rem;
+			}
+			#city1{
+				width: 2.0rem;
+			}
+			.adrMain input,textarea{
+				width: 4.5rem;
+				margin-left: 0.3rem;
+				font-size: 0.30rem;
+				border: none;
+			}
+			.adrMain textarea{
+				resize: none;
+				vertical-align: top;
+			}
+			.adrMain .hide{
+				visibility: hidden;
+			}
+			.setDefault{
+				margin: 0.2rem 0;
+				padding: 0 0.45rem;
+				height: 1.0rem;
+				line-height: 1.0rem;
+				background-color: #fff;
+			}
+			.setDefault span{
+				float: left;
+			}
+			.setDefault .con-btn {
+				display: inline-block;
+				vertical-align: top;
+				float: right;
+				margin-top: 0.2rem;
+			}
+			.delAdr{
+				padding: 0.3rem 0.45rem;
+				background-color: #fff;
+				margin: 0.2rem 0;
+				color: #FFAD00;
+			}
+			p.save{
+				border: none;
+				background: none;
+				width: 6.58rem;
+				text-align: center;
+				height: 1.0rem;
+				line-height: 1.0rem;
+				background-color: #FFAD00;
+				color: white;
+				position: fixed;
+				bottom: 0.2rem;
+				left: 0.45rem;
+				font-size: 0.36rem;
+				z-index: -2;
+			}
+			
+			#div1 {
+				width: 1.1rem;
+				height: 0.56rem;
+				border-radius: 50px;
+				position: relative;
+			}
+			
+			#div2 {
+				width: 0.5rem;
+				height: 0.5rem;
+				border-radius: 50px;
+				position: absolute;
+				background: white;
+				box-shadow: 0px 0.02rem 0.04rem rgba(0, 0, 0, 0.4);
+			}
+			.open1 {
+				background: #00db00;
+			}
+			.open2 {
+				top: 0.02rem;
+				right: 0.01rem;
+			}
+			.close1 {
+				background: rgba(255, 255, 255, 0.4);
+				border: 0.03rem solid rgba(0, 0, 0, 0.15);
+				border-left: transparent;
+			}
+			.close2 {
+				left: 0px;
+				top: 0px;
+				border: 0.02rem solid rgba(0, 0, 0, 0.1);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="newAdr">
+			<form action="" method="post">
+				<div class="adrMain">
+					<div class="bd"><label>收货人<span class="hide">人</span></label><input type="text" name="realName" id="realName" value="" /></div>
+					<div class="bd"><label>联系电话</label><input type="number" name="phone" id="phone" value="" /></div>
+					<div class="bd">
+						<p>所在地区</p>
+						<div data-toggle="distpicker" class="distpicker">
+								<div class="form-group">
+									<select class="form-control" id="province1">
+										
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="city1">
+										
+									</select>
+								</div>
+								<div class="form-group">
+									<select class="form-control" id="district1">
+										
+									</select>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					<div class="bd"><label>详细地址</label><textarea name=""></textarea>
+				</div>
+				
+			</form>
+			
+		</div>
+		<div class="setDefault">
+			<span>设为默认</span>
+			<div class="con-btn">
+			  	<div id="div1" class="open1">
+			    	<div id="div2" class="open2"></div>
+			  	</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="delAdr">
+			<p>删除地址</p>
+		</div>
+		<p class="save">保存</p>
+	</body>
+	
+	<script>
+		function checkForm(){
+			var patName=/^[0-9a-zA-Z\u4e00-\u9fa5_]{2,16}$/.test($('#realName').val());
+			var patPhone=/^\d{11}$/.test($('#phone').val());
+			var patDesc=/^.{5,}$/.test($('textarea').val());
+			if (!patName) {
+				alert('请输入2-16位正确姓名！')
+			} else if(!patPhone){
+				alert('请输入11位正确的电话号码！');
+			}else if(!patDesc){
+				alert('请输入详细地址！');
+			}else{
+				return true;
+			}
+		}
+		
+		var div2 = document.getElementById("div2");
+		var div1 = document.getElementById("div1");
+		div1.onclick = function() {
+			div1.className = (div1.className == "close1") ? "open1" : "close1";
+			div2.className = (div2.className == "close2") ? "open2" : "close2";
+		}
+		
+		if (window.sessionStorage.getItem('adrInfo')) {
+			//从编辑进来
+			
+			var obj=JSON.parse(window.sessionStorage.getItem('adrInfo'));
+			$('#realName').val(obj.realName);
+			$('#phone').val(obj.phone);
+			
+			//初始化省市区
+			$(".distpicker").distpicker({
+                province:obj.province,
+                city:obj.city,
+                district:obj.area
+            });
+			
+			$('textarea').val(obj.desc);
+			
+			var _isDefault=obj.isDefault;
+			if(_isDefault){
+				div1.className='open1';
+				div2.className='open2';
+			}else{
+				div1.className='close1';
+				div2.className='close2';
+			}
+		} else{
+			$('.delAdr').hide();		//从新增地址进来
+		}
+		//保存
+		$('.save').click(function(){
+			var ifSupTrue=$('#div1').attr('class');
+			var startSup=ifSupTrue=='open1'?true:false;
+			if (GetQueryString('len')==0) {
+				startSup=true;	
+			}
+			var content={
+				'realName':$('#realName').val(),
+				'phone':$('#phone').val(),
+				'desc':$('textarea').val(),
+				'default':startSup,
+				'province':$("#province1 option:selected").val(),
+				'city':$("#city1 option:selected").val(),
+				'area':$("#district1 option:selected").val()
+			}
+			if (checkForm()) {
+				if (window.sessionStorage.getItem('adrInfo')) {
+					//修改保存
+					var obj=JSON.parse(window.sessionStorage.getItem('adrInfo'));
+					content.id=obj.id;
+					ajaxPost('/user/address/add',JSON.stringify(content),function(data){
+						console.log(data);
+						window.sessionStorage.removeItem('adrInfo');
+						location.href='adrSet.html';
+					})
+				} else{
+					//新增保存
+					ajaxPost('/user/address/add',JSON.stringify(content),function(data){
+						console.log(data);
+						location.href='adrSet.html';
+					})
+				}
+			}
+		})
+		//删除地址
+		$('.delAdr').click(function(){
+			var id=GetQueryString('id');
+			if (confirm("确定删除吗？")) {
+				ajaxPost('/user/address/del',JSON.stringify({'id':id}),function(data){
+					console.log(data);
+					if (data.success) {
+						location.href='adrSet.html';
+					} else{
+						alert(data.msg);
+					}
+				})
+			}
+		})
+	</script>
+</html>

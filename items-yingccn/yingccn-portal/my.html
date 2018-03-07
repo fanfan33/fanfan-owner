@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>英筹网</title>
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="public/js/concat/jquery-1.8.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/pc-public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/concat/showBo.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/concat/page.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/my.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="public/css/pc_common.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/my.css" />
+		<link rel="shortcut icon" href="favicon.ico" />
+	</head>
+
+	<body>
+		<header>
+			<div class="header-tit">
+				<div class="header-tit-con">
+					<span>您好，欢迎来到<em>英筹网</em></span>
+					<div class="header-tit-right">
+						<ul>
+							<li class="ylogin">请
+								<a href="login.html"><i>登录</i></a>
+							</li>
+							<li>
+								<a href="register.html">免费注册</a>
+							</li>
+							<li class="public-num">公众号<img src="public/img/homes/erwei.png" alt="" /><img style="display:none" class="public-num-img" src="public/img/homes/ewm.png" alt="" /></li>
+							<!--<li class="public-tel">手机版<img src="public/img/homes/tel.png" alt="" /><img class="public-tel-img" src="public/img/homes/ewm.png" alt="" /></li>-->
+							<li class="feedback">意见反馈</li>
+							<!--<li>帮助中心</li>-->
+							<li class="oneself"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul>
+					<li>
+						<a href="home.html">首页</a>
+					</li>
+					<li>
+						<a href="act-detail.html">活动详情</a>
+					</li>
+					<li>
+						<a href="team-act.html">团队详情</a>
+					</li>
+					<li>
+						<a href="view-project.html">个人详情</a>
+					</li>
+					<li>
+						<a href="help.html">新手帮助</a>
+					</li>
+				</ul>
+			</div>
+		</header>
+		<main>
+			<div class="wrap w1200">
+				<div class="own-self shadow">
+					<!--<img class="own-head" src="public/img/my/my-head.png"/>
+						<div class="own-resourse">
+							<span class="user-a">用户名：</span><span class="user-name">化龙星空</span>
+							<span class="user-b">职业：</span><span class="job">互联网</span>
+							<span class="user-c">修改资料</span><img class="fixed-inf" src="public/img/my/my-fixed.png" alt="" />
+							<span class="user-d">所在城市：</span><span class="city">北京</span><br />
+							<span class="user-e">性别：</span><span class="user-sex">男</span>
+							<span class="user-f">个性签名：</span><span class="sign">人生有几件绝对不能失去的东西：自制的力量，冷静的头脑，希望和信心。</span>
+						</div>-->
+				</div>
+				<div class="manage w1200">
+					<div class="man-left">
+						<div class="proj">
+							<span>项目管理</span>
+							<ul class="shadow">
+								<li class="hr list" index="0" style="color: #f8aa00;">我发起的</li>
+								<li class="list" index="1">我参与的</li>
+								<!--<li class="list" index="2">我的回报</li>-->
+							</ul>
+							<span>资金管理</span>
+							<ul class="shadow">
+								<li class="list" index="3">我的钱包</li>
+							</ul>
+							<span>资料管理</span>
+							<ul class="shadow">
+								<li class="hr list fixed-infor" index="4">基本资料</li>
+								<!--<li class="list" index="5">个人认证</li>-->
+							</ul>
+						</div>
+					</div>
+					<div class="man-right shadow">
+						<div class="my-develop txt list0">
+							<span class="title">我发起的</span>
+							<div class="no-proj">
+								<img src="public/img/my/no-pro.png" />
+								<span>赶快去<a href="release-project.html">出发</a>吧</span>
+							</div>
+							<div class="proj-infor">
+								<div class="project-cont">
+									<dl>
+										<dd>项目信息</dd>
+										<dd>审核进度</dd>
+										<dd>筹资状态</dd>
+										<dd>筹资进度</dd>
+										<dd>已筹金额</dd>
+									</dl>
+									<div class="projectss">
+										<!--<ul>
+												<li>
+												<img src="public/img/my/img1.jpg" />
+												<p>千人走长征——遵义会址到赤水河</p>
+												</li>
+												<li>审核成功</li>
+												<li>进行中</li>
+												<li><img style="display: inline-block;margin-top: 30px;" src="public/img/my/schedule.png" alt="" /></li>
+												<li><em>￥</em>12800.00</li>
+											</ul>-->
+									</div>
+									<ul class="page" maxshowpageitem="5" pagelistcount="1" id="page1"></ul>
+								</div>
+
+							</div>
+						</div>
+						<div class="my-support txt list1" style="display: none;">
+							<span class="title">我参与的</span>
+							<!--<div class="content-nav">
+								<div class="nav-tit"><i></i><span>排序方式</span></div>
+								<ul>
+									<li class="nav-select">最近支持</li>
+									<li>金额最多</li>
+								</ul>
+							</div>-->
+							<div class="my-join">
+								<div class="pro-order">
+									<dl>
+										<dd>项目信息</dd>
+										<dd>众筹状态</dd>
+										<dd>众筹进度</dd>
+										<dd>支持金额</dd>
+										<dd>订单编号</dd>
+									</dl>
+									<div class="joinprojectss">
+										<!--<ul>
+									<li>
+										<img src="public/img/my/img1.jpg" />
+										<p>千人走长征——遵义会址到赤水河<br /> <span>发起人：<em>华龙星空</em></span></p>
+									</li>
+									<li>进行中</li>
+									<li><img style="display: inline-block;margin-top: 30px;" src="public/img/my/schedule.png" alt="" /></li>
+									<li><em>￥</em>12800.00</li>
+									<li>1234567890</li>
+								</ul>-->
+									</div>
+									<ul class="page" maxshowpageitem="5" pagelistcount="1" id="page2"></ul>
+								</div>
+							</div>
+						</div>
+						<div class="my-return txt list2" style="display: none;">
+							<span class="title">我的回报</span>
+						</div>
+						<div class="my-money txt list3" style="display: none;">
+							<span class="title">我的钱包</span>
+							<div class="no-money">
+								<span>我的余额</span>
+								<img src="public/img/my/wallet.png" />
+								<i>￥0.00</i>
+								<p>急缺钱？
+									<a href="release-project.html">发起众筹</a>
+								</p>
+							</div>
+						</div>
+						<div class="my-information txt list4" style="display: none;">
+							<span class="title">修改资料</span>
+							<div class="username">昵称：<input type="text" id="username" /></div>
+							<div class="headimg">头像：
+								<form id="uploadForm" method="post" enctype="multipart/form-data">
+									<div id="preview">
+										<!--<img src="public/img/my/my-head.png" alt="" />-->
+									</div>
+									<div class="changhead">
+										<!--<input name="file" class="it" type="file" onchange="previewImage(this)" id="previewImg" value="更换头像">-->
+										<input name="file" class="it" type="file" id="previewImg" value="更换头像">
+										<i>图片大小不超过3M</i>
+									</div>
+								</form>
+
+							</div>
+							<!--<div class="usersex">性别：
+							<input type="radio" name="sex" />男
+							<input type="radio" name="sex" />女
+						</div>-->
+							<!--***********************************************-->
+							<div class="usercity">所在城市：
+								<div data-toggle="distpicker">
+									<div class="form-group">
+										<select class="form-control" id="province1">
+											<option value="" data-code="">—— 省 ——</option>
+											<option value="北京市" data-code="110000" selected="">北京市</option>
+											<option value="天津市" data-code="120000">天津市</option>
+											<option value="河北省" data-code="130000">河北省</option>
+											<option value="山西省" data-code="140000">山西省</option>
+											<option value="内蒙古自治区" data-code="150000">内蒙古自治区</option>
+											<option value="辽宁省" data-code="210000">辽宁省</option>
+											<option value="吉林省" data-code="220000">吉林省</option>
+											<option value="黑龙江省" data-code="230000">黑龙江省</option>
+											<option value="上海市" data-code="310000">上海市</option>
+											<option value="江苏省" data-code="320000">江苏省</option>
+											<option value="浙江省" data-code="330000">浙江省</option>
+											<option value="安徽省" data-code="340000">安徽省</option>
+											<option value="福建省" data-code="350000">福建省</option>
+											<option value="江西省" data-code="360000">江西省</option>
+											<option value="山东省" data-code="370000">山东省</option>
+											<option value="河南省" data-code="410000">河南省</option>
+											<option value="湖北省" data-code="420000">湖北省</option>
+											<option value="湖南省" data-code="430000">湖南省</option>
+											<option value="广东省" data-code="440000">广东省</option>
+											<option value="广西壮族自治区" data-code="450000">广西壮族自治区</option>
+											<option value="海南省" data-code="460000">海南省</option>
+											<option value="重庆市" data-code="500000">重庆市</option>
+											<option value="四川省" data-code="510000">四川省</option>
+											<option value="贵州省" data-code="520000">贵州省</option>
+											<option value="云南省" data-code="530000">云南省</option>
+											<option value="西藏自治区" data-code="540000">西藏自治区</option>
+											<option value="陕西省" data-code="610000">陕西省</option>
+											<option value="甘肃省" data-code="620000">甘肃省</option>
+											<option value="青海省" data-code="630000">青海省</option>
+											<option value="宁夏回族自治区" data-code="640000">宁夏回族自治区</option>
+											<option value="新疆维吾尔自治区" data-code="650000">新疆维吾尔自治区</option>
+											<option value="台湾省" data-code="710000">台湾省</option>
+											<option value="香港特别行政区" data-code="810000">香港特别行政区</option>
+											<option value="澳门特别行政区" data-code="820000">澳门特别行政区</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="city1">
+											<option value="" data-code="">—— 市 ——</option>
+											<option value="北京市市辖区" data-code="110100" selected="">北京市市辖区</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<select class="form-control" id="district1">
+											<option value="" data-code="">—— 区 ——</option>
+											<option value="东城区" data-code="110101" selected="">东城区</option>
+											<option value="西城区" data-code="110102">西城区</option>
+											<option value="朝阳区" data-code="110105">朝阳区</option>
+											<option value="丰台区" data-code="110106">丰台区</option>
+											<option value="石景山区" data-code="110107">石景山区</option>
+											<option value="海淀区" data-code="110108">海淀区</option>
+											<option value="门头沟区" data-code="110109">门头沟区</option>
+											<option value="房山区" data-code="110111">房山区</option>
+											<option value="通州区" data-code="110112">通州区</option>
+											<option value="顺义区" data-code="110113">顺义区</option>
+											<option value="昌平区" data-code="110114">昌平区</option>
+											<option value="大兴区" data-code="110115">大兴区</option>
+											<option value="怀柔区" data-code="110116">怀柔区</option>
+											<option value="平谷区" data-code="110117">平谷区</option>
+											<option value="密云区" data-code="110118">密云区</option>
+											<option value="延庆区" data-code="110119">延庆区</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<!--<div class="userjob">所在行业：<input type="text" /></div>-->
+							<div class="usersign">个性签名：
+								<textarea name="" rows="" cols="" id="usersign"></textarea>
+							</div>
+							<div class="basicinfo-btn">保存</div>
+						</div>
+						<!--<div class="my-rz txt list5" style="display: none;">
+							<span class="title">个人认证</span>
+							<p class="rza">(我们将严格遵守保密条例，不会泄露您的个人隐私)</p>
+							<div class="rz-information">
+								<p class="rzb">其中标记*为必填项</p>
+								<ul>
+									<li>
+										<i>*</i>真实姓名：<input type="text" />
+									</li>
+									<li>
+										<i>*</i>身份证号：<input class="rzId" type="text" />
+									</li>
+									<li>
+										<i>*</i>手机号码：<input class="rztel" type="text" />
+									</li>
+									<li>
+										<i>*</i>手机验证码：<input class="rzcode" type="text" />
+									</li>
+									<li>
+										<i>*</i>工作行业：
+										<select name="" class="rzjob">
+											<option value="">自由职业</option>
+											<option value="">金融</option>
+											<option value="">互联网</option>
+											<option value="">教育</option>
+											<option value="">医疗</option>
+										</select>
+									</li>
+									<li style="height: auto;">&nbsp;&nbsp;身份证照片：<br />
+										<div class="idcard">
+											&nbsp;&nbsp;个人身份证-正面
+											<div class="idcard-left">
+												<img src="public/img/my/idcard.png" />
+											</div>
+										</div>
+										<div class="idcard">
+											&nbsp;&nbsp;个人身份证-反面
+											<div class="idcard-right">
+												<img src="public/img/my/idcard.png" />
+											</div>
+										</div>
+									</li>
+									<p class="bankcard">银行卡认证</p>
+									<li>
+										<i>*</i>开户人姓名：<input class="rzname" type="text" />
+									</li>
+									<li>
+										<i>*</i>开户银行：
+										<select name="" class="rzbank">
+											<option value="">中国建设银行</option>
+											<option value="">中国交通银行</option>
+											<option value="">中国农业银行</option>
+											<option value="">中国人民银行</option>
+											<option value="">中国工商银行</option>
+										</select>
+									</li>
+									<li>
+										<i>*</i>银行卡号：<input class="rzcard" type="text" />
+									</li>
+									<li>
+										<i>*</i>开户支行：<input class="" type="text" />
+									</li>
+								</ul>
+								<div class="rz-nextbtn">下一步</div>
+							</div>
+							<div class="rz-ewm">
+								<p class="rzb">其中标记*为必填项</p>
+								<img src="public/img/my/rz-ewm.png" />
+								<span><i>*</i>请打开微信“扫一扫”完成认证</span>
+								<div class="rz-btn">
+									认证完成
+								</div>
+							</div>
+							<div class="rz-success">
+								<dl>
+									<dt class="suc-tit">个人信息</dt>
+									<dt>
+											<dd class="suc-left">姓名</dd>
+											<dd class="suc-right">华龙星空</dd>
+										</dt>
+									<dt>
+											<dd class="suc-left">身份证号</dd>
+											<dd class="suc-right">123456789</dd>
+										</dt>
+									<dt>
+											<dd class="suc-left">手机号</dd>
+											<dd class="suc-right">123456789</dd>
+										</dt>
+									<dt>
+											<dd class="suc-left">银行卡号</dd>
+											<dd class="suc-right">123456789</dd>
+										</dt>
+									<dt>
+											<dd class="suc-left">微信号</dd>
+											<dd class="suc-right">123456789</dd>
+										</dt>
+								</dl>
+								<div class="fix-zl">修改资料</div>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="opinion">
+				<div class="opinion-back">
+					<span class="op-tit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意见反馈
+							<i class="close-opinion">×</i>
+							</span>
+					<span class="op-type">反馈类型：</span>
+					<select name="">
+						<option value="">投资问题</option>
+						<option value="">其他错误</option>
+						<option value="">意见建议</option>
+						<option value="">文字错误</option>
+						<option value="">数据错误</option>
+						<option value="">融资问题</option>
+						<option value="">技术错误</option>
+					</select>
+					<br />
+					<span class="op-type">反馈内容：</span>
+					<textarea class="op-content"></textarea>
+					<div class="option-submit">提交</div>
+				</div>
+			</div>
+
+		</main>
+		<footer>
+			<div class="footer-ways">
+				<ul>
+					<li>关于我们</li>
+					<li>服务条款</li>
+					<li>联系我们</li>
+					<li>新闻资讯</li>
+					<li>帮助中心</li>
+					<li class="feedback">意见反馈</li>
+					<li><img src="public/img/homes/tels.png" />010-8492-5592 (服务时间：9:00—18:00)</li>
+				</ul>
+				<p>京ICP备17017534号-2 &nbsp;&nbsp; 中国（北京）朝阳区北苑中国铁建广场F座 &nbsp;&nbsp; 投资有风险，购买需谨慎</p>
+			</div>
+		</footer>
+		<script src="public/js/concat/distpicker.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/concat/distpicker.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,129 @@
+body{
+	background-color: #F8F8F8;
+}
+.mJ{
+	width: 7.5rem;
+	margin: auto;
+	font-size: 0.28rem;
+}
+.mJ p.noData{
+	margin-top: 0.5rem;
+	font-size: 0.28rem;
+	text-align: center;
+}
+.mJ .mJ-content{
+	position: relative;
+	width: 6.58rem;
+	border-radius: 0.1rem;
+	margin: 0.1rem auto 0.4rem;
+	background-color: #fff;
+    margin: 0.1rem auto 0.2rem;
+    padding: 0.2rem 0.45rem;
+	padding-bottom: 0.5rem;
+}
+img.finishImg{
+	position: absolute;
+	width: 35%;
+	left: 50%;
+	top: 50%;
+	margin: -17.5% 0 0 -17.5%;
+	z-index: 99;
+}
+.mJ .mJ-content .top{
+	padding: 0.1rem 0;
+}
+.mJ .top img{
+	height: 0.45rem;
+	width: 0.45rem;
+	border-radius: 50%;
+	float: left;
+}
+.mJ .top .topName{
+	padding: 0.05rem 0 0 0.2rem;
+	float: left;
+	width: 4.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.mJ .top .topDate{
+	padding-top: 0.05rem;
+	float: right;
+}
+.mJ .mJ-content .conImg img{
+	width: 6.58rem;
+	height: 2.6rem;
+}
+.mJ .mJ-content p{
+	padding: 0.05rem 0;
+	font-size: 0.26rem;
+	color: #666666;
+}
+/*滚动条*/
+.mJ .progressBar{
+	width: 6.58rem;
+	margin: auto;
+	height: 0.3rem;
+	line-height: 0.3rem;
+	padding: 0.1rem 0;
+	font-size: 0.28rem;
+}
+.mJ .progressBar .scrollShow{
+	width: 5.6rem;
+	height: 0.15rem;
+	background-color: #EEEEEE;
+	border-radius: 0.2rem;
+	float: left;
+	position: relative;
+}
+.mJ .progressBar .scrollShow .scrollShowOn{
+	width: 2.8rem;
+	height: 0.15rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.2rem;
+	background-color: #FFAD00;
+}
+.mJ .progressBar em{
+	float: right;
+}
+.mJ .progressBar .proInfo{
+	margin-top: 0.1rem;
+	font-size: 0.24rem;
+	color: #737373;
+}
+.mJ .progressBar .proFullPrice{
+	float: left;
+}
+.mJ .progressBar .proSupPrice{
+	float: left;
+	margin-left: 0.7rem;
+}
+.mJ .progressBar .proSupPrice span{
+	color: #FAAB00;
+}
+.mJ .progressBar .proFullNum{
+	float: right;
+}
+p.tit{
+	font-size: 0.30rem;
+	text-align: center;
+	margin: 0.4rem;
+}
+.loadImgCon{
+	position: fixed;
+	display: block;
+	left: 50%;
+	margin-left: -0.25rem;
+	bottom: 0.15rem;
+	font-size: 0.28rem;
+	text-align: center;
+}
+.loadImgCon img{
+	width: 0.5rem;
+	height: 0.5rem;
+}
+.mJ-content:last-child{
+	margin-bottom: 1.0rem;
+}

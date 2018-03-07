@@ -1,0 +1,80 @@
+.wrap .tit{
+	font-size: .24rem;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	background: #f8f8f8;
+	padding-left: 0.46rem;
+}
+.new-pwd{
+	padding: 0 0.46rem 0 ;
+	background: #ffffff;
+}
+.new-pwd ul li {
+	height: 1.08rem;
+	line-height: 1.08rem;
+	width: auto;
+	font-size: 0.26rem;
+	color: #000000;
+	vertical-align: top;
+	border-bottom: 1px solid #CCCCCC;
+}
+.new-pwd ul li:nth-of-type(2){
+	position: relative;
+}
+.new-pwd ul li input{
+	border: 0;
+	outline: 0;
+}
+.new-pwd .zc-code{
+	vertical-align: top;
+	display: inline-block;
+	height: 1.08rem;
+	line-height: 1.08rem;
+	width: 5.3rem;
+	font-size: 0.26rem;
+	color: #000000;
+	outline: none;
+}
+.new-pwd .code{
+	position: absolute;
+	bottom: .20rem;
+	right: 0;
+	width: 1.8rem;
+	height: .6rem;
+	border: 1px solid #cccccc;
+	line-height: .6rem;
+	text-align: center;
+	font-size: .26rem;
+	color: #cccccc;
+	border-radius: 5px;
+	margin-top: -0.84rem;
+}
+.new-pwd ul li:nth-of-type(3){
+	position: relative;
+}
+.eyes{
+	display: inline-block;
+	width: .45rem;
+	height: .2rem;
+	position: absolute;
+	right: 0;
+	top: 0.45rem;
+}
+.new-pwd ul li:nth-of-type(3){
+	border: 0;
+}
+.new-pwd .f-btn{
+	width: 6.58rem;
+	height: .9rem;
+	border-radius: 5px;
+	background: #ffad00;
+	font-size: .4rem;
+	line-height: .9rem;
+	text-align: center;
+	color: #ffffff;
+	margin: 1.3rem auto 0;
+}
+.new-pwd input::-webkit-input-placeholder{
+	color: #cccccc;
+	font-size: 0.24rem;
+}

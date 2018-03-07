@@ -1,0 +1,247 @@
+/**index.wxss**/
+.container{
+  overflow-x:hidden; 
+}
+.calTop{
+  width: 100%; 
+  text-align: center;
+  padding: 60rpx 0 0rpx;  
+  background-color: #cccccc;
+  position: relative;
+  height:400rpx;
+}
+.calTobBg {
+  /* filter:blur(4rpx);  */
+  background-image: url('http://image.yingccn.com/image/599d2afcd6c9b64205e1b72e.png');
+  background-size: 100%;
+  position: absolute;
+  width: 100%;
+  text-align: center; 
+  height:500rpx;
+  top:0rpx;
+}
+.stepView{
+  height: 212rpx; 
+}
+.goList{
+  position: absolute;
+  top: 30rpx;
+  right: -30rpx;
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  background-color: #FF6000;
+  height: 100rpx;
+  width: 100rpx;
+  z-index: 999;
+}
+
+.goList > view {
+  border-radius: 50rpx;
+  background-color: #FF6000;
+  height: 100rpx;
+  width: 100rpx;
+  position: absolute;
+  left: -50%;
+  top: 0;
+}
+
+.goList image{
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  top:12rpx;
+  left: 30rpx;
+}
+/* 旋转动画 */
+.bigCricle{
+  width: 200rpx;
+  height: 200rpx;
+  margin: auto;
+  border: 1px solid #FF6000;
+  border-radius: 50%;
+  position: relative;
+  animation: myfirst 5s linear infinite running;
+}
+.smallCircle{
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #FF6000;
+  border-radius: 50%;
+  position: absolute;
+  top: -7rpx;
+  left: 50%;
+}
+@keyframes myfirst{
+  0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+/* 打卡图标缩放 */
+.checkScale{
+  animation: scaleAni 0.6s linear;
+  transform: scale(0.6);
+} 
+@keyframes scaleAni{
+  0% {transform: scale(1);}
+	100% {transform: scale(0.6);}
+}
+.checkRecovery{
+  animation: scaleRecovery 0.6s linear;
+  transform: scale(1); 
+}
+@keyframes scaleRecovery{
+  0% {transform: scale(0.6);}
+	100% {transform: scale(1);}
+} 
+.imgblur{
+  filter: blur(3rpx);
+}
+
+.flagway{
+  position: absolute;
+  right: 0;
+  top: 310rpx;
+  width: 36rpx;
+  height: 34rpx; 
+  padding: 15rpx;
+}
+.flagway image{
+  width: 36rpx;
+  height: 34rpx;
+}
+.flagAnimation{
+  background-image: url('http://image.yingccn.com/image/599a5db1d6c9b64205e1b72b.png');
+  background-size: 100%;
+  background-color: #AB1214;
+} 
+.getCheck{ 
+  width: 180rpx; 
+  height: 180rpx;
+  border-radius: 50%;
+  background-color: rgba(255,96,0,1);
+  color: white;
+  font-weight: bold;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  /* top: calc(50% - 45px); */
+  left: calc(50% - 90rpx);
+  top: 72rpx; 
+}
+/* ////////////////////////////bug/////////////////// */
+.topScale{
+  top: 14rpx;
+}
+.topScale1{
+  top: 13rpx;
+}
+
+
+.steps_p{
+  height: 50rpx;
+  position: relative;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.steps{
+  display: inline-block; 
+  margin: 0rpx auto 0rpx auto;
+  background-color: rgba(255,96,0,1);
+  color: white;
+  padding: 8rpx 24rpx;
+  font-size: 26rpx;
+  border-radius: 5px;
+  position: relative;
+}
+
+
+.daysCon{ 
+  background-color: rgba(33,33,33,0.3);
+  border-top: 1px solid white;
+  padding:20rpx 25rpx;
+  margin-top: 10rpx;
+  color: white;
+  height: 70rpx;
+    
+  
+   display: flex;
+  flex-direction: row; 
+  /* justify-content: space-around; */
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+}
+.daysCon>view{
+  width: 33%;
+  text-align: center;
+  font-size: 25rpx;
+  border-right: 1px white solid;
+}
+
+.daysCon >view:last-child {
+border-right: none;
+}
+
+.signtext{
+  text-align: center;
+  font-size: 30rpx;
+  padding-bottom: 8rpx;
+}
+/*日历*/
+.sectionDate{
+  text-align: center;
+  margin: 20rpx 0;
+}
+#c{
+  width: 700rpx;
+  margin: auto;
+  padding-bottom: 50rpx;
+}
+.days{
+  display: inline-block;
+  text-align: center;
+  width: 100rpx;
+  line-height: 60rpx;   
+  position: relative;
+}
+.title{
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 10rpx;
+  width: 95rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: lightgreen;
+  color: white;
+  font-size: 32rpx;
+}
+.title:after{
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: lightgreen transparent transparent;
+  border-width: 16rpx;
+  bottom: -25rpx;
+  right:50rpx;
+}
+.checked{
+	background-image: url('http://image.yingccn.com/image/599146fad6c9b64205e1b723.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;  
+}
+.thisDay{
+  color: red;
+}
+
+/* 显示隐藏 */
+.view_hide{
+ display: none;
+}
+.view_show{
+ display: block;
+}

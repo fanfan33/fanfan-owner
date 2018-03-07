@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地址管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<script type="text/javascript" src="public/js/util/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+		<style type="text/css">
+			body{background-color: #F8F8F8;}
+			.prevAdr{
+				width: 6.6rem;
+				font-size: 0.28rem;
+				margin: auto;
+				padding: 0.2rem 0 0 0.2rem;
+			}
+			.adr{width: 7.5rem;font-size: 0.28rem;}
+			
+			.adrCon{
+				width: 6.6rem;
+				height: 2.0rem;
+				padding: 0.2rem 0.45rem 0.4rem;
+				margin: 0.2rem 0 0.2rem;
+				background-color: #fff;
+			}
+			.adrCon:last-child{
+				margin-bottom: 1.0rem;
+			}
+			input{display: block;height: 0.5rem;font-size: 0.28rem;border: none;}
+			input[disabled]{background: none;}
+			.nickname{
+				width: 2.3rem;
+				float: left;
+			}
+			.phoneNum{
+				width: 2.0rem;
+				float: right;
+			}
+			.adrInfo{
+				margin: 0.2rem 0;
+				width: 6.5rem;
+			}
+			.check{
+				padding: 0.3rem 0;
+				border-top: 1px solid #CDCDCD;
+			}
+			.check span{
+				padding-left: 0.45rem;
+				background-size: 0.34rem;
+			}
+			.defalut{
+				display: block;
+				float: left;
+				background: url(public/img/home/checked.png) left center no-repeat;
+			}
+			.defalutRight{
+				float: right;
+			}
+			.modify{
+				background: url(public/img/home/modify.png) left center no-repeat ;
+			}
+			.delete{
+				margin-left: 0.3rem;
+				background: url(public/img/home/delete.png) left center no-repeat ;
+			}
+			.addAdr{
+				width: 6.58rem;
+				margin-left: 0.45rem;
+				position: fixed;
+				bottom: 0;
+				background-color: #fff;
+			}
+			.addAdr img{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="prevAdr">< 返回上一页</p>
+		<div class="adr">
+			<!--<div class="adrCon">
+				<input type="text" class="nickname" value="化龙星空"/>
+				<input type="number" class="phoneNum" value="12345678912"/>
+				<div class="clear"></div>
+				<input type="text" class="adrInfo" value="北京市朝阳区中国铁建广场"/>
+				<div class="check">
+					<span class="defalut" >默认地址</span>
+					<div class="defalutRight">
+						<span class="modify">编辑</span>
+						<span class="delete">删除</span>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>-->
+			
+			<div class="addAdr">
+				<img src="public/img/home/addAdr.png"/>
+			</div>
+			
+		</div>
+	</body>
+	<script>
+		
+		var imgUrl='public/img/home/checked.png';
+		var blinkUrl='public/img/home/adrBlink.png';
+		var index=0;
+		ajaxPost('/user/address/list',JSON.stringify({'page':index}),function(data){
+			console.log(data);
+			if (data.content.length == 0) {
+				var noAdr = $("<p style='text-align: center;padding-top: 0.5rem;'>当前暂无默认地址</p>");
+				$(".adr").append(noAdr);
+				return;
+			}
+			$(data.content).each(function(i,item){
+				var defaultAdr=item.default;
+				defaultAdr=defaultAdr?imgUrl:blinkUrl;
+				var adrList=$(
+					'<div class="adrCon" index="'+item.id+'">'+
+					'<input type="text" class="nickname" value="'+item.realName+'"/>'+
+					'<input type="number" class="phoneNum" value="'+item.phone+'"/>'+
+					'<div class="clear"></div>'+
+					'<div class="adrInfo">'+item.desc+'</div>'+
+					'<div class="check">'+
+					'<span class="defalut" style="background-image: url('+defaultAdr+');">默认地址</span>'+
+					'<div class="defalutRight">'+
+					'<span class="modify" default="'+item.default+'" province="'+item.province+'" city="'+item.city+'" area="'+item.area+'">编辑</span>'+
+					'<span class="delete">删除</span>'+
+					'</div>'+
+					'<div class="clear"></div>'+
+					'</div>'+
+					'</div>'
+				);
+				$('.adr').append(adrList);
+				$('input').attr('readonly','readonly');
+			})
+			//编辑地址
+			$('.modify').click(function(){
+				var checkImg=$(this).attr('default');
+				
+				var realName=$(this).parents('.adrCon').find('.nickname').val();
+				var phone=$(this).parents('.adrCon').find('.phoneNum').val();
+				var desc=$(this).parents('.adrCon').find('.adrInfo').text();
+				var id=$(this).parents('.adrCon').attr('index');
+				var box={
+					'id':id,
+					'realName':realName,
+					'phone':phone,
+					'province':$(this).attr('province'),
+					'city':$(this).attr('city'),
+					'area':$(this).attr('area'),
+					'desc':desc,
+					'isDefault':checkImg
+				}
+				window.sessionStorage.setItem('adrInfo',JSON.stringify(box));
+				location.href='newAdr.html';
+			});
+			//删除地址
+			$('span.delete').click(function(){
+				var id=$(this).parents('.adrCon').attr('index');
+				if (confirm("确定删除吗？")) {
+					ajaxPost('/user/address/del',JSON.stringify({'id':id}),function(data){
+						console.log(data);
+						if (data.success) {
+							location.reload();
+						} else{
+							alert(data.msg);
+						}
+					})
+				}
+			})
+		})
+		
+		//添加新地址
+		$('.addAdr').click(function(){
+			var len=$('.adrCon').length;
+			location.href='newAdr.html?len='+len;
+		})
+		var cookieAdr = getCookie("prevAdr");
+		//回到上一页
+		$(".prevAdr").click(function(){
+			location.href = cookieAdr;
+		})
+	</script>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="public/css/add-backway.css"/>
+		<script type="text/javascript" src="public/js/util/jquery.1.10.2.js" ></script>
+		<script type="text/javascript" src="public/js/util/common.js" ></script>
+	</head>
+	<body>
+		<div class="backwayPage">
+			<p>添加回报方式</p>
+			<div class="add-mid">
+				<div class="sup-money">
+					<span>支持金额</span>
+					<input type="number" name="" id="supMoney" value="" placeholder="填写支持金额"/>
+					<span>元</span>
+				</div>
+				<div class="sup-money">
+					<span>限制数量</span>
+					<input type="number" name="" id="supNum" value="" placeholder="默认不限制"/>
+					<span>份</span>
+				</div>
+				<div class="con-detail">
+					<div class="declaration" contenteditable="true" placeholder="填写回报方式具体内容"></div>
+				</div>
+			</div>
+
+			<div class="col-sm-9 big-photo">
+				<form id= "uploadForm"  method= "post" enctype ="multipart/form-data">
+
+                	<div id="preview">
+                        <img id="imghead" class="dai" border="0" />
+                     </div>
+                    <input name="file"  type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+				</form>
+
+            </div>
+
+	        <div class="add-btn">保存修改</div>
+	        <div class="del-btn">删除条目</div>
+		</div>
+	</body>
+	<script>
+		var index=location.href.split('?')[1].split('=')[1];
+		var conData=JSON.parse(window.sessionStorage.getItem('returnConMy'));
+		$(conData).each(function(i,item){
+			if(i==index){
+				$('#supMoney').val(item.fees);
+				$('#supNum').val(item.count);
+				$('.backwayPage .declaration').text(item.desc);
+				$('#preview img').attr('src',rightImg(item.imgArr[0]));
+			}
+		});
+		$('.backwayPage .add-btn').click(function(){
+			var _fees=$('#supMoney').val(),
+				_count=$('#supNum').val(),
+				_desc=$('.backwayPage .declaration').text();
+			var obj={
+				"fees":_fees,
+				"count":_count,
+				"desc":_desc
+			};
+			obj.imgArr=upImg;
+			console.log(upImg);
+			conData.splice(index,1,obj);
+			window.sessionStorage.setItem('returnConMy',JSON.stringify(conData));
+			history.back();
+		})
+		$('.backwayPage .del-btn').click(function(){
+			conData.splice(index,1);
+			window.sessionStorage.setItem('returnConMy',JSON.stringify(conData));
+			history.back();
+		})
+		var upImg=[];
+		//上传图像
+		$("#imghead").click(function(){
+			$("#previewImg").click();
+		})
+		function previewImage(file){
+        	ajaxFilePost('/upload',new FormData($('#uploadForm')[0]) ,function(data){
+            	console.log(data);
+            	var imgId=data.data.id;
+            	upImg.push(imgId);
+            	$("#imghead").attr("src",rightImg(imgId));
+        	});
+		}
+	</script>
+</html>

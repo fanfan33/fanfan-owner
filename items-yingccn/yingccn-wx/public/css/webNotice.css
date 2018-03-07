@@ -1,0 +1,38 @@
+body{
+	background-color: #F3F3F3;
+}
+.webNotice{
+	width: 100%;
+	background-color: #fff;
+	font-size: 0.28rem;
+	margin-top: 0.4rem;
+}
+.webNotice .notCon{
+	width: 6.6rem;
+	margin: auto;
+	padding: 0.2rem 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+.webNotice .notCon .notTitle{
+	text-align: left;
+}
+.webNotice .notCon .notTitle p{
+	font-size: 0.26rem;
+	padding: 0.1rem;
+	color: #666666;
+}
+.webNotice .notCon .notDate{
+	text-align: right;
+	color: #B0B0B0;
+}
+.webNotice .notCon .notText p{
+	padding: 0.2rem 0;
+	text-indent: 0.56rem;
+	letter-spacing: 0.01rem;
+	color: #747474;
+}
+.tit{
+	font-size: 0.30rem;
+	text-align: center;
+	margin: 0.4rem;
+}

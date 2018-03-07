@@ -1,0 +1,37 @@
+.wrap{
+	height: 700px;
+	margin: 50px auto 80px;
+	letter-spacing: 2px;
+}
+.wrap span{
+	font-size: 30px;
+	display: block;
+	padding: 20px 0 0 30px;
+}
+.wrap img{
+	display: block;
+	width: 320px;
+	height: 320px;
+	margin: 10px auto;
+}
+.wrap p{
+	font-size: 24px;
+	width: 512px;
+	margin: 0 auto;
+}
+.wrap p a{
+	color: #f8aa00;
+	border-bottom: 1px solid #f8aa00;
+}
+.wrap .pay-btn{
+	font-size: 30px;
+	width: 360px;
+	height: 54px;
+	line-height: 54px;
+	text-align: center;
+	background: #f8aa00;
+	border-radius: 5px;
+	margin: 50px auto;
+	color: #FFFFFF;
+	cursor: pointer;
+}

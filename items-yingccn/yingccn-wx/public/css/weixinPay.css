@@ -1,0 +1,100 @@
+.pay{
+	width: 100%;
+	font-size: 0.28rem;
+	background-color: #fff;
+}
+.pay .header{
+	background-color: #FFAD00;
+	text-align: center;
+	height: 0.5rem;
+	line-height: 0.5rem;
+}
+.pay .header p{
+	color: white;
+}
+.pay .weiPay{
+	width: 6.58rem;
+	margin: auto;
+}
+.pay .weiPay figure{
+	margin: 0.5rem 0;
+	height: 0.87rem;
+	line-height: 0.87rem;
+}
+.pay .weiPay figure img{
+	float: left;
+	width: 0.87rem;
+	height: 0.87rem'
+}
+.pay .weiPay figure figcaption{
+	float: left;
+	padding-left: 0.2rem;
+}
+.pay .weiPay .payTop{
+	margin: 0.6rem 0;
+}
+.pay .weiPay .payNum .payTop div{
+	background-color: #FFAD00;
+	color: white;
+	height: 0.8rem;
+	float: left;
+	text-align: center;
+	line-height: 0.8rem;
+}
+.pay .inputLeft{
+	width: 1.8rem;
+}
+.pay .inputRight{
+	width: 0.94rem;
+}
+.pay .weiPay .payTop input{
+	display: block;
+	float: left;
+	width: 3.8rem;
+	height: 0.76rem;
+	line-height: 0.76rem;
+	text-align: center;
+	border: none;
+	border-bottom: 1px solid #FFAD00;
+	border-top: 1px solid #FFAD00;
+}
+.pay form textarea{
+	border: none;
+	display: block;
+	width: 100%;
+	height: 3.5rem;
+	background-color: #FFF7E7;
+	resize: none;
+	border-radius: 0.1rem;
+	padding: 0.2rem;
+	box-sizing: border-box;
+}
+.pay .payFooter{
+	width: 100%;
+	height: 1.0rem;
+	line-height: 1.0rem;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	z-index: -1;
+}
+.pay .payFooter .paySum{
+	float: left;
+	width: 50%;
+	border-top: 1px solid #eeeeee;
+}
+.pay .payFooter .paySum span{
+	color: red;
+	font-size: 0.32rem;
+}
+.pay .payFooter .paySub{
+	float: left;
+	width: 50%;
+	background-color: #F81212;
+}
+.pay .payFooter .paySub input{
+	border: none;
+	background-color: transparent;
+	color: white;
+	font-size: 0.32rem;
+}

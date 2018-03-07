@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<link rel="stylesheet" href="public/css/proSupport.css" />
+		<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="public/js/util/common.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<p class="checkRe">请选择回报方式</p>
+			<div class="replyselect">
+				<!--<div class="replyCon">
+					<img class="replyLeft" src="public/img/home/maotai-icon.png"/>
+					<div class="replyRight">
+						<p>&yen;<em class="price">139</em><span>茅台醇浆</span></p>
+						<p>包装精美定价699元的茅台醇浆一瓶</p>
+					</div>
+					<div class="clear"></div>
+					<div class="numInfo" style="font-size: 0.24rem;">
+						每人每天限购20瓶
+					</div>
+					<span class="round" ifget="true" index="0"></span>
+				</div>-->
+			</div>
+			<div class="empty"></div>
+			<div class="supCount">
+				<label>支持份数： </label>
+				<div class="reduce">-</div>
+				<input id="supPer" type="number" value="1"/>
+				<div class="add">+</div>
+				<div class="clear"></div>
+			</div>
+			<div class="empty"></div>
+			<div class="adr">
+				<p>收货地址：</p>
+				<p class="setNewAdr"><span class="user"></span><span class="tel"></span></p>
+				<p class="adrInfo setNewAdr"></p>
+				<img class="arrow" src="public/img/home/myArrow.png"/>
+			</div>
+			<div class="empty"></div>
+			<div class="todo">
+				<p>备注：</p>
+				<textarea name="todo" placeholder="选填"></textarea>
+			</div>
+			<div class="payFooter">
+				<div class="paySum">
+					<span id="support">支持金额：</span><span><em>0</em>元</span>
+				</div>
+				<div class="paySub">
+					<span>立即支付</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var adrInfo;
+		//查询默认地址
+		ajaxPost('/user/address/default', '', function(data) {
+			console.log(data);
+			var obj = data.data;
+			adrInfo = obj;
+			if(!obj) {
+				$(".setNewAdr").hide();
+				var message = $("<p style='color: red;'>您还没有设置默认地址，点击去设置!</p><p>&nbsp;</p>")
+				message.insertBefore($(".arrow"));
+			} else {
+				$('.user').text(obj.realName);
+				$('.tel').text(obj.phone);
+				$('.adrInfo').text(obj.desc);
+				$(".adr").attr("adrid",obj.id);
+			}
+		})
+		//回报方式
+		var localInfo = window.sessionStorage.getItem("proInfo");
+		var res = JSON.parse(localInfo).data;
+//		console.log(localInfo)
+		console.log(res.discount+"  "+res.title+"  "+res.bgImg+" "+res.price)
+		
+		var conReply = $('<div class="replyCon">'+
+					'<img class="replyLeft" src="'+rightImg(res.bgImg)+'"/>'+
+					'<div class="replyRight">'+
+						'<p>&yen;<em class="price">'+res.discount+'</em><span>'+res.title+'</span></p>'+
+						'<p>原价'+res.price+res.unit+'</p>'+
+					'</div>'+
+					'<div class="clear"></div>'+
+					'<div class="numInfo" style="font-size: 0.24rem;">每人每天限购20份</div>'+
+					'<span class="round" ifget="true" index="0"></span>'+
+				'</div>');
+		$(".replyselect").append(conReply)
+		
+		//控制份数
+		var value=Number($('#supPer').val());
+		$("#supPer").on("change",function(){
+			value=Number($('#supPer').val());
+			if (value>20) {
+				$('#supPer').val(20);
+				alert("每人每天限购20瓶");
+			}
+			getTruePrice();
+		})
+		if (value < 2) {
+			$('.reduce').css('color','#dddddd');
+		}else{
+			$('.reduce').css('color','black');
+		}
+		
+		$('.add').click(function(){
+			value=Number($('#supPer').val());
+			$('.reduce').css('color','black');
+			value++;
+			if (value>20) {
+				$('#supPer').val(20);
+				alert("每人每天限购20瓶");
+			} else{
+				$('#supPer').val(value);
+			}
+			getTruePrice();
+		})
+		$('.reduce').click(function(){
+			value=Number($('#supPer').val());
+			if (value>1) {
+				value--;
+				$('#supPer').val(value);
+			}
+			if(value==1){
+				$('.reduce').css('color','#dddddd');
+			}
+			getTruePrice()
+		})
+		//支持金额
+		getTruePrice();
+		$('.round').click(function(){
+			if ($(this).attr('ifget')=="false") {
+				$(this).attr('ifget',"true").css('background-image','url(public/img/home/checked.png)');
+				getTruePrice();
+			} else{
+				$(this).attr('ifget',"false").css('background-image', 'url(public/img/home/ungetcheck.png)');
+				getTruePrice();
+			}
+		})
+		
+		function getTruePrice(){
+			if (value < 2) {
+				$('.reduce').attr('disabled',true).css('color','#dddddd');
+			}else{
+				$('.reduce').attr('disabled',false).css('color','black');
+			}
+			var count=0;
+			$('.round[ifget=true]').each(function(i,item){
+				var price=$(item).parents('.replyCon').find('.price').text();
+				count += price*Number($("#supPer").val());
+			})
+			$('.paySum em').text(count);
+		}
+		
+		
+		$('.paySub').click(function(){
+			var _count=$('.paySum em').text();
+			if (_count==0||!_count) {
+				alert('支持金额需大于1元');
+				return;
+			}
+		})
+		
+		$('.adr').click(function(){
+			setCookie('prevAdr',location.href);
+			location.href="adrSet.html";
+		})
+		
+		var lock = false;
+		//获取订单
+		$(".paySub").click(function() { //projectRequiteId
+			if (!adrInfo) {
+				alert("您还没有填写默认地址!");
+				return;
+			}
+			if(!is_weixn()) {
+				alert("请用微信打开支付！");
+			}
+	
+			var desc = $("textarea").text();
+			
+			var projectId = GetQueryString("projectId");
+	
+			var fees = $('.paySum em').text();
+			fees = parseFloat(fees);
+	
+			if(lock) {
+				return;
+			}
+			lock = true;
+//			var projectRequiteId = $('span.round[ifget=true]').attr('index');
+			ajaxPost("/user/support/create",
+				JSON.stringify({
+					supportFees: fees,
+					desc: desc,
+					projectId: projectId,
+					pcs: $('#supPer').val(),
+//					projectRequiteId: projectRequiteId,
+					supportAddrId: $(".adr").attr("adrid")
+				}),
+				function(obj) {
+					console.log(obj);
+					lock = false;
+					if(obj.success) {
+						// alert("支持成功！");
+						//签名
+						//支付
+						// window.history.back();
+						getSign(obj.data.orderNo);
+					} else {
+						alert(obj.msg);
+					}
+	
+				});
+	
+		});
+	
+		var getSign = function(orderNo) {
+	
+			ajaxPost("/pay/wxjs/getSign", JSON.stringify({
+				orderNo: orderNo
+			}), function(obj) {
+				var wxSign = obj.data.wxSign;
+				if(typeof WeixinJSBridge == "undefined") {
+	
+					if(document.addEventListener) {
+						document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+					} else if(document.attachEvent) {
+	
+						document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+						document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+					}
+				} else {
+	
+					try {
+						onBridgeReady(wxSign);
+					} catch(e) {
+	
+					}
+	
+				}
+			});
+	
+		}
+	
+		// 微信支付 /pay/wxjs/getSign
+		function onBridgeReady(wxSign) {
+	
+			var request = {
+				"appId": wxSign.appId, //公众号名称，由商户传入
+				"timeStamp": "" + wxSign.timeStamp, //时间戳，自1970年以来的秒数
+				"nonceStr": wxSign.nonceStr, //随机串
+				"package": wxSign.packageValue,
+				"signType": "MD5", //微信签名方式:
+				"paySign": wxSign.sign //微信签名
+			};
+	
+			WeixinJSBridge.invoke(
+				'getBrandWCPayRequest', request,
+				function(res) {
+	
+					if(res.err_msg == "get_brand_wcpay_request:ok") {
+						//      	alert("支付成功！");
+						var projectId = GetQueryString("projectId");
+						window.location.href = "proDetail.html?projectId=" + projectId;
+					}
+					// 使用以上方式判断前端返回,微信团队郑重提示:res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+				}
+			);
+		}
+	</script>
+</html>

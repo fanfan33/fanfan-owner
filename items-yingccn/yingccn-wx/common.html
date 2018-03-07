@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>评论</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<script src="public/js/util/jquery.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/js/util/common.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{
+				background: #f8f8f8;
+			}
+			.wrap {
+				font-size: 0;
+				height: 100%;
+			}
+			.wrap .nameFrom{
+				font-size: 0.28rem;
+				color: #666;
+				margin: 0.1rem 0.45rem;
+			}
+			.wrap .nameFrom span{
+				color: #999;
+			}
+			.wrap .password{
+				/*background: #ffffff;*/
+				margin: 0.3rem 0.45rem 0;
+			}
+			.wrap input{
+				background: #ffffff;
+			    height: 1.0rem;
+			    width: 100%;
+			    line-height: 1.0rem;
+			    font-size: 0.26rem;
+			    border: 0;
+			    outline: none;
+			    border-bottom: 1px solid #cccccc;
+			    vertical-align: top;
+			}
+			.wrap input:nth-last-of-type(1){
+				border: 0;
+			}
+			.wrap .finish{
+				width: 5.50rem;
+				height: .8rem;
+				border-radius:5px;
+				background: #ffad00;
+				text-align: center;
+				line-height: .8rem;
+				margin: 1.5rem auto;
+				font-size: .4rem;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<p class="nameFrom">对&nbsp;<span></span>&nbsp;的评论：</p>
+			<div class="password">
+				<textarea id="desc" name="desc" rows="8" style="width:100%;resize: none;padding: 5px;border: 1px solid #eee;border-radius:5px;box-sizing: border-box;"></textarea>
+			</div>
+			<div class="finish">提交</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var _nickname=location.href.split('?')[1].split('&')[1].split('=')[1];
+				var nickname=decodeURI(_nickname);
+				$('.nameFrom span').text(nickname);
+				var ifPost = false;
+				$(".finish").click(function(){
+					if (!ifPost) {
+						var supportId = GetQueryString("supportId");
+						var desc = $("#desc").val();
+						if (desc) {
+							ajaxPost("/user/comment/save",JSON.stringify({supportId:supportId,comment:desc}),
+							function(obj){
+								if (obj.success) {
+										ifPost = true;
+	//									window.history.back();
+										location.href="share.html?id="+GetQueryString("proId");
+									}else{
+										alert(obj.msg);
+									}
+	
+							});
+							}else{
+								alert('评论不能为空！');
+							}
+					}
+						
+
+
+
+				})
+
+			})
+
+
+		</script>
+	</body>
+</html>

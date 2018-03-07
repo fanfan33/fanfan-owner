@@ -1,0 +1,69 @@
+.wrapAbout{
+	max-width: 1920px;
+	width: 100%;
+	background-color: #F7FCFF;
+}
+main .banner img{
+	width: 100%;
+	display: block;
+}
+.wrapAbout .nav a:nth-child(3){
+	color: white;
+	background-color: #FAAB00;
+}
+.aboutCon{
+	max-width: 1200px;
+	width: 100%;
+	margin: 40px auto 0;
+}
+.aboutCon .abLeft{
+	text-align: center;
+	float: left;
+	padding-top: 40px;
+}
+.aboutCon .abLeft ul li.line{
+	width: 115px;
+	height: 30px;
+	text-align: center;
+	margin: 8px 0;
+	border-right: 1px solid darkgrey;
+}
+.aboutCon .abLeft ul li.list{
+	width: 115px;
+	padding-right: 4px;
+	font-size: 1.8rem;
+	background: url(../img/about/fullButton.png) right center no-repeat;
+}
+.aboutCon .abLeft ul li.list:first-child{
+	padding-right: 8px;
+	background-image: url(../img/about/emptyButton.png);
+}
+.aboutCon .abLeft ul li.list:hover{
+	cursor: pointer;
+}
+.aboutCon .abRight{
+	float: right;
+}
+.aboutCon .abRight .txt{
+	width: 1050px;
+	height: 773px;
+	background-color: #FFFFFF;
+	padding: 25px 45px 0;
+	box-sizing: border-box;
+}
+.aboutCon .abRight .serve{}
+
+.aboutCon .abRight .aboutUs{
+	text-align: center;
+}
+.txtCon{
+	padding: 0 45px;
+	box-sizing: border-box;
+	text-align: left;
+}
+.aboutCon .abRight .joinUs{
+	background-image: url(../img/about/join.png);
+}
+.aboutCon .abRight .joinUs p{
+	letter-spacing: 2px;
+}

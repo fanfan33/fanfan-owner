@@ -1,0 +1,57 @@
+.index {
+	width: 100%;
+}
+
+ul.indexBtn{
+	width: 100%;
+	font-size: 0.28rem;
+	background-color: #333333;
+	position: fixed;
+	bottom: 0;
+	padding: 5px 0;
+}
+
+ul.indexBtn li {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+/*.homeImg{
+	color: #fff;
+	background-image: url(../img/home/home.png);
+}
+.mesImg{
+	color: #FAAB00;
+	background-image: url(../img/home/message-c.png);
+}*/
+
+ul.indexBtn li a{
+	color: white;
+	display: block;
+	padding-top: 0.5rem;
+	background: url(../img/home/message.png) center top no-repeat;
+	background-size: 0.5rem;
+}
+ul.indexBtn li:first-child a{
+	color: #FAAB00;
+	background-image: url(../img/home/home-c.png);
+}
+ul.indexBtn li:nth-child(2) a{
+	background-image: url(../img/home/store.png);
+	background-size: 0.47rem;
+}
+ul.indexBtn li:last-child a{
+	background-image: url(../img/home/my.png);
+	background-size: 0.45rem;
+}
+/*.index ul li a.footHomeIcon{
+	color: #FAAB00;
+	background-image: url(../img/home/home-c.png);
+}
+.index ul li a.footMesIcon{
+	background-image: url(../img/home/message.png);
+}
+.index ul li a.footMyIcon{
+	background-image: url(../img/home/my.png);
+	background-size: 0.45rem;
+}*/

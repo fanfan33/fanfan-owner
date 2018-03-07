@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>头像</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<script type="text/javascript" src="public/js/util/jquery.1.10.2.js"></script>
+		<script type="text/javascript" src="public/js/util/common.js"></script>
+		<style type="text/css">
+			.warn{
+				font-size: 0.3rem;
+				color: #CCCCCC;
+				display: block;
+				text-align: center;
+				margin-top: 0.5rem;
+			}
+			.big-photo{
+				width: 2.0rem;
+				height: 2.0rem;
+				margin: 4.0rem auto 0;
+			}
+			.big-photo img{
+				display: inline-block;
+				width: 2.0rem;
+				height: 2.0rem;
+				border-radius: 50px;
+				margin-bottom: 0.2rem;
+			}
+			.dai{
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<!--<p>头像</p>-->
+			<div class="col-sm-9 big-photo">
+				<form id= "uploadForm"  method= "post" enctype ="multipart/form-data">
+
+                	<div id="preview">
+                        <!--<img id="imghead" class="dai" border="0" src="" onclick="$('#previewImg').click();">-->
+                     </div>
+                    <input name="file"  type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+				</form>
+
+            </div>
+			<span class="warn">点击上面修改头像</span>
+		</div>
+	<script>
+			ajaxGET('/user/info','',function(data){
+				console.log(data);
+				var item = data.data;
+				var headImg = getFeild(item,['headImg']),
+					imgId = getFeild(item,['id']);
+
+				var myimg =$('<img id="imghead" border="0" src="'+rightImg(headImg)+'">')
+				$("#preview").append(myimg);
+				$("#imghead").click(function(){
+					$("#previewImg").click();
+				})
+           })
+
+		 //图片上传
+        function previewImage(file){
+        	ajaxFilePost('/upload',new FormData($('#uploadForm')[0]) ,function(data){
+            	console.log(data);
+            	var imgId=data.data.id;
+
+            	ajaxPost("/user/headImg",JSON.stringify({"headImg":imgId}),function(obj){
+            		console.info(obj);
+            		$("#imghead").attr("src",rightImg(obj.data.headImg));
+            	});
+
+        });
+
+
+//        var MAXWIDTH  = 90;
+//        var MAXHEIGHT = 90;
+//        var div = document.getElementById('preview');
+//        if (file.files && file.files[0])
+//        {
+//            div.innerHTML ='<img id=imghead onclick=$("#previewImg").click()>';
+//            var img = document.getElementById('imghead');
+//            img.onload = function(){
+//              var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+//              img.width  =  rect.width;
+//              img.height =  rect.height;
+////                 img.style.marginLeft = rect.left+'px';
+//              img.style.marginTop = rect.top+'px';
+//            }
+//            var reader = new FileReader();
+//            reader.onload = function(evt){img.src = evt.target.result;}
+//            reader.readAsDataURL(file.files[0]);
+//        }
+//        else //兼容IE
+//        {
+//          var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+//          file.select();
+//          var src = document.selection.createRange().text;
+//          div.innerHTML = '<img id=imghead>';
+//          var img = document.getElementById('imghead');
+//          img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+//          var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+//          status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+//          div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+//        }
+
+
+       }
+	</script>
+	</body>
+</html>

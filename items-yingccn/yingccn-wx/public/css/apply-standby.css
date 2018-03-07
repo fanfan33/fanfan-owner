@@ -1,0 +1,140 @@
+.wrap{
+	background: url(../img/active/apply-bg.png)no-repeat;
+	background-size: 100% 100%;
+	width: auto;
+	height:100%;
+	padding: 0 .46rem;
+}
+.ap-top{
+	height: .6rem;
+}
+.ap-top span:nth-child(1) {
+	font-size: .46rem;
+	color: #ffad00;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.ap-top span:nth-child(2) {
+	display: inline-block;
+	width: 1.10rem;
+	height: 0;
+	vertical-align: middle;
+	border-bottom:1px solid #ffffff;
+}
+.ap-top span:nth-child(3) {
+	font-size: .4rem ;
+	vertical-align: middle;
+	color: #ffffff;
+}
+.ap-content .con-tit{
+	display: inline-block;
+	font-size: .3rem;
+	color: #ffffff;
+}
+.con-btn{
+	display: inline-block;
+	float: right;
+	margin-top: 0.69rem;
+	/*width: 1.1rem;
+	height: .56rem;*/
+	/*border-radius: 50px;*/
+}
+.con-detail{
+	margin-top:.2rem ;
+	width: auto;
+	height: 3.4rem;
+	padding: .3rem;
+	background: #fff9f3;
+	font-size: .24rem;
+	border-radius: 10px;
+}
+.con-detail input {
+	border: 0;
+	outline: none;
+	vertical-align: top;
+	width: 5.9rem;
+}
+.con-detail input[placeholder]{
+	background: #fff9f3;
+}
+.ap-btn{
+	width: 4.8rem;
+	height: .92rem;
+	border-radius: 10px;
+	background: #ffad00;
+	font-size: .4rem;
+	line-height: .92rem;
+	text-align: center;
+	margin: 3.8rem auto 0;
+}
+.agree{
+	height: .4rem;
+	margin-top: -0.5rem;
+	margin-bottom: 2.6rem;
+}
+.agree div{
+	font-size: .22rem;
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+}
+.agr-btn{
+	background: url(../img/active/agree.png)no-repeat;
+	background-size: 100% 100%;
+	width: .3rem;
+	height: .3rem;
+}
+.agr-content{
+	color: #ffad00;
+}
+/******************开关按钮********************/
+	#div1{
+        width: 1.1rem;
+        height: 0.56rem;
+        border-radius: 50px;
+        position: relative;
+    }
+    #div2{
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50px;
+        position: absolute;
+        background: white;
+        box-shadow: 0px 0.02rem 0.04rem rgba(0,0,0,0.4);
+    }
+    .open1{
+        background: #00db00;
+    }
+    .open2{
+        top: 0.02rem;
+        right: 0.01rem;
+    }
+    .close1{
+        background: rgba(255,255,255,0.4);
+        border:0.03rem solid rgba(0,0,0,0.15);
+        border-left: transparent;
+    }
+    .close2{
+        left: 0px;
+        top: 0px;
+        border:0.02rem solid rgba(0,0,0,0.1);
+    }
+/**********宣言文本框***************/
+.declaration {
+	width: 5.9rem;
+	max-height:3.5rem;
+	overflow: auto;
+	word-wrap: break-word;
+	outline: none;
+}
+.declaration:empty:before {
+	content: attr(placeholder);
+	/* element attribute*/
+	/*content: 'this is content';*/
+	color: #cccccc;
+}
+/*焦点时内容为空*/
+
+.declaration:focus:before {
+	content: none;
+}

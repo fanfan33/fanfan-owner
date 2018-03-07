@@ -1,0 +1,165 @@
+.wrap{
+	
+}
+.log-top{
+	height: 4.2rem;
+	width: 100%;
+	background-color: #faab00;
+	background-image: url(../img/login/logo.png);
+	background-size: 3.35rem 3rem;
+	background-repeat: no-repeat;
+	background-position: center .25rem;
+	position: relative;
+}
+.log-top div{
+	position: absolute;
+	bottom: 0;
+	display: inline-block;
+	font-size: .4rem;
+	color: #ffffff;
+	width: 50%;
+	height: .9rem;
+	line-height: .9rem;
+	text-align: center;
+}
+.log-top .top-register{
+	right: 0;
+}
+.login{
+	padding: 0 .46rem;
+	position: relative;
+	font-size: 0;
+}
+.login:before{
+	content: "";
+	position: absolute;
+	top: -0.15rem;
+	left: 1.7rem;
+	width: .33rem;
+	height: .33rem;
+	border-radius: 100px;
+	background: #ffffff;
+	z-index: 100;
+}
+#login-id,.password,#login-pas{
+	height: 1.0rem;
+	width: 100%;
+	line-height: 1.0rem;
+	font-size: 0.26rem;
+	border: 0;
+	outline: none;
+	border-bottom: 1px solid #cccccc;
+	vertical-align: top;
+	position: relative;
+}
+.login .password .eye{
+	display: inline-block;
+	width: .45rem;
+	height: .2rem;
+	position: absolute;
+	right: 0;
+	top: 0.45rem;
+}
+.login .login-style {
+	height: .66rem;
+	width: 100%;
+	margin-top: .2rem;
+}
+.login .login-style .wx{
+	width: 2.2rem;
+	height: .66rem;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 2.8rem;
+}
+.login .login-style .forget-w{
+	display: inline-block;
+	font-size: .26rem;
+	vertical-align: middle;
+	color: #cccccc;
+}
+.login .login-btn{
+	width: 6.58rem;
+	height: .9rem;
+	border-radius: 5px;
+	background: #ffad00;
+	font-size: .4rem;
+	line-height: .9rem;
+	text-align: center;
+	color: #ffffff;
+	margin: 1.3rem auto 0;
+	border: none;
+}
+.register{
+	padding: 0 .46rem;
+	position: relative;
+	display: none;
+	font-size: 0;
+}
+.register:before{
+	content: "";
+	position: absolute;
+	top: -0.15rem;
+	left: 5.5rem;
+	width: .33rem;
+	height: .33rem;
+	border-radius: 100px;
+	background: #ffffff;
+	z-index: 100;
+}
+.register input::-webkit-input-placeholder{
+	color: #cccccc;
+}
+.register input,.register .yz-code,.register .reg-password,#reg-pas{
+	height: 1.0rem;
+	width: 100%;
+	line-height: 1.0rem;
+	font-size: 0.26rem;
+	border: 0;
+	outline: none;
+	border-bottom: 1px solid #cccccc;
+	vertical-align: top;
+}
+.register .reg-password{
+	position: relative;
+}
+.yz-code:empty:before {
+	content: attr(placeholder);
+	color: #cccccc;
+}
+.yz-code:focus:before {
+	content: none;
+}
+.register .code-num{
+	display: inline-block;
+	width: 1.8rem;
+	height: .6rem;
+	border: 1px solid #cccccc;
+	line-height: .6rem;
+	text-align: center;
+	font-size: .26rem;
+	color: #333;
+	border-radius: 5px;
+	float: right;
+	margin-top: -0.84rem;
+	background: #FFFFFF;
+}
+.register .eyes {
+	display: inline-block;
+	width: .45rem;
+	height: .2rem;
+	position: absolute;
+	right: 0;
+	top: 0.45rem;
+}
+.register .reg-btn{
+	width: 6.58rem;
+	height: .9rem;
+	border-radius: 5px;
+	background: #ffad00;
+	font-size: .4rem;
+	line-height: .9rem;
+	text-align: center;
+	color: #ffffff;
+	margin: 1.3rem auto 0;
+}

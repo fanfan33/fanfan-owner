@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>发布项目</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/apply.css" />
+		<link rel="stylesheet" type="text/css" href="public/css/add-backway.css"/>
+		<script src="public/js/util/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="public/js/util/common.js" type="text/javascript"></script>
+		<script src="public/js/my-release.js" type="text/javascript"></script>
+		
+	</head>
+
+	<body>
+		<div class="wrap">
+			<div class="fabu">
+				<div class="ap-change">
+					<div class="sup-price">
+						<span>筹款金额</span><input type="number" name="" id="saveMoney" value="" placeholder="填写筹款目标金额" /><span>元</span>
+					</div>
+					<div class="sup-date">
+						<span>众筹天数</span><span class="endDate"></span>00:00<span class="blink"></span>共<em id="dateCount">3</em>天
+						<div class="days">
+							<span>3天</span><em><i></i></em><span>30天</span>
+						</div>
+					</div>
+					<div class="support">
+						<span>开启友情赞助</span>
+						<div class="con-btn">
+							<div id="div1" class="open1">
+								<div id="div2" class="open2"></div>
+							</div>
+						</div>
+					</div>
+					<div class="support">
+						<span>需要支持者填写收件地址</span>
+						<div class="con-btn">
+							<div id="div3" class="close3">
+								<div id="div4" class="close4"></div>
+							</div>
+						</div>
+					</div>
+					<!--默认地址-->
+					<div class="defaultAdr" style="display: none;">
+						<div class="adrLeft">
+							<p><span class="realName"></span><span class="phone"></span></p>
+							<p class="defadr"></p>
+						</div>
+						<img src="public/img/home/myArrow.png"/>
+						<div class="clear"></div>
+					</div>
+					<div class="itemTitle">
+						<input type="" name="itemTitle" id="itemTitle" placeholder="请填写项目标题"/>
+					</div>
+					<div class="con-detail">
+						<div class="declaration" contenteditable="true" placeholder="请在此输入项目描述"></div>
+					</div>
+				</div>
+				<!--上传多张图像-->
+				<div class="addLotImg">
+					<div class="send_photo">
+						<div class="send_file">
+							<form id= "uploadFormSend"  method= "post" enctype ="multipart/form-data">  
+								<input type="file" id="sendfile" value=" "  name="file" accept="image/*"  onchange="imgChange('send_photo','send_file');" />
+							</form>
+		            	</div>
+			        </div>
+						<!--遮罩层-->
+			        <div class="z_mask">
+			            <!--弹出框-->
+			            <div class="z_alert">
+			                <p>确定要删除这张图片吗？</p>
+			                <p>
+			                    <span class="z_cancel">取消</span>
+			                    <span class="z_sure">确定</span>
+			                </p>
+			            </div>
+			        </div>
+				</div>
+				<div class="backway">
+					添加回报方式
+				</div>
+				<div class="reply" style="display: none;">
+					<!--回报方式-->
+					
+				</div>
+				<input type="button" value="发布" class="sub">
+				<!--<div class="sub">发布</div>-->
+				<div class="agree">
+					<div class="agr-btn"></div>
+					<div >已阅读并同意<span class="agr-content">《英筹网发起项目条款》</span></div>
+				</div>
+			</div>
+			
+			<div id="backway" style="display: none;">
+				<p></p>
+				<div class="add-mid">
+					<div class="sup-money">
+						<span>支持金额</span>
+						<input type="number" name="" id="supMoney" value="" placeholder="填写支持金额"/>
+						<span>元</span>
+					</div>
+					<div class="sup-money">
+						<span>限制数量</span>
+						<input type="number" name="" id="supNum" value="" placeholder="默认不限制"/>
+						<span>份</span>
+					</div>
+					<div class="con-detail">
+						<div class="declaration" contenteditable="true" placeholder="填写回报方式具体内容"></div>
+					</div>
+				</div>
+				<div class="z_photo">
+					<div class="z_file">
+						<form id= "uploadForm"  method= "post" enctype ="multipart/form-data">  
+							<input type="file" id="file" name="file" accept="image/*"   />
+						</form>
+	            	</div>
+		       	</div>
+		        <div class="add-btn">保存</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="public/js/add-backway.js" ></script>
+</html>

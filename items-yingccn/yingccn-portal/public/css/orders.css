@@ -1,0 +1,20 @@
+.wrap{
+	height: 928px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+.wrap .title{
+	padding: 20px;
+	font-size: 30px;
+	display: block;
+}
+.order-table{
+	width: 1070px;
+	height: 260px;
+}
+.oleft{
+	width: 820px;
+	height: 60px;
+	line-height: 60px;
+	background: #;
+}
